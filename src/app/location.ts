@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, Output, EventEmitter } from "@angular/core";
 
 @Component({
     selector: "location",
@@ -6,5 +6,26 @@ import { Component, Input } from "@angular/core";
 })
 export class LocationComponent {
     @Input()
-    location;
+    location: any;
+
+    @Output()
+    change = new EventEmitter<any>();
+
+    @Output()
+    takeOrders = new EventEmitter<any>();
+
+    _checked: boolean;
+
+    get checked() {
+        return this._checked;
+    }
+
+    set checked(b) {
+        this._checked = b;
+        this.change.emit({checked: b, location: this.location});
+    }
+
+    takeOrdersClicked() {
+        this.takeOrders.emit(this.location);
+    }
 }

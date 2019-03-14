@@ -1,21 +1,22 @@
-<div style="float:left; margin-left: .5em; font-size: .4em; width: 100px; overflow: hidden">
-    <div *ngFor="let v of location.votes">
-        ⭐ {{v}}
-    </div>
-    <div *ngIf="!location.votes">keine Stimme</div>
+<div style="float:left;">
+    <mat-checkbox [(ngModel)]="checked"></mat-checkbox>
 </div>
 <div style="float:left; margin-left: .5em;">
-    <mat-checkbox></mat-checkbox>
-</div>
-<div style="float:left; margin-left: .5em;">
-    <div style="font-size: .8em;">
+    <div style="font-size: .7em;">
         {{location.name}}
     </div>
     <div style="font-size: .5em;">
-        <a target="_blank" [href]="location.link">➔Speisekarte</a>
+        <a target="_blank" [href]="location.link">Speisekarte ➔</a>
     </div>
 </div>
-<div style="clear:both; margin-bottom: .8em;">
-    <button *ngIf="location.votes" mat-stroked-button color="primary">Bestellung aufgeben</button>
+<div style="float:right; margin-left: .5em; font-size: .4em; width: 100px; overflow: hidden">
+    <div *ngFor="let v of location.votes">
+        ⭐ {{v}}
+    </div>
 </div>
+<div style="clear:both;"></div>
+<div style="float:right;">
+    <button *ngIf="location.votes && location.votes.length" mat-stroked-button color="primary" (click)="takeOrdersClicked()">Bestellungen aufnehmen</button>
+</div>
+<div style="clear:both;"></div>
 <hr/>

@@ -1,11 +1,21 @@
 <mat-toolbar color="primary" class="mat-elevation-z6">
-  <span class="headerSign">Lunch Master 3000 <sup>&reg;</sup></span>
+  <span class="headerSign">Lunch Master 3000<sup>&reg;</sup></span>
 </mat-toolbar>
 
 <mat-card>
   <form class="name-form">
     <mat-form-field>
-      <input #inpname name="name" matInput placeholder="Wie heißt du?" [(ngModel)]="name">
+      <input #inpname name="name" matInput placeholder="Wie heißt du?" [(ngModel)]="nameInput">
+    </mat-form-field>
+  </form>
+</mat-card>
+
+<mat-card *ngFor="let orderSet of data.ordersets">
+  <mat-card-title>{{orderSet.location.name}}</mat-card-title>
+  <mat-card-subtitle>{{orderSet.name}} ist ein Held und bestellt bei {{orderSet.location.name}}. Hier ist die <a target="_blank" [href]="orderSet.location.link">Speisekarte</a></mat-card-subtitle>
+  <form class="order-form">
+    <mat-form-field>
+      <input #inporder name="order" matInput placeholder="Was möchtest du haben?" [(ngModel)]="orderInput">
     </mat-form-field>
   </form>
 </mat-card>
@@ -14,8 +24,8 @@
   <mat-card-title>Favoritenliste</mat-card-title>
   <mat-card-subtitle>Hallo {{name}}!<br/>Bitte wähle aus, auf was du heute Appetit hast. Mehrfachauswahl ist möglich.</mat-card-subtitle>
   <form class="favorites-form">
-    <div *ngFor="let l of locations">
-      <location [location]="l"></location>
+    <div *ngFor="let l of data.locations">
+      <location [location]="l" (change)="checkboxChanged($event)" (takeOrders)="takeOrders($event)"></location>
     </div>
   </form>
 </mat-card>
