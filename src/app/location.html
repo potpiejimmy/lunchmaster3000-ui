@@ -1,0 +1,21 @@
+<div style="float:left; margin-left: .5em; font-size: .4em; width: 100px; overflow: hidden">
+    <div *ngFor="let v of location.votes">
+        ⭐ {{v}}
+    </div>
+    <div *ngIf="!location.votes">keine Stimme</div>
+</div>
+<div style="float:left; margin-left: .5em;">
+    <mat-checkbox></mat-checkbox>
+</div>
+<div style="float:left; margin-left: .5em;">
+    <div style="font-size: .8em;">
+        {{location.name}}
+    </div>
+    <div style="font-size: .5em;">
+        <a target="_blank" [href]="location.link">➔Speisekarte</a>
+    </div>
+</div>
+<div style="clear:both; margin-bottom: .8em;">
+    <button *ngIf="location.votes" mat-stroked-button color="primary">Bestellung aufgeben</button>
+</div>
+<hr/>

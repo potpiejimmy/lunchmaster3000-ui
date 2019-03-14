@@ -1,11 +1,21 @@
 <mat-toolbar color="primary" class="mat-elevation-z6">
-  <a class="headerSign">Mittagessen-Manager 3000</a>
+  <span class="headerSign">Lunch Master 3000 <sup>&reg;</sup></span>
 </mat-toolbar>
 
 <mat-card>
-  <form class="example-form">
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Wie heißt du?" value="">
+  <form class="name-form">
+    <mat-form-field>
+      <input #inpname name="name" matInput placeholder="Wie heißt du?" [(ngModel)]="name">
     </mat-form-field>
+  </form>
+</mat-card>
+
+<mat-card *ngIf="name && name.length > 2">
+  <mat-card-title>Favoritenliste</mat-card-title>
+  <mat-card-subtitle>Hallo {{name}}!<br/>Bitte wähle aus, auf was du heute Appetit hast. Mehrfachauswahl ist möglich.</mat-card-subtitle>
+  <form class="favorites-form">
+    <div *ngFor="let l of locations">
+      <location [location]="l"></location>
+    </div>
   </form>
 </mat-card>
