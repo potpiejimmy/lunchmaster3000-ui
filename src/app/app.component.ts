@@ -12,6 +12,12 @@ export class AppComponent implements AfterViewInit {
   _nameInput: string;
   nameInputDeferrer: any;
   name: string;
+  _isTyping: boolean = false;
+  get isTyping() { return this._isTyping; }
+  set isTyping(s) {
+    this._isTyping = s;
+    console.log(s);
+  }
 
   data = {
    locations: [{
@@ -44,8 +50,14 @@ export class AppComponent implements AfterViewInit {
 
   set nameInput(n) {
     this._nameInput = n;
-    if (this.nameInputDeferrer) clearTimeout(this.nameInputDeferrer);
+    clearTimeout(this.nameInputDeferrer);
     this.nameInputDeferrer = setTimeout(() => this.name = this._nameInput, 500);
+  }
+
+  get nameInUse(): boolean {
+    for (let l of this.data.locations) if (l.votes.includes(this.name)) return true;
+    for (let o of this.data.ordersets) if (o.name == this.name || o.orders[this.name]) return true;
+    return false;
   }
 
   ngAfterViewInit(): void {
@@ -60,7 +72,17 @@ export class AppComponent implements AfterViewInit {
   takeOrders(location) {
     this.data.ordersets.push({
       name: this.name,
-      location: location
+      location: location,
+      orders: {}
     });
+  }
+
+  order(e) {
+    e.orderSet.orders[this.name] = e.order;
+  }
+
+  cancel(e) {
+    this.data.ordersets.splice(this.data.ordersets.indexOf(e), 1);
+    this.data = JSON.parse(JSON.stringify(this.data));
   }
 }

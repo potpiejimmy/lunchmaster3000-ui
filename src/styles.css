@@ -6,7 +6,6 @@ html {
     height: 100%;
     background-image: url('./assets/background.jpg');
     background-size: cover;
-    background-repeat: no-repeat;
 }
 
 body {
@@ -25,7 +24,15 @@ a, a:visited {
 
 .mat-card {
     margin: 1.5em;
+    background-color: white;
+}
+
+.mat-card.favlist {
     background-color: #eaecf3;
+}
+
+.mat-card.orderSet {
+    background-color: #e7f1e4;
 }
 
 .mat-form-field {

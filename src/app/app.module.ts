@@ -9,14 +9,17 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
 
 import { AppComponent } from './app.component';
 import { LocationComponent } from './location';
+import { OrderSetComponent } from './orderset';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LocationComponent
+    LocationComponent,
+    OrderSetComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,8 @@ import { LocationComponent } from './location';
     MatCardModule,
     MatInputModule,
     MatCheckboxModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
