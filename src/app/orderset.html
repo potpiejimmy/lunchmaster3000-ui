@@ -22,7 +22,7 @@
     </form>
   </div>
   <div *ngIf="!orderSet.finished && orderKeys.length" style="float:left;">
-    <button *ngIf="own" mat-raised-button color="primary" (click)="finish()">Bestellung beenden</button>
+    <button *ngIf="own" mat-raised-button color="primary" (click)="finish()">Bestellannahme beenden</button>
   </div>
   <div *ngIf="!orderSet.finished" style="float:right;">
     <button *ngIf="own" mat-raised-button color="warn" (click)="cancel()">Abbrechen</button>

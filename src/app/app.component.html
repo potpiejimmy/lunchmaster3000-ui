@@ -22,7 +22,7 @@
   <mat-card-subtitle>Bitte wähle aus, auf was du heute Appetit hast. Mehrfachauswahl ist möglich.</mat-card-subtitle>
   <form class="favorites-form">
     <div *ngFor="let l of data.locations">
-      <location [location]="l" (change)="checkboxChanged($event)" (takeOrders)="takeOrders($event)"></location>
+      <location [location]="l" [name]="name" (change)="checkboxChanged($event)" (takeOrders)="takeOrders($event)"></location>
     </div>
   </form>
 </mat-card>

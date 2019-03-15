@@ -1,4 +1,7 @@
 import { Component, AfterViewInit, ViewChild } from '@angular/core';
+import { LmApiService } from './services/lmapi';
+import * as io from 'socket.io-client';
+import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +11,17 @@ import { Component, AfterViewInit, ViewChild } from '@angular/core';
 export class AppComponent implements AfterViewInit {
   
   @ViewChild('inpname') inpname;
+
+  socket: SocketIOClient.Socket;
+
+  constructor(
+    private api: LmApiService
+  ) {
+    this.socket = io.connect(environment.apiUrl);
+    this.socket.on('data', data => {
+      this.data = data;
+    })
+  }
 
   _nameInput: string;
   nameInputDeferrer: any;
@@ -20,29 +34,9 @@ export class AppComponent implements AfterViewInit {
   }
 
   data = {
-   locations: [{
-      name: "Green Thai",
-      link: "https://ni.greenthai.de",
-      votes: []
-    },
-    {
-      name: "City Döner",
-      link: "n/a",
-      votes: []
-    },
-    {
-      name: "Subway",
-      link: "https://www.subway.com/de-DE",
-      votes: []
-    },
-    {
-      name: "LSG Kantine",
-      link: "http://lz-catering.signage-server.de/frankfurt-neu-isenburg/web-app",
-      votes: []
-    }
-   ],
-   ordersets: []
-  }
+    locations: [],
+    ordersets: []
+  };
 
   get nameInput() {
     return this._nameInput;
@@ -62,11 +56,18 @@ export class AppComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     setTimeout(()=>this.inpname.nativeElement.focus(),100);
+    this.refresh();
+  }
+
+  refresh() {
+    this.api.getData().then(data => {
+      console.log("Loaded data: " + data.locations.length + " locations");
+      this.data = data;
+    });
   }
 
   checkboxChanged(event) {
-    if (event.checked) event.location.votes.push(this.name);
-    else event.location.votes.splice(event.location.votes.indexOf(this.name), 1);
+    this.api.setFavorite(event.location.name, this.name, event.checked);
   }
 
   takeOrders(location) {

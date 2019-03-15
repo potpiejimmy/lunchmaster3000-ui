@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { HttpClientModule }    from '@angular/common/http';
 
 // Material
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -14,6 +15,7 @@ import { MatTableModule } from '@angular/material/table';
 import { AppComponent } from './app.component';
 import { LocationComponent } from './location';
 import { OrderSetComponent } from './orderset';
+import { LmApiService } from './services/lmapi';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { OrderSetComponent } from './orderset';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
     // Material
     MatToolbarModule,
     MatCardModule,
@@ -33,7 +36,9 @@ import { OrderSetComponent } from './orderset';
     MatButtonModule,
     MatTableModule
   ],
-  providers: [],
+  providers: [
+    LmApiService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

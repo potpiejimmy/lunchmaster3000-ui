@@ -1,12 +1,15 @@
-import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { Component, Input, Output, EventEmitter, AfterViewInit } from "@angular/core";
 
 @Component({
     selector: "location",
     templateUrl: "location.html"
 })
-export class LocationComponent {
+export class LocationComponent implements AfterViewInit {
     @Input()
     location: any;
+
+    @Input()
+    name: any;
 
     @Output()
     change = new EventEmitter<any>();
@@ -15,6 +18,10 @@ export class LocationComponent {
     takeOrders = new EventEmitter<any>();
 
     _checked: boolean;
+
+    ngAfterViewInit(): void {
+        setTimeout(() => this._checked = this.location.votes.includes(this.name), 0);
+    }
 
     get checked() {
         return this._checked;
