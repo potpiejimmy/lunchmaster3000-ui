@@ -28,7 +28,7 @@ export class AppComponent implements AfterViewInit {
     // register socket for receiving data:
     this.socket = io.connect(environment.apiUrl);
     this.socket.on('data', data => {
-      this.data = data;
+      if (!this.isTyping) this.data = data;
     })
 
     // initialize name from local storage
@@ -77,19 +77,18 @@ export class AppComponent implements AfterViewInit {
   }
 
   takeOrders(location) {
-    this.data.ordersets.push({
-      name: this.name,
-      location: location,
-      orders: {}
-    });
+    this.api.setOrderSet(location, this.name);
   }
 
   order(e) {
-    e.orderSet.orders[this.name] = e.order;
+    this.api.setOrder(e.orderSet, this.name, e.order);
   }
 
   cancel(e) {
-    this.data.ordersets.splice(this.data.ordersets.indexOf(e), 1);
-    this.data = JSON.parse(JSON.stringify(this.data));
+    this.api.setOrderSet(e.location, this.name, true);
+  }
+
+  finish(e) {
+    this.api.setOrderSet(e.location, this.name, false, true);
   }
 }

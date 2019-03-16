@@ -14,6 +14,9 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+  <div *ngIf="orderSet.finished" style="font-size: .8em;">
+      Die Bestellung ist beendet.
+  </div>
   <div *ngIf="!orderSet.finished">
     <form class="order-form">
         <mat-form-field>
@@ -24,11 +27,8 @@
   <div *ngIf="!orderSet.finished && orderKeys.length" style="float:left;">
     <button *ngIf="own" mat-raised-button color="primary" (click)="finish()">Bestellannahme beenden</button>
   </div>
-  <div *ngIf="!orderSet.finished" style="float:right;">
-    <button *ngIf="own" mat-raised-button color="warn" (click)="cancel()">Abbrechen</button>
+  <div style="float:right;">
+    <button *ngIf="own" mat-raised-button color="warn" (click)="cancel()">Bestellung löschen</button>
   </div>
   <div style="clear:both;"></div>
-  <div *ngIf="orderSet.finished">
-      Die Bestellung ist beendet.
-  </div>
 </mat-card>

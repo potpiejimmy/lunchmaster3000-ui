@@ -1,16 +1,16 @@
-import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { Component, Input, Output, EventEmitter, OnInit } from "@angular/core";
 
 @Component({
     selector: "orderset",
     templateUrl: "orderset.html"
 })
-export class OrderSetComponent {
+export class OrderSetComponent implements OnInit {
 
     @Input()
     orderSet: any;
 
     @Input()
-    own: boolean;
+    name: string;
 
     @Output()
     orderChanged = new EventEmitter<any>();
@@ -19,13 +19,23 @@ export class OrderSetComponent {
     cancelled = new EventEmitter<any>();
 
     @Output()
+    finished = new EventEmitter<any>();
+
+    @Output()
     isTyping = new EventEmitter<boolean>();
 
+    own: boolean;
     _orderInput: string;
     _orderInputDeferrer: any;
     _order: string;
 
     displayedColumns: string[] = ['name', 'order'];
+
+    ngOnInit() {
+        this.own = this.name == this.orderSet.name;
+        this._order = this.orderSet.orders[this.name];
+        this._orderInput = this._order;
+    }
 
     get orderInput() {
         return this._orderInput;
@@ -38,7 +48,7 @@ export class OrderSetComponent {
         this._orderInputDeferrer = setTimeout(() => {
             this.order = this._orderInput;
             this.isTyping.emit(false);
-        }, 1000);
+        }, 2000);
     }
 
     get order() {
@@ -62,6 +72,6 @@ export class OrderSetComponent {
     }
 
     finish() {
-        this.orderSet.finished = true;
+        this.finished.emit(this.orderSet);
     }
 }
