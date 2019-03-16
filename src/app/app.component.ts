@@ -2,6 +2,7 @@ import { Component, AfterViewInit, ViewChild } from '@angular/core';
 import { LmApiService } from './services/lmapi';
 import * as io from 'socket.io-client';
 import { environment } from '../environments/environment';
+import { LocalStorageService } from 'angular-2-local-storage';
 
 @Component({
   selector: 'app-root',
@@ -14,23 +15,25 @@ export class AppComponent implements AfterViewInit {
 
   socket: SocketIOClient.Socket;
 
+  _nameInput: string;
+  nameInputDeferrer: any;
+  name: string;
+  isTyping: boolean = false;
+
   constructor(
+    private localStorageService: LocalStorageService,
     private api: LmApiService
   ) {
+
+    // register socket for receiving data:
     this.socket = io.connect(environment.apiUrl);
     this.socket.on('data', data => {
       this.data = data;
     })
-  }
 
-  _nameInput: string;
-  nameInputDeferrer: any;
-  name: string;
-  _isTyping: boolean = false;
-  get isTyping() { return this._isTyping; }
-  set isTyping(s) {
-    this._isTyping = s;
-    console.log(s);
+    // initialize name from local storage
+    this.name = this.localStorageService.get('name');
+    this._nameInput = this.name;
   }
 
   data = {
@@ -45,7 +48,10 @@ export class AppComponent implements AfterViewInit {
   set nameInput(n) {
     this._nameInput = n;
     clearTimeout(this.nameInputDeferrer);
-    this.nameInputDeferrer = setTimeout(() => this.name = this._nameInput, 500);
+    this.nameInputDeferrer = setTimeout(() => {
+      this.name = this._nameInput;
+      this.localStorageService.set('name', this.name);
+    }, 500);
   }
 
   get nameInUse(): boolean {

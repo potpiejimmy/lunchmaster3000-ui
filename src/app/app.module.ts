@@ -12,6 +12,10 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 
+// Special
+import { LocalStorageModule } from 'angular-2-local-storage';
+
+// App
 import { AppComponent } from './app.component';
 import { LocationComponent } from './location';
 import { OrderSetComponent } from './orderset';
@@ -34,7 +38,9 @@ import { LmApiService } from './services/lmapi';
     MatInputModule,
     MatCheckboxModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    // Special
+    LocalStorageModule.forRoot({ prefix: 'lunchmaster3000', storageType: 'localStorage' }), // or sessionStorage
   ],
   providers: [
     LmApiService
