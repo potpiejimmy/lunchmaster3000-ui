@@ -43,3 +43,12 @@ a, a:visited {
     height: 32px !important;
     width: 32px !important;
 }
+
+td.mat-cell, th.mat-header-cell {
+    padding: 0 24px !important;
+}
+
+.mat-snack-bar-container {
+    color: white;
+    background-color: red;
+}

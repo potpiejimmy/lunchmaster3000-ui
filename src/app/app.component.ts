@@ -80,6 +80,10 @@ export class AppComponent implements AfterViewInit {
     this.api.setOrderSet(location, this.name);
   }
 
+  comment(e) {
+    this.api.setOrderSetComment(e.orderSet, e.comment);
+  }
+
   order(e) {
     this.api.setOrder(e.orderSet, this.name, e.order);
   }
@@ -90,5 +94,9 @@ export class AppComponent implements AfterViewInit {
 
   finish(e) {
     this.api.setOrderSet(e.location, this.name, false, true);
+  }
+
+  arrive(e) {
+    this.api.setOrderSet(e.location, this.name, false, false, true);
   }
 }

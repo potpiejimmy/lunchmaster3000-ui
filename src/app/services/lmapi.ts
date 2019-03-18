@@ -15,9 +15,15 @@ export class LmApiService extends HttpBaseService {
         });
     }
 
-    setOrderSet(location: string, name: string, cancel: boolean = false, finish: boolean = false): Promise<any> {
+    setOrderSet(location: string, name: string, cancel: boolean = false, finish: boolean = false, arrive: boolean = false): Promise<any> {
         return this.post(environment.apiUrl+"ordersets", {
-            location: location, name: name, cancel: cancel, finish: finish
+            location: location, name: name, cancel: cancel, finish: finish, arrive: arrive
+        });
+    }
+
+    setOrderSetComment(orderset: any, comment: string) {
+        return this.post(environment.apiUrl+"ordersets", {
+            location: orderset.location, name: orderset.name, comment: comment ? comment: " "
         });
     }
 
