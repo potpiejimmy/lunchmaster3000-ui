@@ -1,10 +1,13 @@
-import { Component, Input, Output, EventEmitter, OnInit } from "@angular/core";
+import { Component, Input, Output, EventEmitter, OnInit, ViewChild, AfterViewInit } from "@angular/core";
 
 @Component({
     selector: "orderset",
     templateUrl: "orderset.html"
 })
-export class OrderSetComponent implements OnInit {
+export class OrderSetComponent implements OnInit, AfterViewInit {
+
+    @ViewChild('inporder')
+    inporder;
 
     @Input()
     orderSet: any;
@@ -35,6 +38,10 @@ export class OrderSetComponent implements OnInit {
         this.own = this.name == this.orderSet.name;
         this._order = this.orderSet.orders[this.name];
         this._orderInput = this._order;
+    }
+
+    ngAfterViewInit(): void {
+        this.inporder.nativeElement.focus();
     }
 
     get orderInput() {
