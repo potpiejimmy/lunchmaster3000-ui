@@ -30,10 +30,24 @@ export class AppComponent implements AfterViewInit {
     this.socket.on('data', data => {
       if (!this.isTyping) this.data = data;
     })
+    this.socket.on('push', msg => {
+      if (msg.name != this.name) {
+        new Notification(msg.title, {
+          body: msg.body,
+          requireInteraction: true
+        });
+      }
+    })
 
     // initialize name from local storage
     this.name = this.localStorageService.get('name');
     this._nameInput = this.name;
+  }
+
+  ngAfterViewInit(): void {
+    setTimeout(()=>this.inpname.nativeElement.focus(),100);
+    this.refresh();
+    Notification.requestPermission();
   }
 
   data = {
@@ -58,11 +72,6 @@ export class AppComponent implements AfterViewInit {
     for (let l of this.data.locations) if (l.votes.includes(this.name)) return true;
     for (let o of this.data.ordersets) if (o.name == this.name || o.orders[this.name]) return true;
     return false;
-  }
-
-  ngAfterViewInit(): void {
-    setTimeout(()=>this.inpname.nativeElement.focus(),100);
-    this.refresh();
   }
 
   refresh() {

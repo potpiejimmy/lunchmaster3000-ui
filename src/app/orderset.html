@@ -5,7 +5,7 @@
   <div *ngIf="own || orderSet.comment" style="font-size: .5em;">
     <form class="comment-form">
         <mat-form-field>
-            <input #inpcomment name="comment" matInput [placeholder]="'Bestellhinweise von '+orderSet.name" [(ngModel)]="commentInput" [readonly]="!own">
+            <textarea #inpcomment name="comment" matInput [placeholder]="'Bestellhinweise von '+orderSet.name" [(ngModel)]="commentInput" [readonly]="!own"></textarea>
         </mat-form-field>
     </form>
   </div>
