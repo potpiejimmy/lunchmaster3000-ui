@@ -2,7 +2,7 @@
   <span class="headerSign">Lunch Master 3000<sup>&reg;</sup></span>
 </mat-toolbar>
 
-<mat-card>
+<mat-card *ngIf="!nameWasSet">
   <form class="name-form">
     <mat-form-field>
       <input #inpname name="name" matInput placeholder="Wie heißt du?" [(ngModel)]="nameInput" [disabled]="nameInUse">

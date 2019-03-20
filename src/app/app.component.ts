@@ -18,6 +18,8 @@ export class AppComponent implements AfterViewInit {
   _nameInput: string;
   nameInputDeferrer: any;
   name: string;
+
+  nameWasSet: boolean = false;
   isTyping: boolean = false;
 
   constructor(
@@ -42,10 +44,11 @@ export class AppComponent implements AfterViewInit {
     // initialize name from local storage
     this.name = this.localStorageService.get('name');
     this._nameInput = this.name;
+    this.nameWasSet = this.name != null;
   }
 
   ngAfterViewInit(): void {
-    setTimeout(()=>this.inpname.nativeElement.focus(),100);
+    setTimeout(()=>this.inpname&&this.inpname.nativeElement.focus(),100);
     this.refresh();
     Notification.requestPermission();
   }
