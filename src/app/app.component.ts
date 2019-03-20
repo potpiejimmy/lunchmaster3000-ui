@@ -30,7 +30,7 @@ export class AppComponent implements AfterViewInit {
     // register socket for receiving data:
     this.socket = io.connect(environment.apiUrl);
     this.socket.on('data', data => {
-      if (!this.isTyping) this.data = data;
+      if (!this.isTyping) this.adaptDataFromServer(data);
     })
     this.socket.on('push', msg => {
       if (msg.name != this.name) {
@@ -49,7 +49,7 @@ export class AppComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     setTimeout(()=>this.inpname&&this.inpname.nativeElement.focus(),100);
-    this.refresh();
+    this.load();
     Notification.requestPermission();
   }
 
@@ -77,11 +77,34 @@ export class AppComponent implements AfterViewInit {
     return false;
   }
 
-  refresh() {
+  get orderSets(): Array<any> {
+    return Object.values(this.data.ordersets);
+  }
+
+  load() {
     this.api.getData().then(data => {
       console.log("Loaded data: " + data.locations.length + " locations");
       this.data = data;
     });
+  }
+
+  adaptDataFromServer(data) {
+    this.data.locations = data.locations;
+    for (let o of Object.values<any>(data.ordersets)) {
+      // adapt new ones
+      if (!this.data.ordersets[o.id]) this.data.ordersets[o.id] = o;
+      else {
+        let orderset = this.data.ordersets[o.id];
+        orderset.orders = o.orders;
+        orderset.finished = o.finished;
+        orderset.arrived = o.arrived;
+        if (o.name != this.name) orderset.comment = o.comment;
+      }
+    }
+    for (let o of Object.values<any>(this.data.ordersets)) {
+      // remove deleted ones
+      if (!data.ordersets[o.id]) delete this.data.ordersets[o.id];
+    }
   }
 
   checkboxChanged(event) {
@@ -89,26 +112,26 @@ export class AppComponent implements AfterViewInit {
   }
 
   takeOrders(location) {
-    this.api.setOrderSet(location, this.name);
+    this.api.createOrderSet(location, this.name);
   }
 
   comment(e) {
-    this.api.setOrderSetComment(e.orderSet, e.comment);
+    this.api.updateOrderSetComment(e.orderSet.id, e.comment);
   }
 
   order(e) {
-    this.api.setOrder(e.orderSet, this.name, e.order);
+    this.api.setOrder(e.orderSet.id, this.name, e.order);
   }
 
   cancel(e) {
-    this.api.setOrderSet(e.location, this.name, true);
+    this.api.deleteOrderSet(e.id);
   }
 
   finish(e) {
-    this.api.setOrderSet(e.location, this.name, false, true);
+    this.api.updateOrderSet(e.id, true);
   }
 
   arrive(e) {
-    this.api.setOrderSet(e.location, this.name, false, false, true);
+    this.api.updateOrderSet(e.id, false, true);
   }
 }

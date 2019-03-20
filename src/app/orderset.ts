@@ -1,5 +1,4 @@
 import { Component, Input, Output, EventEmitter, OnInit, ViewChild, AfterViewInit } from "@angular/core";
-import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
     selector: "orderset",
@@ -49,8 +48,6 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
 
     displayedColumns: string[] = ['name', 'order'];
 
-    constructor(private snackBar: MatSnackBar) {}
-
     ngOnInit() {
         this.own = this.name == this.orderSet.name;
         this._order = this.orderSet.orders[this.name];
@@ -60,8 +57,7 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit(): void {
-        if (!this.own) setTimeout(()=>this.inporder.nativeElement.focus(), 10);
-        if (this.orderSet.arrived) setTimeout(()=>this.snackBar.open("ESSEN IST DAAA!!!!!"), 100);
+        setTimeout(()=>this.inporder.nativeElement.focus(), 10);
     }
 
     get orderInput() {
@@ -75,7 +71,7 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
         this._orderInputDeferrer = setTimeout(() => {
             this.order = this._orderInput;
             this.isTyping.emit(false);
-        }, 1000);
+        }, 500);
     }
 
     get commentInput() {
@@ -89,7 +85,7 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
         this._commentInputDeferrer = setTimeout(() => {
             this.comment = this._commentInput;
             this.isTyping.emit(false);
-        }, 1000);
+        }, 500);
     }
 
     get order() {

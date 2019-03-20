@@ -2,10 +2,14 @@
   <mat-card-title>{{orderSet.location.name}}</mat-card-title>
   <mat-card-subtitle>{{orderSet.name}} bestellt heute bei {{orderSet.location.name}}. Hier ist die <a target="_blank" [href]="orderSet.location.link">Speisekarte</a>.</mat-card-subtitle>
   <mat-card-subtitle>Wenn du etwas mitbestellen möchtest, schreibe es unten hin.</mat-card-subtitle>
-  <div *ngIf="own || orderSet.comment" style="font-size: .5em;">
+  <div *ngIf="!own && orderSet.comment" style="font-size: .5em;">
+    <mat-card-subtitle>Infos von {{orderSet.name}}:</mat-card-subtitle>
+    <pre>{{orderSet.comment}}</pre>
+  </div>
+  <div *ngIf="own" style="font-size: .5em;">
     <form class="comment-form">
         <mat-form-field>
-            <textarea #inpcomment name="comment" matInput [placeholder]="'Bestellhinweise von '+orderSet.name" [(ngModel)]="commentInput" [readonly]="!own"></textarea>
+            <textarea #inpcomment name="comment" matInput placeholder="Bestellhinweise / Infos" [(ngModel)]="commentInput"></textarea>
         </mat-form-field>
     </form>
   </div>
@@ -22,7 +26,7 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
   <div *ngIf="orderSet.finished && !orderSet.arrived" style="font-size: .6em;">
-      Die Bestellung ist beendet. Sobald das Essen da ist, {{own ? 'drücke auf den Knopf':'wird es unten angezeigt!'}}
+      Die Bestellung ist beendet. Sobald das Essen da ist, {{own ? 'drücke auf den Knopf!':'erhältst du eine Nachricht!'}}
   </div>
   <div *ngIf="!orderSet.finished">
     <form class="order-form">
@@ -36,6 +40,9 @@
   </div>
   <div *ngIf="orderSet.finished && !orderSet.arrived" style="float:left;">
     <button *ngIf="own" mat-raised-button color="accent" (click)="arrive()">Essen ist da!!</button>
+  </div>
+  <div *ngIf="orderSet.finished && orderSet.arrived" style="float:left;">
+    Das Essen ist da!!
   </div>
   <div style="float:right;">
     <button *ngIf="own" mat-raised-button color="warn" (click)="cancel()">Bestellung löschen</button>
