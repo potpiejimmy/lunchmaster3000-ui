@@ -20,7 +20,11 @@
         </ng-container>
         <ng-container matColumnDef="order">
             <th mat-header-cell *matHeaderCellDef> Bestellwunsch </th>
-            <td mat-cell *matCellDef="let element"> {{orderSet.orders[element]}} </td>
+            <td mat-cell *matCellDef="let element"> {{orderSet.orders[element].order}} </td>
+        </ng-container>
+        <ng-container matColumnDef="price">
+            <th mat-header-cell *matHeaderCellDef> Preis </th>
+            <td mat-cell *matCellDef="let element"> {{orderSet.orders[element].price}} </td>
         </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
@@ -30,9 +34,16 @@
   </div>
   <div *ngIf="!orderSet.finished">
     <form class="order-form">
-        <mat-form-field>
-            <input #inporder name="order" matInput [placeholder]="own ? 'Optional: was möchtest du selbst essen?' : ' Was möchtest du haben?'" [(ngModel)]="orderInput">
-        </mat-form-field>
+        <div>
+          <mat-form-field>
+              <input #inporder name="order" matInput [placeholder]="own ? 'Optional: Dein eigener Bestellwunsch' : ' Was möchtest du haben?'" [(ngModel)]="orderInput">
+          </mat-form-field>
+        </div>
+        <div style="font-size: .7em;">
+          <mat-form-field style="width: 6em;" >
+              <input #inpprice name="price" matInput currencyMask placeholder="Preis (EUR)" [(ngModel)]="priceInput" [options]="{prefix: '', suffix: ' €', thousands: '.', decimal: ','}">
+          </mat-form-field>
+        </div>
     </form>
   </div>
   <div *ngIf="!orderSet.finished && orderKeys.length" style="float:left;">

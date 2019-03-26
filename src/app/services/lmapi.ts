@@ -37,7 +37,7 @@ export class LmApiService extends HttpBaseService {
         });
     }
 
-    setOrder(ordersetId: string, name: string, order: string) {
+    setOrder(ordersetId: string, name: string, order: any) {
         return this.post(environment.apiUrl+"orders", {
             ordersetId: ordersetId, name: name, order: order
         });

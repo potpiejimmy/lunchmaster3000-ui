@@ -15,6 +15,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 // Special
 import { LocalStorageModule } from 'angular-2-local-storage';
+import { CurrencyMaskModule } from "ng2-currency-mask";
 
 // App
 import { AppComponent } from './app.component';
@@ -42,6 +43,7 @@ import { LmApiService } from './services/lmapi';
     MatTableModule,
     MatSnackBarModule,
     // Special
+    CurrencyMaskModule,
     LocalStorageModule.forRoot({ prefix: 'lunchmaster3000', storageType: 'localStorage' }), // or sessionStorage
   ],
   providers: [

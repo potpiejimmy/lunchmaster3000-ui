@@ -39,19 +39,18 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
     own: boolean;
 
     _orderInput: string;
-    _orderInputDeferrer: any;
-    _order: string;
+    _priceInput: number;
+    _inputDeferrer: any;
 
     _commentInput: string;
     _commentInputDeferrer: any;
     _comment: string;
 
-    displayedColumns: string[] = ['name', 'order'];
+    displayedColumns: string[] = ['name', 'order', 'price'];
 
     ngOnInit() {
         this.own = this.name == this.orderSet.name;
-        this._order = this.orderSet.orders[this.name];
-        this._orderInput = this._order;
+        this._orderInput = this.orderSet.orders[this.name] && this.orderSet.orders[this.name].order;
         this._comment = this.orderSet.comment;
         this._commentInput = this._comment;
     }
@@ -66,11 +65,30 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
 
     set orderInput(s) {
         this._orderInput = s;
-        clearTimeout(this._orderInputDeferrer);
+        this.submitOrderDeferred();
+    }
+
+    get priceInput() {
+        return this._priceInput;
+    }
+
+    set priceInput(p) {
+        this._priceInput = p;
+        this.submitOrderDeferred();
+    }
+
+    submitOrderDeferred() {
+        clearTimeout(this._inputDeferrer);
         this.isTyping.emit(true);
-        this._orderInputDeferrer = setTimeout(() => {
-            this.order = this._orderInput;
+        this._inputDeferrer = setTimeout(() => {
             this.isTyping.emit(false);
+            this.orderChanged.emit({
+                orderSet: this.orderSet,
+                order: {
+                    order: this._orderInput,
+                    price: this._priceInput
+                }
+            })
         }, 500);
     }
 
@@ -86,18 +104,6 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
             this.comment = this._commentInput;
             this.isTyping.emit(false);
         }, 500);
-    }
-
-    get order() {
-        return this._order;
-    }
-
-    set order(o) {
-        this._order = o;
-        this.orderChanged.emit({
-            orderSet: this.orderSet,
-            order: this._order
-        })
     }
 
     get comment() {
