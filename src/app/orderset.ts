@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter, OnInit, ViewChild, AfterViewInit } from "@angular/core";
+import { formatCurrency } from '@angular/common';
 
 @Component({
     selector: "orderset",
@@ -132,5 +133,18 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
 
     arrive() {
         this.arrived.emit(this.orderSet);
+    }
+
+    formatPrice(p: number): string {
+        if (!p) return '';
+        return formatCurrency(p, "de", "€");
+    }
+
+    get sum(): string {
+        let sum = 0;
+        for (let o of Object.values<any>(this.orderSet.orders)) {
+            sum += o.price;
+        }
+        return this.formatPrice(sum);
     }
 }

@@ -1,3 +1,6 @@
+import localeDE from '@angular/common/locales/de';
+registerLocaleData(localeDE);
+
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
@@ -12,6 +15,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatIconModule } from '@angular/material/icon';
 
 // Special
 import { LocalStorageModule } from 'angular-2-local-storage';
@@ -22,6 +26,7 @@ import { AppComponent } from './app.component';
 import { LocationComponent } from './location';
 import { OrderSetComponent } from './orderset';
 import { LmApiService } from './services/lmapi';
+import { registerLocaleData } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -42,6 +47,7 @@ import { LmApiService } from './services/lmapi';
     MatButtonModule,
     MatTableModule,
     MatSnackBarModule,
+    MatIconModule,
     // Special
     CurrencyMaskModule,
     LocalStorageModule.forRoot({ prefix: 'lunchmaster3000', storageType: 'localStorage' }), // or sessionStorage
