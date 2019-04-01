@@ -41,7 +41,7 @@
         <div style="float:left; font-size: .75em; width: 80%;">
           <mat-form-field>
               <input #inporder name="order" matInput [placeholder]="own ? 'Dein eigener Bestellwunsch' : ' Was möchtest du haben?'" [(ngModel)]="orderInput">
-              <button mat-button *ngIf="orderInput" matSuffix mat-icon-button aria-label="Clear" (click)="orderInput=''">
+              <button type="button" mat-button *ngIf="orderInput" matSuffix mat-icon-button aria-label="Clear" (click)="orderInput=''">
                 <mat-icon>close</mat-icon>
               </button>
           </mat-form-field>
