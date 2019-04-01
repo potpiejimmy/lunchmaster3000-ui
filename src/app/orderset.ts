@@ -44,16 +44,17 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
     _inputDeferrer: any;
 
     _commentInput: string;
-    _commentInputDeferrer: any;
-    _comment: string;
+    _payLinkInput: string;
+    _adminInputDeferrer: any;
 
-    displayedColumns: string[] = ['name', 'order', 'price'];
+    displayedColumns: string[] = ['name', 'order', 'price', 'paylink'];
 
     ngOnInit() {
         this.own = this.name == this.orderSet.name;
         this._orderInput = this.orderSet.orders[this.name] && this.orderSet.orders[this.name].order;
-        this._comment = this.orderSet.comment;
-        this._commentInput = this._comment;
+        this._priceInput = this.orderSet.orders[this.name] && this.orderSet.orders[this.name].price;
+        this._commentInput = this.orderSet.comment;
+        this._payLinkInput = this.orderSet.payLink;
     }
 
     ngAfterViewInit(): void {
@@ -99,24 +100,31 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
 
     set commentInput(s) {
         this._commentInput = s;
-        clearTimeout(this._commentInputDeferrer);
+        this.submitAdminDeferred();
+    }
+
+    get payLinkInput() {
+        return this._payLinkInput;
+    }
+
+    set payLinkInput(s) {
+        this._payLinkInput = s;
+        this.submitAdminDeferred();
+    }
+
+    submitAdminDeferred() {
+        clearTimeout(this._adminInputDeferrer);
         this.isTyping.emit(true);
-        this._commentInputDeferrer = setTimeout(() => {
-            this.comment = this._commentInput;
+        this._adminInputDeferrer = setTimeout(() => {
             this.isTyping.emit(false);
+            this.commentChanged.emit({
+                orderSet: this.orderSet,
+                update: {
+                    comment: this._commentInput,
+                    payLink: this._payLinkInput
+                }
+            })
         }, 500);
-    }
-
-    get comment() {
-        return this._comment;
-    }
-
-    set comment(c) {
-        this._comment = c;
-        this.commentChanged.emit({
-            orderSet: this.orderSet,
-            comment: this._comment
-        })
     }
 
     get orderKeys() {
@@ -146,5 +154,9 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
             sum += o.price;
         }
         return this.formatPrice(sum);
+    }
+
+    formatPayLink(o) {
+        return this.orderSet.payLink && o.price ? this.orderSet.payLink + '/' + o.price : "";
     }
 }

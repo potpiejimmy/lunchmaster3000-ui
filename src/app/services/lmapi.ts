@@ -15,9 +15,9 @@ export class LmApiService extends HttpBaseService {
         });
     }
 
-    createOrderSet(location: string, name: string): Promise<any> {
+    createOrderSet(location: string, name: string, payLink: string): Promise<any> {
         return this.post(environment.apiUrl+"ordersets", {
-            location: location, name: name
+            location: location, name: name, payLink: payLink
         });
     }
 
@@ -31,10 +31,8 @@ export class LmApiService extends HttpBaseService {
         });
     }
 
-    updateOrderSetComment(id: string, comment: string) {
-        return this.put(environment.apiUrl+"ordersets/"+id, {
-            comment: comment ? comment: " "
-        });
+    updateOrderSetComment(id: string, orderSet: any) {
+        return this.put(environment.apiUrl+"ordersets/"+id, orderSet);
     }
 
     setOrder(ordersetId: string, name: string, order: any) {

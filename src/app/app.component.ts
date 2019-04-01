@@ -98,7 +98,10 @@ export class AppComponent implements AfterViewInit {
         orderset.orders = o.orders;
         orderset.finished = o.finished;
         orderset.arrived = o.arrived;
-        if (o.name != this.name) orderset.comment = o.comment;
+        if (o.name != this.name) {
+          orderset.comment = o.comment;
+          orderset.payLink = o.payLink;
+        }
       }
     }
     for (let o of Object.values<any>(this.data.ordersets)) {
@@ -112,11 +115,12 @@ export class AppComponent implements AfterViewInit {
   }
 
   takeOrders(location) {
-    this.api.createOrderSet(location, this.name);
+    this.api.createOrderSet(location, this.name, this.localStorageService.get('paylink'));
   }
 
-  comment(e) {
-    this.api.updateOrderSetComment(e.orderSet.id, e.comment);
+  update(e) {
+    this.localStorageService.set('paylink', e.update.payLink);
+    this.api.updateOrderSetComment(e.orderSet.id, e.update);
   }
 
   order(e) {
