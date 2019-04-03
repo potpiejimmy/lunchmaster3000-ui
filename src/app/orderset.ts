@@ -47,7 +47,7 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
     _payLinkInput: string;
     _adminInputDeferrer: any;
 
-    displayedColumns: string[] = ['name', 'order', 'price', 'paylink'];
+    displayedColumns: string[] = ['name', 'order', 'price', 'paylink', 'moneyrec'];
 
     ngOnInit() {
         this.own = this.name == this.orderSet.name;
@@ -85,6 +85,7 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
         this._inputDeferrer = setTimeout(() => {
             this.isTyping.emit(false);
             this.orderChanged.emit({
+                name: this.name,
                 orderSet: this.orderSet,
                 order: {
                     order: this._orderInput,
@@ -151,12 +152,20 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
     get sum(): string {
         let sum = 0;
         for (let o of Object.values<any>(this.orderSet.orders)) {
-            sum += o.price;
+            sum += o.price ? o.price : 0;
         }
         return this.formatPrice(sum);
     }
 
     formatPayLink(o) {
         return this.orderSet.payLink && o.price ? this.orderSet.payLink + '/' + o.price : "";
+    }
+
+    moneyReceivedClicked(name: string, e: any) {
+        this.orderChanged.emit({
+            name: name,
+            orderSet: this.orderSet,
+            order: this.orderSet.orders[name]
+        })
     }
 }

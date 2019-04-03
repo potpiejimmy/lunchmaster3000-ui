@@ -39,7 +39,7 @@ a, a:visited {
     width: 100%;
 }
 
-.mat-checkbox-inner-container {
+.locfavcheck .mat-checkbox-inner-container {
     height: 32px !important;
     width: 32px !important;
 }

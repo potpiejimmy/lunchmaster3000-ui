@@ -124,7 +124,7 @@ export class AppComponent implements AfterViewInit {
   }
 
   order(e) {
-    this.api.setOrder(e.orderSet.id, this.name, e.order);
+    this.api.setOrder(e.orderSet.id, e.name, e.order);
   }
 
   cancel(e) {

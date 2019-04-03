@@ -33,10 +33,14 @@
           <th mat-header-cell *matHeaderCellDef> </th>
           <td mat-cell *matCellDef="let element"><a *ngIf="orderSet.name!=name && element==name && orderSet.orders[element].price && orderSet.payLink" target="_blank" [href]="formatPayLink(orderSet.orders[element])">Jetzt bezahlen</a></td>
         </ng-container>
+        <ng-container matColumnDef="moneyrec">
+          <th mat-header-cell *matHeaderCellDef> Geld erhalten? </th>
+          <td mat-cell *matCellDef="let element"><mat-checkbox [(ngModel)]="orderSet.orders[element].moneyReceived" [disabled]="orderSet.name!=name" (change)="moneyReceivedClicked(element,$event)"></mat-checkbox></td>
+        </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
-  <div *ngIf="sum" style="float:right; font-size: .5em; margin-bottom: 1em;">
+  <div *ngIf="sum" style="float:right; font-size: .75em; margin-bottom: 1em;">
     Gesamt: {{sum}}
   </div>
   <div style="clear:both;"></div>
@@ -48,7 +52,7 @@
         <div style="float:left; font-size: .75em; width: 80%;">
           <mat-form-field>
               <input #inporder name="order" matInput [placeholder]="own ? 'Dein eigener Bestellwunsch' : ' Was möchtest du haben?'" [(ngModel)]="orderInput">
-              <button type="button" mat-button *ngIf="orderInput" matSuffix mat-icon-button aria-label="Clear" (click)="orderInput=''">
+              <button type="button" mat-button *ngIf="orderInput" matSuffix mat-icon-button aria-label="Clear" (click)="orderInput=''" title="Bestellwunsch entfernen">
                 <mat-icon>close</mat-icon>
               </button>
           </mat-form-field>
