@@ -44,7 +44,7 @@ export class AppComponent implements AfterViewInit {
     // initialize name from local storage
     this.name = this.localStorageService.get('name');
     this._nameInput = this.name;
-    this.nameWasSet = this.name != null;
+    this.nameWasSet = this.name && this.name.length > 2;
   }
 
   ngAfterViewInit(): void {
@@ -68,12 +68,12 @@ export class AppComponent implements AfterViewInit {
     this.nameInputDeferrer = setTimeout(() => {
       this.name = this._nameInput;
       this.localStorageService.set('name', this.name);
-    }, 500);
+    }, 1000);
   }
 
   get nameInUse(): boolean {
     for (let l of this.data.locations) if (l.votes.includes(this.name)) return true;
-    for (let o of this.data.ordersets) if (o.name == this.name || o.orders[this.name]) return true;
+    for (let o of this.orderSets) if (o.name == this.name || o.orders[this.name]) return true;
     return false;
   }
 
