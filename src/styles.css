@@ -23,8 +23,14 @@ a, a:visited {
 }
 
 .mat-card {
-    margin: 1.5em;
+    margin: .25em;
     background-color: white;
+}
+
+@media (min-width: 960px) {
+    .mat-card {
+        margin: 1.5em;
+    }
 }
 
 .mat-card.favlist {
