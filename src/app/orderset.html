@@ -3,13 +3,15 @@
   <mat-card-subtitle>{{orderSet.name}} bestellt heute bei {{orderSet.location.name}}. Hier ist die <a target="_blank" [href]="orderSet.location.link">Speisekarte</a>.</mat-card-subtitle>
   <mat-card-subtitle>Wenn du etwas mitbestellen möchtest, schreibe es unten hin.</mat-card-subtitle>
   <div *ngIf="!own && orderSet.comment" style="font-size: .5em;">
-    <mat-card-subtitle>Infos von {{orderSet.name}}:</mat-card-subtitle>
-    <pre>{{orderSet.comment}}</pre>
+    <mat-card class="notecard">
+      <mat-card-subtitle>Infos von {{orderSet.name}}:</mat-card-subtitle>
+      <pre>{{orderSet.comment}}</pre>
+    </mat-card>
   </div>
   <div *ngIf="own" style="font-size: .5em;">
     <form class="comment-form">
         <mat-form-field>
-            <textarea #inpcomment name="comment" matInput placeholder="Bestellhinweise / Infos" [(ngModel)]="commentInput"></textarea>
+            <textarea #inpcomment name="comment" matInput placeholder="Bestellhinweise / Infos" [(ngModel)]="commentInput" cdkTextareaAutosize="true"></textarea>
         </mat-form-field>
         <mat-form-field>
             <input #inppaylink name="paylink" matInput placeholder="Bezahllink" [(ngModel)]="payLinkInput"/>
@@ -65,7 +67,7 @@
     </form>
   </div>
   <div *ngIf="!orderSet.finished && orderKeys.length" style="float:left;">
-    <button *ngIf="own" mat-raised-button color="primary" (click)="finish()">Bestellannahme für alle beenden</button>
+    <button *ngIf="own" mat-raised-button color="primary" (click)="finish()">Bestellannahme beenden</button>
   </div>
   <div *ngIf="orderSet.finished && !orderSet.arrived" style="float:left;">
     <button *ngIf="own" mat-raised-button color="accent" (click)="arrive()">Essen ist da!!</button>
