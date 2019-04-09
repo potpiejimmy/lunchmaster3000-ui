@@ -40,4 +40,10 @@ export class LmApiService extends HttpBaseService {
             ordersetId: ordersetId, name: name, order: order
         });
     }
+
+    sendChatMsg(ordersetId: string, name: string, msg: string) {
+        return this.post(environment.apiUrl+"ordersets/"+ordersetId+"/chat", {
+            name: name, msg: msg
+        });
+    }
 }

@@ -1,6 +1,6 @@
 <mat-card class="orderSet">
   <mat-card-title>{{orderSet.location.name}}</mat-card-title>
-  <mat-card-subtitle>{{orderSet.name}} bestellt heute bei {{orderSet.location.name}}. Hier ist die <a target="_blank" [href]="orderSet.location.link">Speisekarte</a>.</mat-card-subtitle>
+  <mat-card-subtitle>{{orderSet.name}} bestellt heute bzw. holt heute etwas bei {{orderSet.location.name}}. Hier ist die <a target="_blank" [href]="orderSet.location.link">Speisekarte</a>.</mat-card-subtitle>
   <mat-card-subtitle>Wenn du etwas mitbestellen möchtest, schreibe es unten hin.</mat-card-subtitle>
   <div *ngIf="!own && orderSet.comment" style="font-size: .5em;">
     <mat-card class="notecard">
@@ -75,16 +75,25 @@
   <div *ngIf="orderSet.finished && orderSet.arrived" style="float:left;">
     Das Essen ist da!!
   </div>
-  <div style="float:right;">
+  <div style="float:right; margin-bottom: .5em;">
     <button *ngIf="own" mat-raised-button color="warn" (click)="cancel()">Bestellung löschen</button>
   </div>
   <div style="clear:both;"></div>
-  <hr/>
+
   <mat-card class="chatcard">
     <mat-card-title>Chat</mat-card-title>
+    <div style="font-size: .5em;">
+      <div *ngFor="let msg of orderSet.chat" style="margin: .5em 0;">
+        <span style="color: #777; font-size: .75em;">👤{{msg.name}} [{{formatMoment(msg.date)}}]</span><br/>
+        <span style="color: black;">{{msg.msg}}</span>
+      </div>
+    </div>
     <form class="chat-form">
       <mat-form-field>
-      <input #inpchat name="chatmsg" matInput placeholder="Deine Nachricht" [(ngModel)]="chatInput">
+        <input #inpchat name="chatmsg" matInput placeholder="Deine Nachricht" [(ngModel)]="chatInput">
+        <button type="submit" mat-button *ngIf="chatInput" matSuffix mat-icon-button (click)="sendChatMsg()" title="Nachricht absenden">
+          <mat-icon>send</mat-icon>
+        </button>
       </mat-form-field>
     </form>
   </mat-card>

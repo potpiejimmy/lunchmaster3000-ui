@@ -98,6 +98,7 @@ export class AppComponent implements AfterViewInit {
         orderset.orders = o.orders;
         orderset.finished = o.finished;
         orderset.arrived = o.arrived;
+        orderset.chat = o.chat;
         if (o.name != this.name) {
           orderset.comment = o.comment;
           orderset.payLink = o.payLink;
@@ -137,5 +138,9 @@ export class AppComponent implements AfterViewInit {
 
   arrive(e) {
     this.api.updateOrderSet(e.id, false, true);
+  }
+
+  sendChatMsg(e: any) {
+    this.api.sendChatMsg(e.orderSet.id, this.name, e.msg);
   }
 }

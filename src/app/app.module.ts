@@ -18,6 +18,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
 // Special
 import { LocalStorageModule } from 'angular-2-local-storage';
@@ -50,6 +51,7 @@ import { registerLocaleData } from '@angular/common';
     MatTableModule,
     MatSnackBarModule,
     MatIconModule,
+    MatListModule,
     // Special
     CurrencyMaskModule,
     LocalStorageModule.forRoot({ prefix: 'lunchmaster3000', storageType: 'localStorage' }), // or sessionStorage

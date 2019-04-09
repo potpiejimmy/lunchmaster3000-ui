@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter, OnInit, ViewChild, AfterViewInit } from "@angular/core";
 import { formatCurrency } from '@angular/common';
+import * as moment from 'moment';
 
 @Component({
     selector: "orderset",
@@ -37,6 +38,9 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
     @Output()
     isTyping = new EventEmitter<boolean>();
 
+    @Output()
+    chatMessage = new EventEmitter<any>();
+
     own: boolean;
 
     _orderInput: string;
@@ -46,6 +50,8 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
     _commentInput: string;
     _payLinkInput: string;
     _adminInputDeferrer: any;
+
+    chatInput: string;
 
     displayedColumns: string[] = ['name', 'order', 'price', 'paylink', 'moneyrec'];
 
@@ -167,5 +173,17 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
             orderSet: this.orderSet,
             order: this.orderSet.orders[name]
         })
+    }
+
+    sendChatMsg() {
+        this.chatMessage.emit({
+            orderSet: this.orderSet,
+            msg: this.chatInput
+        });
+        this.chatInput = '';
+    }
+
+    formatMoment(d): string {
+        return moment(d).fromNow();
     }
 }
