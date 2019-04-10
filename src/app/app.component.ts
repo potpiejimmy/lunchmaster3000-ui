@@ -36,7 +36,7 @@ export class AppComponent implements AfterViewInit {
       if (msg.name != this.name) {
         new Notification(msg.title, {
           body: msg.body,
-          requireInteraction: true
+          requireInteraction: msg.type != 'chat'
         });
       }
     })
