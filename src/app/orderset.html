@@ -5,7 +5,7 @@
   <div *ngIf="!own && orderSet.comment" style="font-size: .5em;">
     <mat-card class="notecard">
       <mat-card-subtitle>Infos von {{orderSet.name}}:</mat-card-subtitle>
-      <pre>{{orderSet.comment}}</pre>
+      <span style="white-space: pre-line;">{{orderSet.comment}}</span>
     </mat-card>
   </div>
   <div *ngIf="own" style="font-size: .5em;">
@@ -21,7 +21,7 @@
   <mat-card class="orderlist">
     <mat-card-title><mat-icon>reorder</mat-icon> Gesamtliste</mat-card-title>
     <table mat-table [dataSource]="orderKeys" style="width:100%; margin-bottom: 1em;">
-        <ng-container matColumnDef="name">
+            <ng-container matColumnDef="name">
                 <th mat-header-cell *matHeaderCellDef> Name </th>
                 <td mat-cell *matCellDef="let element"> {{element}} </td>
             </ng-container>
@@ -39,10 +39,10 @@
             </ng-container>
             <ng-container matColumnDef="moneyrec">
               <th mat-header-cell *matHeaderCellDef> Geld erhalten? </th>
-              <td mat-cell *matCellDef="let element"><mat-checkbox *ngIf="element!=orderSet.name" [(ngModel)]="orderSet.orders[element].moneyReceived" [disabled]="orderSet.name!=name" (change)="moneyReceivedClicked(element,$event)"></mat-checkbox></td>
+              <td fxShow fxHide.xs mat-cell *matCellDef="let element"><mat-checkbox *ngIf="element!=orderSet.name" [(ngModel)]="orderSet.orders[element].moneyReceived" [disabled]="orderSet.name!=name" (change)="moneyReceivedClicked(element,$event)"></mat-checkbox></td>
             </ng-container>
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            <tr fxShow fxHide.xs mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr fxLayout.xs="column" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
     <div *ngIf="sum" style="float:right; font-size: .75em;">
       Summe: {{sum}}

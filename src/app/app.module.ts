@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { HttpClientModule }    from '@angular/common/http';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
@@ -42,6 +43,7 @@ import { registerLocaleData } from '@angular/common';
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,
+    FlexLayoutModule,
     // Material
     MatToolbarModule,
     MatCardModule,
