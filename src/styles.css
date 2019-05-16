@@ -1,13 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-html {
+body {
+    font-family: Roboto,"Helvetica Neue",sans-serif;
     font-size: 2em;
+    line-height: .7em;
+    color: #212121;
+    -webkit-font-smoothing: antialiased;
+    padding: 0;
+    margin: 0;
+    background-color: rgb(200, 228, 201);
     height: 100%;
-    background-image: url('./assets/background.jpg');
-    background-size: cover;
 }
-
+  
 body {
     margin: 0;
 }
@@ -22,14 +27,37 @@ a, a:visited {
     text-align: center;
 }
 
+.mat-toolbar.mat-primary {
+    background: #4CAF50;
+    color: white;
+}
+
+.mat-toolbar.mat-secondary {
+    background: #2E7D32;
+    color: white;
+}
+
+#primarybar.mat-toolbar-single-row {
+    height: 64px;
+}
+
+#secondarybar.mat-toolbar-single-row {
+    height: 30px;
+    padding: 0;
+}
+
+#secondarybar .material-icons {
+    font-size: 18px;
+}
+
 .mat-card {
-    margin: .25em;
+    margin: .5em;
     background-color: white;
 }
 
 @media (min-width: 960px) {
     .mat-card {
-        margin: 1.5em;
+        margin: 1em 4em;
     }
 }
 
