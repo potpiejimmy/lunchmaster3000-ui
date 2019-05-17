@@ -1,11 +1,14 @@
 <mat-toolbar id="primarybar" color="primary" class="mat-elevation-z6">
-  <span class="headerSign">Welcome to lunch.community</span>
+  <div class="headerSign" fxLayout="column">
+    <div style="font-size: .8em; line-height: 1.2em;">Welcome to the Lunch Commmunity of</div>
+    <div>Sample Company Inc.</div>
+  </div>
 </mat-toolbar>
 <mat-toolbar id="secondarybar" color="secondary" class="mat-elevation-z6">
     <span style="flex: 1 1 auto;"></span>
-      <button mat-icon-button title="Settings">
-          <mat-icon>settings</mat-icon>
-      </button>
+    <button mat-icon-button title="Settings">
+        <mat-icon>settings</mat-icon>
+    </button>
 </mat-toolbar>
 
 <mat-card *ngIf="!nameWasSet">
