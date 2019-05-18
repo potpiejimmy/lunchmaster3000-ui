@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 
 body {
-    font-family: Roboto,"Helvetica Neue",sans-serif;
+    font-family: 'PT Sans', sans-serif;
     font-size: 2em;
     color: #212121;
     -webkit-font-smoothing: antialiased;
@@ -11,7 +11,20 @@ body {
     background-color: rgb(200, 228, 201);
     height: 100%;
 }
+
+.mat-card {
+    font-family: 'PT Sans', sans-serif;
+}
+
+.mat-toolbar {
+    font-family: 'PT Sans', sans-serif;
+    font-size: .6em;
+}
   
+.mat-card-subtitle {
+    font-size: .5em;
+}
+
 body {
     margin: 0;
 }
@@ -24,6 +37,13 @@ a, a:visited {
 .headerSign {
     width: 100%;
     text-align: center;
+}
+
+.topbar-logo {
+    width: 32px;
+    height: 32px;
+    background: url("assets/logo.png") top left no-repeat;
+    background-size: 32px 32px;
 }
 
 .mat-toolbar.mat-primary {
@@ -42,11 +62,14 @@ a, a:visited {
 
 #secondarybar.mat-toolbar-single-row {
     height: 30px;
-    padding: 0;
 }
 
-#secondarybar .material-icons {
+#primarybar .material-icons {
     font-size: 18px;
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background, .mat-fab.mat-primary, .mat-flat-button.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary {
+    background: #2E7D32;
 }
 
 .mat-card {
@@ -61,7 +84,7 @@ a, a:visited {
 }
 
 .mat-card.favlist {
-    background-color: #eaecf3;
+    background-color: white;
 }
 
 .mat-card.orderSet {
