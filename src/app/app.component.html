@@ -1,16 +1,4 @@
-<mat-toolbar id="primarybar" color="primary" class="mat-elevation-z6">
-    <span class="topbar-logo"></span>
-    <div style="margin-left: 1em;">lunch.community</div>
-    <span style="flex: 1 1 auto;"></span>
-    <button mat-icon-button title="Settings">
-        <mat-icon>settings</mat-icon>
-    </button>
-</mat-toolbar>
-<mat-toolbar id="secondarybar" color="secondary" class="mat-elevation-z6">
-    <div class="headerSign" fxLayout="column">
-      <div>Sample Company Inc.</div>
-    </div>
-</mat-toolbar>
+<app-topbar></app-topbar>
 
 <mat-card *ngIf="!nameWasSet">
   <form class="name-form">
@@ -46,3 +34,5 @@
     </div>
   </form>
 </mat-card>
+
+<app-footer></app-footer>

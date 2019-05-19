@@ -31,7 +31,7 @@ body {
 
 a, a:visited {
     text-decoration: none;
-    color: darkblue;
+    color: #2E7D32;
 }
 
 .headerSign {
@@ -64,22 +64,27 @@ a, a:visited {
     height: 30px;
 }
 
-#primarybar .material-icons {
-    font-size: 18px;
+#secondarybar .material-icons {
+    font-size: 17px;
 }
 
 .mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background, .mat-fab.mat-primary, .mat-flat-button.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary {
     background: #2E7D32;
 }
 
+#footer {
+    display: flex;
+    font-size: .5em;
+}
+
 .mat-card {
-    margin: .5em;
+    margin: 16px;
     background-color: white;
 }
 
 @media (min-width: 960px) {
     .mat-card {
-        margin: 1em 4em;
+        margin: 32px 128px;
     }
 }
 

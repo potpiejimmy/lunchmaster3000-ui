@@ -8,6 +8,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule }    from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { AppRoutes } from './app.routes';
 import { environment } from '../environments/environment';
 
 // Material
@@ -27,14 +28,18 @@ import { CurrencyMaskModule } from "ng2-currency-mask";
 
 // App
 import { AppComponent } from './app.component';
-import { LocationComponent } from './location';
-import { OrderSetComponent } from './orderset';
+import { AppTopbarComponent } from './components/topbar';
+import { AppFooterComponent } from './components/footer';
+import { LocationComponent } from './components/location';
+import { OrderSetComponent } from './components/orderset';
 import { LmApiService } from './services/lmapi';
 import { registerLocaleData } from '@angular/common';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AppTopbarComponent,
+    AppFooterComponent,
     LocationComponent,
     OrderSetComponent
   ],
@@ -42,6 +47,7 @@ import { registerLocaleData } from '@angular/common';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    AppRoutes,
     HttpClientModule,
     FlexLayoutModule,
     // Material
