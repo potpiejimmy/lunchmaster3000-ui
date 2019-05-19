@@ -77,6 +77,10 @@ a, a:visited {
     font-size: .5em;
 }
 
+a.footerlink {
+    margin-right: 1em;
+}
+
 .mat-card {
     margin: 16px;
     background-color: white;
