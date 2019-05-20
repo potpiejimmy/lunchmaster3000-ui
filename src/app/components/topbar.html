@@ -9,8 +9,8 @@
 <mat-toolbar id="secondarybar" color="secondary" class="mat-elevation-z6">
     <div class="headerSign" fxLayout="column">
       <div>
-        Mustermann GmbH, Frankfurt am Main
-        <button mat-icon-button title="Copy link to https://lunch.community?id=3n0unpjb2q5zn0aw153abqqgmn3rb8zgjqghq94u2213zwvqwjuhbkaphq4p7w8e">
+        {{app.community.name}}
+        <button mat-icon-button [title]="'Copy link to https://lunch.community?id='+app.community.webid">
           <mat-icon>share</mat-icon>
         </button>
       </div>

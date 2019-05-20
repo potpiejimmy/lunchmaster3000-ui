@@ -71,6 +71,13 @@ a, a:visited {
 .mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background, .mat-fab.mat-primary, .mat-flat-button.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary {
     background: #2E7D32;
 }
+.mat-form-field.mat-focused .mat-form-field-label {
+    color: #2E7D32;
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple {
+    background-color: #2E7D32;
+}
 
 #footer {
     display: flex;
@@ -90,6 +97,10 @@ a.footerlink {
     .mat-card {
         margin: 32px 128px;
     }
+}
+
+.mat-card.createcard {
+    background-color: lightgoldenrodyellow;
 }
 
 .mat-card.favlist {

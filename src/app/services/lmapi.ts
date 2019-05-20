@@ -5,6 +5,14 @@ import { environment } from '../../environments/environment';
 @Injectable()
 export class LmApiService extends HttpBaseService {
 
+    createCommunity(name: string): Promise<any> {
+        return this.post(environment.apiUrl+"communities", {name:name});
+    }
+
+    getCommunity(id: string): Promise<any> {
+        return this.get(environment.apiUrl+"communities/"+id);
+    }
+
     getData(): Promise<any> {
         return this.get(environment.apiUrl+"data");
     }

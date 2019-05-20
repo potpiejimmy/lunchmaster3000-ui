@@ -34,14 +34,19 @@ import { LocationComponent } from './components/location';
 import { OrderSetComponent } from './components/orderset';
 import { LmApiService } from './services/lmapi';
 import { registerLocaleData } from '@angular/common';
+import { MainComponent } from './routes/main';
+import { CreateComponent } from './routes/create';
+import { AppService } from './services/app';
 
 @NgModule({
   declarations: [
     AppComponent,
     AppTopbarComponent,
     AppFooterComponent,
+    MainComponent,
     LocationComponent,
-    OrderSetComponent
+    OrderSetComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
@@ -62,10 +67,11 @@ import { registerLocaleData } from '@angular/common';
     MatListModule,
     // Special
     CurrencyMaskModule,
-    LocalStorageModule.forRoot({ prefix: 'lunchmaster3000', storageType: 'localStorage' }), // or sessionStorage
+    LocalStorageModule.forRoot({ prefix: 'lunch.community', storageType: 'localStorage' }), // or sessionStorage
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
+    AppService,
     LmApiService
   ],
   bootstrap: [AppComponent]

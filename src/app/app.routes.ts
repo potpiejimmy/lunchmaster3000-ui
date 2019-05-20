@@ -1,9 +1,11 @@
 import {Routes,RouterModule} from '@angular/router';
 import {ModuleWithProviders} from '@angular/core';
-import { AppComponent } from './app.component';
+import { MainComponent } from './routes/main';
+import { CreateComponent } from './routes/create';
 
 export const routes: Routes = [
-    {path: '', component: AppComponent},
+    {path: '', component: MainComponent},
+    {path: 'create', component: CreateComponent},
 ];
 
 export const AppRoutes: ModuleWithProviders = RouterModule.forRoot(routes);

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TypeWriter } from '../util/TypeWriter';
+import { AppService } from '../services/app';
 
 @Component({
     selector: 'app-topbar',
@@ -8,6 +9,10 @@ import { TypeWriter } from '../util/TypeWriter';
 export class AppTopbarComponent implements OnInit {
 
     title: string;
+
+    constructor(
+        private app: AppService
+    ) {}
 
     ngOnInit() {
         let tw = new TypeWriter(["„Was essen wir heute Mittag?“","lunch.community"], t => {
