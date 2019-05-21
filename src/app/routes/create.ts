@@ -25,7 +25,7 @@ export class CreateComponent implements AfterViewInit {
 
     async create() {
         this.processing = true;
-        let c = await this.api.createCommunity(this.nameInput);
+        let c = await this.api.createCommunity(this.nameInput.trim());
         this.router.navigate(['/'], { queryParams: { id: c.webid } });
     }
 }

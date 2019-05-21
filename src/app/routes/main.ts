@@ -3,6 +3,8 @@ import { LmApiService } from '../services/lmapi';
 import * as io from 'socket.io-client';
 import { environment } from '../../environments/environment';
 import { LocalStorageService } from 'angular-2-local-storage';
+import { AppService } from '../services/app';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
     selector: 'main',
@@ -23,9 +25,26 @@ export class MainComponent implements AfterViewInit {
 
     constructor(
         private localStorageService: LocalStorageService,
-        private api: LmApiService
-    ) {
+        private api: LmApiService,
+        private app: AppService,
+        private router: Router,
+        private route: ActivatedRoute) {
 
+        this.route.queryParams.subscribe(params => {
+            let id = params.id;
+            if (id) {
+                this.localStorageService.set("id", id);
+            } else {
+                id = this.localStorageService.get("id");
+            }
+            if (!id) {
+                // no community selected
+                this.router.navigate(['/create'], { replaceUrl: true });
+            } else {
+                this.api.getCommunity(id).then(c => this.app.community = c);
+            }
+        });
+                
         // register socket for receiving data:
         this.socket = io.connect(environment.apiUrl);
         this.socket.on('data', data => {

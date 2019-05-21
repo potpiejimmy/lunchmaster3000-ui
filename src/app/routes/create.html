@@ -19,6 +19,6 @@
     <mat-card-subtitle>
       <mat-checkbox name="agreeTerms" [(ngModel)]="agreeTerms" [disabled]="processing">I agree to the <a [routerLink]="['/terms']" target="_blank">Terms & Conditions</a></mat-checkbox>
     </mat-card-subtitle>
-    <button mat-raised-button color="primary" (click)="create()" [disabled]="!agreeTerms || !nameInput || processing">Community erstellen</button>
+    <button mat-raised-button color="primary" (click)="create()" [disabled]="!agreeTerms || !nameInput || !nameInput.trim().length || processing">Community erstellen</button>
   </form>
 </mat-card>
