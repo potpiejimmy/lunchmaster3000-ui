@@ -16,11 +16,8 @@ export class MainComponent implements AfterViewInit {
 
     socket: SocketIOClient.Socket;
 
-    _nameInput: string;
-    nameInputDeferrer: any;
     name: string;
 
-    nameWasSet: boolean = false;
     isTyping: boolean = false;
 
     constructor(
@@ -29,6 +26,9 @@ export class MainComponent implements AfterViewInit {
         private app: AppService,
         private router: Router,
         private route: ActivatedRoute) {
+
+        // initialize name from local storage
+        this.name = this.localStorageService.get('name');
 
         this.route.queryParams.subscribe(params => {
             let id = params.id;
@@ -41,10 +41,22 @@ export class MainComponent implements AfterViewInit {
                 // no community selected
                 this.router.navigate(['/create'], { replaceUrl: true });
             } else {
-                this.api.getCommunity(id).then(c => this.app.community = c);
+                // load community
+                let c = this.api.getCommunity(id).then(c => {
+                    this.app.community = c;
+                    if (!this.name) {
+                        // name not set?
+                        this.router.navigate(['/welcome'], { replaceUrl: true });
+                    } else {
+                        this.app.name = this.name;
+                        this.initSocket();
+                    }
+                });
             }
         });
-                
+    }
+
+    initSocket() {
         // register socket for receiving data:
         this.socket = io.connect(environment.apiUrl);
         this.socket.on('data', data => {
@@ -58,11 +70,6 @@ export class MainComponent implements AfterViewInit {
                 });
             }
         })
-
-        // initialize name from local storage
-        this.name = this.localStorageService.get('name');
-        this._nameInput = this.name;
-        this.nameWasSet = this.name && this.name.length > 2;
     }
 
     ngAfterViewInit(): void {
@@ -75,19 +82,6 @@ export class MainComponent implements AfterViewInit {
         locations: [],
         ordersets: []
     };
-
-    get nameInput() {
-        return this._nameInput;
-    }
-
-    set nameInput(n) {
-        this._nameInput = n;
-        clearTimeout(this.nameInputDeferrer);
-        this.nameInputDeferrer = setTimeout(() => {
-            this.name = this._nameInput;
-            this.localStorageService.set('name', this.name);
-        }, 1000);
-    }
 
     get nameInUse(): boolean {
         for (let l of this.data.locations) if (l.votes.includes(this.name)) return true;
@@ -117,10 +111,8 @@ export class MainComponent implements AfterViewInit {
                 orderset.finished = o.finished;
                 orderset.arrived = o.arrived;
                 orderset.chat = o.chat;
-                if (o.name != this.name) {
-                    orderset.comment = o.comment;
-                    orderset.payLink = o.payLink;
-                }
+                orderset.comment = o.comment;
+                orderset.payLink = o.payLink;
             }
         }
         for (let o of Object.values<any>(this.data.ordersets)) {

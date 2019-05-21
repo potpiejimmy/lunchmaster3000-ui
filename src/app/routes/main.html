@@ -1,11 +1,3 @@
-<mat-card *ngIf="!nameWasSet">
-  <form class="name-form">
-    <mat-form-field>
-      <input #inpname name="name" matInput placeholder="Wie heißt du?" [(ngModel)]="nameInput" [disabled]="nameInUse">
-    </mat-form-field>
-  </form>
-</mat-card>
-
 <div *ngIf="name && name.length > 2">
   <div *ngFor="let orderSet of orderSets">
     <orderset [orderSet]="orderSet" [name]="name" (orderChanged)="order($event)" (commentChanged)="update($event)" (cancelled)="cancel($event)" (finished)="finish($event)" (arrived)="arrive($event)" (chatMessage)="sendChatMsg($event)" (isTyping)="isTyping = $event"></orderset>
@@ -14,9 +6,9 @@
 
 <mat-card *ngIf="name && name.length > 2" class="favlist">
   <mat-card-title><mat-icon>star</mat-icon> Favoritenliste</mat-card-title>
-  <mat-card-subtitle>Hallo {{name}}, willkommen beim Lunch Master 3000!</mat-card-subtitle>
+  <mat-card-subtitle>Hallo {{name}},</mat-card-subtitle>
   <mat-card-subtitle>
-    Bitte wähle aus, auf was du heute Appetit hast. Mehrfachauswahl ist möglich.
+    bitte wähle aus, auf was du heute Appetit hast. Mehrfachauswahl ist möglich.
     <br/>
     Wenn du dich dazu entscheidest, Essen für dich und deine Kollegen bei einem der Restaurants
     zu bestellen und abzuholen oder liefern zu lassen, dann drücke auf <i>Bestellungen aufnehmen</i>. Ansonsten warte einfach,

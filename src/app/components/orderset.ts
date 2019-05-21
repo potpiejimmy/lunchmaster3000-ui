@@ -99,7 +99,7 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
                     price: this._priceInput
                 }
             })
-        }, 500);
+        }, 1000);
     }
 
     get commentInput() {
@@ -132,7 +132,7 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
                     payLink: this._payLinkInput
                 }
             })
-        }, 500);
+        }, 1000);
     }
 
     get orderKeys() {

@@ -1,0 +1,16 @@
+<mat-card class="createcard">
+  <mat-card-title>Willkommen bei der lunch.community von</mat-card-title>
+  <mat-card-title>{{app.community && app.community.name}}</mat-card-title>
+  <mat-card-subtitle>
+    Du bist neu hier. Bitte gib einen Namen ein, damit deine Kollegen dich erkennen können.
+  </mat-card-subtitle>
+  <form class="create-form">
+    <mat-form-field>
+      <input #inpname name="name" matInput placeholder="Wie heißt du?" [(ngModel)]="nameInput" [disabled]="processing">
+    </mat-form-field>
+    <mat-card-subtitle>
+      <mat-checkbox name="agreeTerms" [(ngModel)]="agreeTerms" [disabled]="processing">Ich akzeptiere die <a [routerLink]="['/terms']" target="_blank">Nutzungsbedingungen</a></mat-checkbox>
+    </mat-card-subtitle>
+    <button mat-raised-button color="primary" (click)="submit()" [disabled]="!agreeTerms || !nameInput || !nameInput.trim().length || processing">Ich habe Hunger!</button>
+  </form>
+</mat-card>

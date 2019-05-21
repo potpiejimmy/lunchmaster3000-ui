@@ -37,6 +37,7 @@ import { registerLocaleData } from '@angular/common';
 import { MainComponent } from './routes/main';
 import { CreateComponent } from './routes/create';
 import { AppService } from './services/app';
+import { WelcomeComponent } from './routes/welcome';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { AppService } from './services/app';
     MainComponent,
     LocationComponent,
     OrderSetComponent,
-    CreateComponent
+    CreateComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,

@@ -112,13 +112,17 @@ a.footerlink {
 }
 
 .mat-card.notecard {
+    margin: 0 0 1em 0;
+}
+
+.mat-card.ordercard {
     margin: 0 0 .5em 0;
-    background-color: lightyellow;
+    background-color: lightgoldenrodyellow;
 }
 
 .mat-card.chatcard {
     margin: 0;
-    background-color: white;
+    background-color: lightgoldenrodyellow;
 }
 
 .mat-card.orderlist {

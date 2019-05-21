@@ -2,12 +2,6 @@
   <mat-card-title><mat-icon>fastfood</mat-icon> {{orderSet.location.name}}</mat-card-title>
   <mat-card-subtitle>{{orderSet.name}} bestellt heute bzw. holt heute etwas bei {{orderSet.location.name}}. Hier ist die <a target="_blank" [href]="orderSet.location.link">Speisekarte</a>.</mat-card-subtitle>
   <mat-card-subtitle>Wenn du etwas mitbestellen möchtest, schreibe es unten hin.</mat-card-subtitle>
-  <div *ngIf="!own && orderSet.comment" style="font-size: .5em;">
-    <mat-card class="notecard">
-      <mat-card-subtitle>Infos von {{orderSet.name}}:</mat-card-subtitle>
-      <span style="white-space: pre-line;">{{orderSet.comment}}</span>
-    </mat-card>
-  </div>
   <div *ngIf="own" style="font-size: .5em;">
     <form class="comment-form">
         <mat-form-field>
@@ -17,6 +11,33 @@
             <input #inppaylink name="paylink" matInput placeholder="Bezahllink" [(ngModel)]="payLinkInput"/>
         </mat-form-field>
     </form>
+  </div>
+  <div *ngIf="orderSet.comment" style="font-size: .5em;">
+    <mat-card class="notecard">
+      <mat-card-subtitle style="font-size: 1em;">Infos von {{orderSet.name}}:</mat-card-subtitle>
+      <span style="white-space: pre-line;">{{orderSet.comment}}</span>
+    </mat-card>
+  </div>
+  <div *ngIf="!orderSet.finished">
+    <mat-card class="ordercard">
+      <mat-card-title><mat-icon>edit</mat-icon> Deine Bestellung</mat-card-title>
+      <form class="order-form">
+        <div style="float:left; font-size: .75em; width: 80%;">
+          <mat-form-field>
+              <input #inporder name="order" matInput [placeholder]="own ? 'Dein eigener Bestellwunsch' : ' Was möchtest du haben?'" [(ngModel)]="orderInput">
+              <button type="button" mat-button *ngIf="orderInput" matSuffix mat-icon-button aria-label="Clear" (click)="orderInput=''" title="Bestellwunsch entfernen">
+                <mat-icon>close</mat-icon>
+              </button>
+          </mat-form-field>
+        </div>
+        <div style="float:left; font-size: .75em; width: 20%;">
+          <mat-form-field>
+              <input #inpprice name="price" matInput currencyMask placeholder="Preis" [(ngModel)]="priceInput" [options]="{prefix: '', suffix: ' €', thousands: '.', decimal: ','}">
+          </mat-form-field>
+        </div>
+        <div style="clear:both;"></div>
+      </form>
+    </mat-card>
   </div>
   <mat-card class="orderlist">
     <mat-card-title><mat-icon>reorder</mat-icon> Gesamtliste</mat-card-title>
@@ -52,27 +73,6 @@
   <div *ngIf="orderSet.finished && !orderSet.arrived" style="font-size: .6em;">
       Die Bestellung ist beendet. Sobald das Essen da ist, {{own ? 'drücke auf den Knopf!':'erhältst du eine Nachricht!'}}
   </div>
-  <div *ngIf="!orderSet.finished">
-    <mat-card class="notecard">
-      <mat-card-title><mat-icon>edit</mat-icon> Deine Bestellung</mat-card-title>
-      <form class="order-form">
-        <div style="float:left; font-size: .75em; width: 80%;">
-          <mat-form-field>
-              <input #inporder name="order" matInput [placeholder]="own ? 'Dein eigener Bestellwunsch' : ' Was möchtest du haben?'" [(ngModel)]="orderInput">
-              <button type="button" mat-button *ngIf="orderInput" matSuffix mat-icon-button aria-label="Clear" (click)="orderInput=''" title="Bestellwunsch entfernen">
-                <mat-icon>close</mat-icon>
-              </button>
-          </mat-form-field>
-        </div>
-        <div style="float:left; font-size: .75em; width: 20%;">
-          <mat-form-field>
-              <input #inpprice name="price" matInput currencyMask placeholder="Preis" [(ngModel)]="priceInput" [options]="{prefix: '', suffix: ' €', thousands: '.', decimal: ','}">
-          </mat-form-field>
-        </div>
-        <div style="clear:both;"></div>
-      </form>
-    </mat-card>
-  </div>
   <div *ngIf="!orderSet.finished && orderKeys.length" style="float:left;">
     <button *ngIf="own" mat-raised-button color="primary" (click)="finish()">Bestellannahme beenden</button>
   </div>
@@ -98,7 +98,7 @@
     <form class="chat-form">
       <mat-form-field>
         <input #inpchat name="chatmsg" matInput placeholder="Deine Nachricht" [(ngModel)]="chatInput">
-        <button type="submit" mat-button *ngIf="chatInput" matSuffix mat-icon-button (click)="sendChatMsg()" title="Nachricht absenden">
+        <button type="submit" mat-button *ngIf="chatInput && chatInput.trim().length" matSuffix mat-icon-button (click)="sendChatMsg()" title="Nachricht absenden">
           <mat-icon>send</mat-icon>
         </button>
       </mat-form-field>
