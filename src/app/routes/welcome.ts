@@ -17,7 +17,7 @@ export class WelcomeComponent implements OnInit {
     processing: boolean;
 
     constructor(
-        private app: AppService,
+        public app: AppService,
         private localStorage: LocalStorageService,
         private router: Router
     ) {}

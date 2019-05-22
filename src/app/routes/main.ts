@@ -23,7 +23,7 @@ export class MainComponent implements AfterViewInit {
     constructor(
         private localStorageService: LocalStorageService,
         private api: LmApiService,
-        private app: AppService,
+        public app: AppService,
         private router: Router,
         private route: ActivatedRoute) {
 

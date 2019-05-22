@@ -11,7 +11,7 @@ export class AppTopbarComponent implements OnInit {
     title: string;
 
     constructor(
-        private app: AppService
+        public app: AppService
     ) {}
 
     ngOnInit() {
