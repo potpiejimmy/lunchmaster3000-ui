@@ -25,6 +25,7 @@ import { MatListModule } from '@angular/material/list';
 // Special
 import { LocalStorageModule } from 'angular-2-local-storage';
 import { CurrencyMaskModule } from "ng2-currency-mask";
+import { ClipboardModule } from 'ngx-clipboard';
 
 // App
 import { AppComponent } from './app.component';
@@ -38,6 +39,7 @@ import { MainComponent } from './routes/main';
 import { CreateComponent } from './routes/create';
 import { AppService } from './services/app';
 import { WelcomeComponent } from './routes/welcome';
+import { SettingsComponent } from './routes/settings';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,8 @@ import { WelcomeComponent } from './routes/welcome';
     LocationComponent,
     OrderSetComponent,
     CreateComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -69,6 +72,7 @@ import { WelcomeComponent } from './routes/welcome';
     MatListModule,
     // Special
     CurrencyMaskModule,
+    ClipboardModule,
     LocalStorageModule.forRoot({ prefix: 'lunch.community', storageType: 'localStorage' }), // or sessionStorage
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],

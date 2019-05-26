@@ -1,8 +1,8 @@
 <mat-toolbar id="primarybar" color="primary" class="mat-elevation-z6">
-    <span class="topbar-logo"></span>
+    <a [routerLink]="['/']"><div class="topbar-logo"></div></a>
     <div style="margin-left: 1em; font-weight: bold;">{{title}}</div>
     <span style="flex: 1 1 auto;"></span>
-    <button mat-icon-button title="Settings">
+    <button mat-icon-button title="Settings" [routerLink]="['/settings']">
         <mat-icon>settings_applications</mat-icon>
     </button>
 </mat-toolbar>
@@ -10,7 +10,7 @@
     <div class="headerSign" fxLayout="column">
       <div>
         {{app.name ? app.name + " @" : ""}} {{app.community && app.community.name}}
-        <button *ngIf="app.community" mat-icon-button [title]="'Copy link to https://lunch.community?id='+app.community.webid">
+        <button *ngIf="app.community" mat-icon-button [title]="'Copy link to '+communityLink" ngxClipboard [cbContent]="communityLink" (clicked)="linkCopied()">
           <mat-icon>share</mat-icon>
         </button>
       </div>

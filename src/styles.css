@@ -37,6 +37,7 @@ a, a:visited {
 .headerSign {
     width: 100%;
     text-align: center;
+    font-size: .85em;
 }
 
 .topbar-logo {

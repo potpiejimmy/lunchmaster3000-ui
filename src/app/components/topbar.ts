@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TypeWriter } from '../util/TypeWriter';
 import { AppService } from '../services/app';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
     selector: 'app-topbar',
@@ -11,7 +12,8 @@ export class AppTopbarComponent implements OnInit {
     title: string;
 
     constructor(
-        public app: AppService
+        public app: AppService,
+        private snackBar: MatSnackBar
     ) {}
 
     ngOnInit() {
@@ -19,5 +21,13 @@ export class AppTopbarComponent implements OnInit {
             this.title = t;
         })
         tw.start();
+    }
+
+    linkCopied() {
+        this.snackBar.open("Community link copied to clipboard");
+    }
+
+    get communityLink(): string {
+        return 'https://lunch.community?id='+this.app.community.webid;
     }
 }

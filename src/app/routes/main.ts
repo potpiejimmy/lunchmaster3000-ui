@@ -43,13 +43,17 @@ export class MainComponent implements AfterViewInit {
             } else {
                 // load community
                 let c = this.api.getCommunity(id).then(c => {
-                    this.app.community = c;
-                    if (!this.name) {
-                        // name not set?
-                        this.router.navigate(['/welcome'], { replaceUrl: true });
+                    if (!c) {
+                        this.router.navigate(['/create'], { replaceUrl: true });
                     } else {
-                        this.app.name = this.name;
-                        this.initSocket();
+                        this.app.community = c;
+                        if (!this.name) {
+                            // name not set?
+                            this.router.navigate(['/welcome'], { replaceUrl: true });
+                        } else {
+                            this.app.name = this.name;
+                            this.initSocket();
+                        }
                     }
                 });
             }
