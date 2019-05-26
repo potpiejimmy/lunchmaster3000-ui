@@ -1,6 +1,8 @@
 import { Component, ViewChild, OnInit, AfterViewInit } from "@angular/core";
 import { AppService } from '../services/app';
 import { LocalStorageService } from 'angular-2-local-storage';
+import { DeferredValue } from '../util/DeferredValue';
+import { Router } from '@angular/router';
 
 @Component({
     selector: "settings",
@@ -8,19 +10,31 @@ import { LocalStorageService } from 'angular-2-local-storage';
 })
 export class SettingsComponent implements OnInit, AfterViewInit {
     
-    @ViewChild('inpname') inpname;
-    nameInput: string;
+    nameInput: DeferredValue;
 
     constructor(
         public app: AppService,
-        private localStorage: LocalStorageService
-    ) {}
+        private localStorage: LocalStorageService,
+        private router: Router
+    ) {
+        this.nameInput = new DeferredValue(1000, n => this.setName(n));
+    }
 
     ngOnInit() {
-        this.nameInput = this.localStorage.get("name");
+        if (!this.app.community) this.router.navigate(['/'], { replaceUrl: true });
+        this.nameInput._value = this.localStorage.get("name");
     }
 
     ngAfterViewInit() {
-        setTimeout(() => this.inpname && this.inpname.nativeElement.focus(), 100);
+    }
+
+    setName(v: string) {
+        console.log("Storing name: " + v);
+        this.localStorage.set("name", v);
+    }
+
+    leaveCommunity() {
+        this.localStorage.remove("id");
+        this.router.navigate(['/']);
     }
 }

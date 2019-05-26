@@ -10,7 +10,7 @@
     <div class="headerSign" fxLayout="column">
       <div>
         {{app.name ? app.name + " @" : ""}} {{app.community && app.community.name}}
-        <button *ngIf="app.community" mat-icon-button [title]="'Copy link to '+communityLink" ngxClipboard [cbContent]="communityLink" (clicked)="linkCopied()">
+        <button *ngIf="app.community" mat-icon-button [title]="'Copy link to '+communityLink" ngxClipboard [cbContent]="communityLink" (click)="linkCopied()">
           <mat-icon>share</mat-icon>
         </button>
       </div>
