@@ -146,7 +146,7 @@ td.mat-cell, th.mat-header-cell {
 
 .mat-snack-bar-container {
     color: white;
-    background-color: red;
+    background-color: #2E7D32;
 }
 
 pre {
@@ -156,4 +156,11 @@ pre {
 
 .chat-form {
     font-size: .5em;
+}
+
+.favorites-form .mat-icon-button {
+    color: #2E7D32;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
 }

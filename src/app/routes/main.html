@@ -19,8 +19,11 @@
     Die Eingabe-Taste musst du niemals drücken (Ausnahme: Chatnachricht absenden).
   </mat-card-subtitle>
   <form class="favorites-form">
-    <div *ngFor="let l of data.locations">
-      <location [location]="l" [name]="name" (change)="checkboxChanged($event)" (takeOrders)="takeOrders($event)"></location>
+    <div fxFlex fxLayout="column">
+      <div *ngFor="let l of data.locations">
+        <location [location]="l" [name]="name" (change)="checkboxChanged($event)" (takeOrders)="takeOrders($event)"></location>
+      </div>
+      <div gdAlignRows="start"><button mat-icon-button title="Neue Location hinzufügen"><mat-icon>add_box</mat-icon></button></div>
     </div>
   </form>
 </mat-card>
