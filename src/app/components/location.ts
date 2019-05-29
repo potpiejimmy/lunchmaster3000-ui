@@ -19,6 +19,8 @@ export class LocationComponent implements OnInit {
 
     _checked: boolean;
 
+    showEditControls: boolean = false;
+
     ngOnInit(): void {
         this._checked = this.location.votes.includes(this.name);
     }
