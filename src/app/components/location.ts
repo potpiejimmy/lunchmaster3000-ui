@@ -1,4 +1,6 @@
-import { Component, Input, Output, EventEmitter, AfterViewInit, OnInit } from "@angular/core";
+import { Component, Input, Output, EventEmitter, AfterViewInit, OnInit, ViewChild } from "@angular/core";
+import { LocationEditComponent } from './location-edit';
+import { AppService } from '../services/app';
 
 @Component({
     selector: "location",
@@ -21,6 +23,10 @@ export class LocationComponent implements OnInit {
 
     showEditControls: boolean = false;
 
+    constructor(
+        public app: AppService
+    ) {}
+
     ngOnInit(): void {
         this._checked = this.location.votes.includes(this.name);
     }
@@ -36,5 +42,9 @@ export class LocationComponent implements OnInit {
 
     takeOrdersClicked() {
         this.takeOrders.emit(this.location);
+    }
+
+    edit() {
+        this.app.locationEditor.editLocation(this.location);
     }
 }

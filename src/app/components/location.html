@@ -6,19 +6,19 @@
         <div style="flex: 1 1 auto;" (mouseenter)="showEditControls=true;" (mouseleave)="showEditControls=false;">
             <div style="font-size: .7em;">
                 {{location.name}}
-                <button *ngIf="showEditControls" mat-icon-button title="Bearbeiten"><mat-icon style="font-size: 1.5em;">edit</mat-icon></button>
+                <button *ngIf="showEditControls" mat-icon-button title="Bearbeiten" (click)="edit()"><mat-icon style="font-size: 1.5em;">edit</mat-icon></button>
             </div>
             <div style="font-size: .5em;">
                 <a target="_blank" [href]="location.link">Speisekarte</a>
             </div>
         </div>
         <div fxLayout="column" fxLayoutGap="1em">
-            <div gdAlignRows="end" style="font-size: .4em;">
+            <div style="font-size: .4em;">
                 <div gdAlignRows="end" *ngFor="let v of location.votes">
                     {{v}} ⭐
                 </div>
             </div>
-            <div gdAlignRows="end">
+            <div fxFlexAlign="end">
                 <button *ngIf="location.votes && location.votes.length" mat-raised-button color="primary" (click)="takeOrdersClicked()">Bestellungen aufnehmen</button>
             </div>
         </div>

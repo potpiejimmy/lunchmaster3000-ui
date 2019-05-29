@@ -40,6 +40,7 @@ import { CreateComponent } from './routes/create';
 import { AppService } from './services/app';
 import { WelcomeComponent } from './routes/welcome';
 import { SettingsComponent } from './routes/settings';
+import { LocationEditComponent } from './components/location-edit';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { SettingsComponent } from './routes/settings';
     OrderSetComponent,
     CreateComponent,
     WelcomeComponent,
-    SettingsComponent
+    SettingsComponent,
+    LocationEditComponent
   ],
   imports: [
     BrowserModule,

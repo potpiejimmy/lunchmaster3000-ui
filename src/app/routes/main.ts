@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { LmApiService } from '../services/lmapi';
 import * as io from 'socket.io-client';
 import { environment } from '../../environments/environment';
@@ -12,7 +12,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class MainComponent implements AfterViewInit {
 
-    @ViewChild('inpname') inpname;
+    @ViewChild('locationEditor') locationEditor;
 
     socket: SocketIOClient.Socket;
 
@@ -77,7 +77,7 @@ export class MainComponent implements AfterViewInit {
     }
 
     ngAfterViewInit(): void {
-        setTimeout(() => this.inpname && this.inpname.nativeElement.focus(), 100);
+        this.app.locationEditor = this.locationEditor;
         this.load();
         Notification.requestPermission();
     }

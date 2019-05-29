@@ -1,0 +1,16 @@
+<mat-card class="ordercard" *ngIf="location">
+
+    <form class="settings-form">
+        <div fxFlex fxLayout="column">
+            <mat-form-field style="font-size: .75em;">
+                <input #inpname name="name" matInput placeholder="Name" [(ngModel)]="location.name">
+            </mat-form-field>
+            <div fxFlexAlign="end">
+                <button mat-raised-button color="warn" (click)="cancel()">Abbrechen</button>
+            </div>
+        </div>
+    </form>
+
+</mat-card>
+
+<div #scrollAnchor></div>
