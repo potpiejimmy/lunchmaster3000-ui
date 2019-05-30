@@ -1,13 +1,16 @@
 <mat-card class="ordercard" *ngIf="location">
-    <mat-card-title><mat-icon>edit</mat-icon> {{location.id ? 'Bearbeite: ' + location.name : 'Neue Location'}}</mat-card-title>
+    <mat-card-title><mat-icon>edit</mat-icon> {{location.id ? 'Bearbeite: ' + origName : 'Neue Location'}}</mat-card-title>
 
     <form class="settings-form">
         <div fxFlex fxLayout="column">
             <mat-form-field style="font-size: .75em;">
                 <input #inpname name="name" matInput placeholder="Name" [(ngModel)]="location.name">
             </mat-form-field>
-            <div fxFlexAlign="end">
-                <button mat-raised-button color="warn" (click)="cancel()">Abbrechen</button>
+            <div fxLayout="row" fxLayoutGap=".5em">
+                <button mat-raised-button color="primary" (click)="save()">Speichern</button>
+                <button mat-raised-button color="secondary" (click)="cancel()">Abbrechen</button>
+                <span style="flex: 1 1 auto;"></span>
+                <button *ngIf="location.id" mat-raised-button color="warn" (click)="delete()">Location löschen</button>
             </div>
         </div>
     </form>

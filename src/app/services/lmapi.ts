@@ -1,6 +1,8 @@
 import { Injectable } from "@angular/core";
 import { HttpBaseService } from './httpbase';
 import { environment } from '../../environments/environment';
+import { LocalStorageService } from 'angular-2-local-storage';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class LmApiService extends HttpBaseService {
@@ -14,43 +16,51 @@ export class LmApiService extends HttpBaseService {
     }
 
     getData(): Promise<any> {
-        return this.get(environment.apiUrl+"data");
+        return this.get(environment.apiUrl+"data?id="+this.localStorage.get("id"));
     }
 
-    setFavorite(location: string, name: string, checked: boolean): Promise<any> {
-        return this.post(environment.apiUrl+"favorites", {
-            location: location, name: name, checked: checked
+    saveLocation(location: any): Promise<any> {
+        return this.post(environment.apiUrl+"locations?id="+this.localStorage.get("id"), location);
+    }
+
+    deleteLocation(location: any): Promise<any> {
+        return this.delete(environment.apiUrl+"locations/"+location.id+"?id="+this.localStorage.get("id"));
+    }
+
+    setFavorite(locationId: number, name: string, checked: boolean): Promise<any> {
+        return this.post(environment.apiUrl+"favorites?id="+this.localStorage.get("id"), {
+            locationId: locationId, name: name, checked: checked
         });
     }
 
-    createOrderSet(location: string, name: string, payLink: string): Promise<any> {
-        return this.post(environment.apiUrl+"ordersets", {
+    createOrderSet(location: any, name: string, payLink: string): Promise<any> {
+        return this.post(environment.apiUrl+"ordersets?id="+this.localStorage.get("id"), {
             location: location, name: name, payLink: payLink
         });
     }
 
     deleteOrderSet(id: string): Promise<any> {
-        return this.delete(environment.apiUrl+"ordersets/"+id);
+        return this.delete(environment.apiUrl+"ordersets/"+id+"?id="+this.localStorage.get("id"));
     }
 
     updateOrderSet(id: string, finish: boolean = false, arrive: boolean = false): Promise<any> {
-        return this.put(environment.apiUrl+"ordersets/"+id, {
+        return this.put(environment.apiUrl+"ordersets/"+id+"?id="+this.localStorage.get("id"), {
             finish: finish, arrive: arrive
         });
     }
 
     updateOrderSetComment(id: string, orderSet: any) {
-        return this.put(environment.apiUrl+"ordersets/"+id, orderSet);
+        return this.put(environment.apiUrl+"ordersets/"+id+"?id="+this.localStorage.get("id"), orderSet);
     }
 
     setOrder(ordersetId: string, name: string, order: any) {
-        return this.post(environment.apiUrl+"orders", {
+        return this.post(environment.apiUrl+"orders?id="+this.localStorage.get("id"), {
             ordersetId: ordersetId, name: name, order: order
         });
     }
 
     sendChatMsg(ordersetId: string, name: string, msg: string) {
-        return this.post(environment.apiUrl+"ordersets/"+ordersetId+"/chat", {
+        return this.post(environment.apiUrl+"ordersets/"+ordersetId+"/chat?id="+this.localStorage.get("id"), {
             name: name, msg: msg
         });
     }

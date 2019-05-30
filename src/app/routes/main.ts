@@ -126,10 +126,10 @@ export class MainComponent implements AfterViewInit {
     }
 
     checkboxChanged(event) {
-        this.api.setFavorite(event.location.name, this.name, event.checked);
+        this.api.setFavorite(event.location.id, this.name, event.checked);
     }
 
-    takeOrders(location) {
+    takeOrders(location: any) {
         this.api.createOrderSet(location, this.name, this.localStorageService.get('paylink'));
     }
 

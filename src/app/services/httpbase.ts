@@ -2,12 +2,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { Injectable } from '@angular/core';
+import { LocalStorageService } from 'angular-2-local-storage';
 
 @Injectable()
 export class HttpBaseService {
 
     constructor (
-        private http: HttpClient
+        protected http: HttpClient,
+        protected localStorage: LocalStorageService
     ) {}
 
     requestOptions() {
