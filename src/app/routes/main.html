@@ -23,7 +23,7 @@
       <div *ngFor="let l of data.locations">
         <location [location]="l" [name]="name" (change)="checkboxChanged($event)" (takeOrders)="takeOrders($event)"></location>
       </div>
-      <div gdAlignRows="start" *ngIf="!app.locationEditor || !app.locationEditor.location"><button mat-icon-button title="Neue Location hinzufügen"><mat-icon>add_box</mat-icon></button></div>
+      <div gdAlignRows="start" *ngIf="!app.locationEditor || !app.locationEditor.location" (click)="app.locationEditor.newLocation()"><button mat-icon-button title="Neue Location hinzufügen"><mat-icon>add_box</mat-icon></button></div>
     </div>
   </form>
   <location-edit #locationEditor></location-edit>

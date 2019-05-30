@@ -8,6 +8,7 @@ import { AppService } from '../services/app';
 export class LocationEditComponent {
 
     @ViewChild("scrollAnchor") scrollAnchor;
+    @ViewChild('inpname') inpname;
 
     location;
 
@@ -16,8 +17,13 @@ export class LocationEditComponent {
     ) {}
 
     editLocation(l: any): void {
-        this.location = l;
+        this.location = JSON.parse(JSON.stringify(l));
         this.scrollAnchor.nativeElement.scrollIntoView({behavior: "smooth"});
+        setTimeout(() => this.inpname && this.inpname.nativeElement.focus(), 200);
+    }
+
+    newLocation(): void {
+        this.editLocation({});
     }
 
     cancel() {

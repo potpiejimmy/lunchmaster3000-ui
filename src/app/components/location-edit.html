@@ -1,4 +1,5 @@
 <mat-card class="ordercard" *ngIf="location">
+    <mat-card-title><mat-icon>edit</mat-icon> {{location.id ? 'Bearbeite: ' + location.name : 'Neue Location'}}</mat-card-title>
 
     <form class="settings-form">
         <div fxFlex fxLayout="column">
