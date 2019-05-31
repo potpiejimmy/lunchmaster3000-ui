@@ -25,8 +25,10 @@ export class LocationEditComponent {
         this.location = JSON.parse(JSON.stringify(l));
         delete this.location.votes;
         delete this.location.created;
-        this.scrollAnchor.nativeElement.scrollIntoView({behavior: "smooth"});
-        setTimeout(() => this.inpname && this.inpname.nativeElement.focus(), 200);
+        setTimeout(() => {
+            this.scrollAnchor.nativeElement.scrollIntoView({behavior: "smooth"});
+            this.inpname && this.inpname.nativeElement.focus();
+        }, 200);
     }
 
     newLocation(): void {

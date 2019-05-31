@@ -4,7 +4,7 @@
     <form class="settings-form">
         <div fxFlex fxLayout="column">
             <mat-form-field style="font-size: .75em;">
-                <input #inpname name="name" matInput placeholder="Name *" [(ngModel)]="location.name">
+                <input #inpname name="name" matInput placeholder="Name" [(ngModel)]="location.name" required>
             </mat-form-field>
             <mat-form-field style="font-size: .6em;">
                 <input #inpdescription name="description" matInput placeholder="Kurzbeschreibung / Infos" [(ngModel)]="location.description">
@@ -16,7 +16,7 @@
                 <button mat-raised-button color="primary" (click)="save()">Speichern</button>
                 <button mat-raised-button color="secondary" (click)="cancel()">Abbrechen</button>
                 <span style="flex: 1 1 auto;"></span>
-                <button *ngIf="location.id" mat-raised-button color="warn" (click)="delete()">Location löschen</button>
+                <button *ngIf="location.id" mat-raised-button color="warn" (click)="delete()">Löschen</button>
             </div>
         </div>
     </form>
