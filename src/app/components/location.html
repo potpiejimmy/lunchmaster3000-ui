@@ -8,8 +8,9 @@
                 {{location.name}}
                 <button *ngIf="showEditControls" mat-icon-button title="Bearbeiten" (click)="edit()"><mat-icon style="font-size: 1.5em;">edit</mat-icon></button>
             </div>
-            <div style="font-size: .5em;">
-                <a target="_blank" [href]="location.link">Speisekarte</a>
+            <mat-card-subtitle style="margin:0;" *ngIf="location.description">{{location.description}}</mat-card-subtitle>
+            <div style="font-size: .5em;" *ngIf="location.menu_link">
+                <a target="_blank" [href]="location.menu_link">Speisekarte</a>
             </div>
         </div>
         <div fxLayout="column" fxLayoutGap="1em">

@@ -4,7 +4,13 @@
     <form class="settings-form">
         <div fxFlex fxLayout="column">
             <mat-form-field style="font-size: .75em;">
-                <input #inpname name="name" matInput placeholder="Name" [(ngModel)]="location.name">
+                <input #inpname name="name" matInput placeholder="Name *" [(ngModel)]="location.name">
+            </mat-form-field>
+            <mat-form-field style="font-size: .6em;">
+                <input #inpdescription name="description" matInput placeholder="Kurzbeschreibung / Infos" [(ngModel)]="location.description">
+            </mat-form-field>
+            <mat-form-field style="font-size: .5em;">
+                <input #inpmenulink name="menu_link" matInput placeholder="Link zur Speisekarte" [(ngModel)]="location.menu_link">
             </mat-form-field>
             <div fxLayout="row" fxLayoutGap=".5em">
                 <button mat-raised-button color="primary" (click)="save()">Speichern</button>

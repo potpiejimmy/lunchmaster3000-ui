@@ -62,7 +62,7 @@ export class MainComponent implements AfterViewInit {
 
     initSocket() {
         // register socket for receiving data:
-        this.socket = io.connect(environment.apiUrl);
+        this.socket = io.connect(environment.apiUrl+this.app.community.webid);
         this.socket.on('data', data => {
             if (!this.isTyping) this.adaptDataFromServer(data);
         })

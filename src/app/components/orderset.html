@@ -1,6 +1,6 @@
 <mat-card class="orderSet">
   <mat-card-title><mat-icon>fastfood</mat-icon> {{orderSet.location.name}}</mat-card-title>
-  <mat-card-subtitle>{{orderSet.name}} bestellt heute bzw. holt heute etwas bei {{orderSet.location.name}}. Hier ist die <a target="_blank" [href]="orderSet.location.link">Speisekarte</a>.</mat-card-subtitle>
+  <mat-card-subtitle>{{orderSet.name}} bestellt heute bzw. holt heute etwas bei {{orderSet.location.name}}. Hier ist die <a target="_blank" [href]="orderSet.location.menu_link">Speisekarte</a>.</mat-card-subtitle>
   <mat-card-subtitle>Wenn du etwas mitbestellen möchtest, schreibe es unten hin.</mat-card-subtitle>
   <div *ngIf="own" style="font-size: .5em;">
     <form class="comment-form">
