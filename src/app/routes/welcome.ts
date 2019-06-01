@@ -13,7 +13,6 @@ export class WelcomeComponent implements OnInit, AfterViewInit {
     @ViewChild('inpname') inpname;
     nameInput: string;
 
-    agreeTerms: boolean;
     processing: boolean;
 
     constructor(

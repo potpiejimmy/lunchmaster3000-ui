@@ -15,9 +15,24 @@
     bis ein anderer dies tut, dann kannst du dich anschließen.
   </mat-card-subtitle>
   <mat-card-subtitle>
-    Hinweis: Du musst die Website niemals neu laden und alles, was du anklickst und eintippst, ist für alle sofort sichtbar.
+    Hinweis: Du musst diese Website niemals neu laden und alles, was du anklickst und eintippst, ist für alle sofort sichtbar.
     Die Eingabe-Taste musst du niemals drücken (Ausnahme: Chatnachricht absenden).
   </mat-card-subtitle>
+  <mat-card class="ordercard" *ngIf="!data || !data.locations.length">
+    <mat-card-subtitle>
+      Diese Community scheint noch ganz neu zu sein.
+    </mat-card-subtitle>
+    <mat-card-subtitle>
+      Bitte lade deine Kollegen zu dieser Community ein, indem du den Link zu dieser Community über das Teilen-Symbol <mat-icon style="font-size: .8em; width: 1em; height: 1em;">share</mat-icon>
+      oben in der Titelzeile kopierst und an deine Kollegen sendest. Der Link enthält eine geheime, eindeutige ID zu dieser
+      Community. Bitte sorge dafür, dass nur die Personen deines Teams oder deiner lokalen Organisation diesen kennen,
+      damit deine Community nicht von Fremden missbraucht wird.
+    </mat-card-subtitle>
+    <mat-card-subtitle>
+      Füge dann bitte unten über das Plus-Symbol neue Essens-Locations hinzu, um deine Community mit Leben
+      zu füllen.
+    </mat-card-subtitle>
+  </mat-card>
   <form class="favorites-form">
     <div fxFlex fxLayout="column">
       <div *ngFor="let l of data.locations">

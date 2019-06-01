@@ -1,6 +1,7 @@
 import { Component, ViewChild, AfterViewInit } from "@angular/core";
 import { LmApiService } from '../services/lmapi';
 import { Router } from '@angular/router';
+import { AppService } from '../services/app';
 
 @Component({
     selector: "create-community",
@@ -11,10 +12,10 @@ export class CreateComponent implements AfterViewInit {
     @ViewChild('inpname') inpname;
     nameInput: string;
 
-    agreeTerms: boolean;
     processing: boolean;
 
     constructor(
+        public app: AppService,
         private api: LmApiService,
         private router: Router
     ) {}

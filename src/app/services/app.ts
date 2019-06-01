@@ -3,9 +3,13 @@ import { LocationEditComponent } from '../components/location-edit';
 
 @Injectable()
 export class AppService {
+
+    // agree to terms and conditions?
+    agreeTerms: boolean;    
+
     // current community settings
-    community;
-    name;
+    community: any;
+    name: string;
 
     // editing?
     locationEditor: LocationEditComponent;

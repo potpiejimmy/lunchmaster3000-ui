@@ -13,10 +13,10 @@
                 <input #inpmenulink name="menu_link" matInput placeholder="Link zur Speisekarte" [(ngModel)]="location.menu_link">
             </mat-form-field>
             <div fxLayout="row" fxLayoutGap=".5em">
-                <button mat-raised-button color="primary" (click)="save()">Speichern</button>
-                <button mat-raised-button color="secondary" (click)="cancel()">Abbrechen</button>
+                <button mat-raised-button color="primary" (click)="save()" [disabled]="processing">Speichern</button>
+                <button mat-raised-button color="secondary" (click)="cancel()" [disabled]="processing">Abbrechen</button>
                 <span style="flex: 1 1 auto;"></span>
-                <button *ngIf="location.id" mat-raised-button color="warn" (click)="delete()">Löschen</button>
+                <button *ngIf="location.id" mat-raised-button color="warn" (click)="delete()" [disabled]="processing">Löschen</button>
             </div>
         </div>
     </form>

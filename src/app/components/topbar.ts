@@ -24,7 +24,7 @@ export class AppTopbarComponent implements OnInit {
     }
 
     linkCopied() {
-        this.snackBar.open("⎘ Community link copied to clipboard", null, {duration: 3000});
+        this.snackBar.open("Der Link zu dieser Community wurde in die Zwischenablage kopiert.", null, {duration: 3000});
     }
 
     get communityLink(): string {
