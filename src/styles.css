@@ -80,6 +80,10 @@ a, a:visited {
     background-color: #2E7D32;
 }
 
+.mat-checkbox-layout {
+    white-space: normal !important;
+}
+
 #footer {
     display: flex;
     font-size: .5em;

@@ -4,8 +4,9 @@ import { LocationEditComponent } from '../components/location-edit';
 @Injectable()
 export class AppService {
 
-    // agree to terms and conditions?
+    // agree to terms and conditions and privacy statement?
     agreeTerms: boolean;    
+    agreePrivacy: boolean;
 
     // current community settings
     community: any;
