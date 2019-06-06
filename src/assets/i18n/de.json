@@ -21,11 +21,11 @@
             "allrights": "All Rights Reserved"
         },
         "topbar": {
-            "copy_link": "Link kopieren:"
+            "copy_link": "Link kopieren: {{communityLink}}"
         },
-        "location-edit": {
-            "edit_1": "Bearbeite: ",
-            "edit_2": "Neue Location",
+        "location_edit": {
+            "edit": "Bearbeite: {{name}}",
+            "new_location": "Neue Location",
             "shortdescription": "Kurzbeschreibung / Infos",
             "menu_link": "Link zur Speisekarte"
         },
@@ -33,11 +33,11 @@
             "placeorder": "Bestellungen aufnehmen"
         },
         "orderset": {
-            "subtitle_1": "{{orderSet.name}} bestellt heute bzw. holt heute etwas bei {{orderSet.location.name}}. Hier ist die",
+            "subtitle_1": "{{name}} bestellt heute bzw. holt heute etwas bei {{location}}. Hier ist die",
             "subtitle_2": "Wenn du etwas mitbestellen möchtest, schreibe es unten hin.",
             "comment": "Bestellhinweise / Infos",
             "paylink": "Bezahllink",
-            "subtitle_infos": "Infos von",
+            "subtitle_infos": "Infos von {{name}}",
             "yourorder": "Deine Bestellung",
             "ownorder_1": "Dein eigener Bestellwunsch",
             "ownorder_2": "Was möchtest du haben?",
@@ -45,6 +45,7 @@
             "price": "Preis",
             "list": "Gesamtliste",
             "user_order_request": "Bestellwunsch",
+			"pay_now": "Jetzt bezahlen",
             "money_received": "Geld erhalten?",
             "sum": "Summe:",
             "order_finished": "Die Bestellung ist beendet. Sobald das Essen da ist,",
@@ -71,11 +72,11 @@
         },
         "main": {
             "favorite_list": "Favoritenliste",
-            "hello": "Hallo",
+            "hello": "Hallo {{name}},",
             "welcome_text_1": "bitte wähle aus, auf was du heute Appetit hast. Mehrfachauswahl ist möglich.",
-            "welcome_text_2": "Wenn du dich dazu entscheidest, Essen für dich und deine Kollegen bei einem der Restaurants",
-            "welcome_text_3": "zu bestellen und abzuholen oder liefern zu lassen, dann drücke auf <i>Bestellungen aufnehmen</i>. Ansonsten warte einfach,",
-            "welcome_text_4": "bis ein anderer dies tut, dann kannst du dich anschließen.",
+            "welcome_text_2": "Wenn du dich dazu entscheidest, Essen für dich und deine Kollegen bei einem der Restaurants zu bestellen und abzuholen oder liefern zu lassen, dann drücke auf",
+            "welcome_text_3": "Bestellungen aufnehmen",
+            "welcome_text_4": "Ansonsten warte einfach, bis ein anderer dies tut, dann kannst du dich anschließen.",
             "hint_1": "Hinweis: Du musst diese Website nicht neu laden (sie aktualisiert sich von alleine) und alles, was du anklickst und eintippst, ist für deine Commmunity sofort sichtbar,",
             "hint_2": "auch ohne dass du die Eingabe-Taste dazu drücken musst (Ausnahme: Chatnachricht absenden).",
             "community_new": "Diese Community scheint noch neu zu sein.",

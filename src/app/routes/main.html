@@ -5,32 +5,31 @@
 </div>
 
 <mat-card *ngIf="name && name.length > 2" class="favlist">
-  <mat-card-title><mat-icon>star</mat-icon> Favoritenliste</mat-card-title>
-  <mat-card-subtitle>Hallo {{name}},</mat-card-subtitle>
+  <mat-card-title><mat-icon>star</mat-icon> {{'routes.main.favorite_list'|translate}}</mat-card-title>
+  <mat-card-subtitle>{{'routes.main.hello'|translate:{name: name} }}</mat-card-subtitle>
   <mat-card-subtitle>
-    bitte wähle aus, auf was du heute Appetit hast. Mehrfachauswahl ist möglich.
+    {{'routes.main.welcome_text_1'|translate}}
     <br/>
-    Wenn du dich dazu entscheidest, Essen für dich und deine Kollegen bei einem der Restaurants
-    zu bestellen und abzuholen oder liefern zu lassen, dann drücke auf <i>Bestellungen aufnehmen</i>. Ansonsten warte einfach,
-    bis ein anderer dies tut, dann kannst du dich anschließen.
+    {{'routes.main.welcome_text_2'|translate}} <i>{{'routes.main.welcome_text_3'|translate}}</i>.
+    {{'routes.main.welcome_text_4'|translate}}
   </mat-card-subtitle>
   <mat-card-subtitle>
-    Hinweis: Du musst diese Website nicht neu laden (sie aktualisiert sich von alleine) und alles, was du anklickst und eintippst, ist für deine Commmunity sofort sichtbar,
-    auch ohne dass du die Eingabe-Taste dazu drücken musst (Ausnahme: Chatnachricht absenden).
+    {{'routes.main.hint_1'|translate}}
+    {{'routes.main.hint_2'|translate}}
   </mat-card-subtitle>
   <mat-card class="ordercard" *ngIf="!data || !data.locations.length">
     <mat-card-subtitle>
-      <mat-icon>info</mat-icon> Diese Community scheint noch neu zu sein.
+      <mat-icon>info</mat-icon> {{'routes.main.community_new'|translate}}
     </mat-card-subtitle>
     <mat-card-subtitle>
-      Bitte lade deine Kollegen zu dieser Community ein, indem du den Link zu dieser Community über das Teilen-Symbol <mat-icon style="font-size: .8em; width: 1em; height: 1em;">share</mat-icon>
-      oben in der Titelzeile kopierst und an deine Kollegen sendest. Der Link enthält eine geheime, eindeutige ID zu dieser
-      Community. Bitte sorge dafür, dass nur die Personen deines Teams oder deiner lokalen Organisation den Link kennen,
-      damit deine Community nicht von Fremden missbraucht wird.
+      {{'routes.main.invite_colleagues_1'|translate}} <mat-icon style="font-size: .8em; width: 1em; height: 1em;">share</mat-icon>
+      {{'routes.main.invite_colleagues_2'|translate}}
+      {{'routes.main.invite_colleagues_3'|translate}}
+      {{'routes.main.invite_colleagues_4'|translate}}
     </mat-card-subtitle>
     <mat-card-subtitle>
-      Füge dann bitte unten über das Plus-Symbol neue Essens-Locations hinzu, um deine Community mit Leben
-      zu füllen.
+      {{'routes.main.invite_colleagues_5'|translate}}
+      {{'routes.main.invite_colleagues_6'|translate}}
     </mat-card-subtitle>
   </mat-card>
   <form class="favorites-form">
@@ -38,7 +37,7 @@
       <div *ngFor="let l of data.locations">
         <location [location]="l" [name]="name" (change)="checkboxChanged($event)" (takeOrders)="takeOrders($event)"></location>
       </div>
-      <div gdAlignRows="start" *ngIf="!app.locationEditor || !app.locationEditor.location" (click)="app.locationEditor.newLocation()"><button mat-icon-button title="Neue Location hinzufügen"><mat-icon>add_box</mat-icon></button></div>
+      <div gdAlignRows="start" *ngIf="!app.locationEditor || !app.locationEditor.location" (click)="app.locationEditor.newLocation()"><button mat-icon-button [title]="'routes.main.add_new_location'|translate"><mat-icon>add_box</mat-icon></button></div>
     </div>
   </form>
   <location-edit #locationEditor></location-edit>
