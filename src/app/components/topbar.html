@@ -16,10 +16,11 @@
       </div>
     </div>
     <div>
-      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="display:flex; vertical-align: middle">
+      <form #form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" style="display:flex; vertical-align: middle">
         <input type="hidden" name="cmd" value="_s-xclick" />
         <input type="hidden" name="hosted_button_id" value="6KJS5SZJ8REPW" />
-        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" name="submit" title="Donations keep the lunch.community service alive!" alt="Donate with PayPal button" />
+        <input type="hidden" name="return" value="https://lunch.community/" />
+        <input (click)="form.submit()" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" name="submit" title="Donations are keeping the lunch.community service alive! Thank you!" alt="Donate with PayPal button" />
         <img alt="" src="https://www.paypal.com/en_DE/i/scr/pixel.gif" width="1" height="1" />
       </form>     
     </div>
