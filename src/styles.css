@@ -41,10 +41,10 @@ a, a:visited {
 }
 
 .topbar-logo {
-    width: 32px;
-    height: 32px;
+    width: 42px;
+    height: 42px;
     background: url("assets/logo.png") top left no-repeat;
-    background-size: 32px 32px;
+    background-size: 42px 42px;
 }
 
 .mat-toolbar.mat-primary {

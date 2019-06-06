@@ -43,6 +43,9 @@ import { AppService } from './services/app';
 import { WelcomeComponent } from './routes/welcome';
 import { SettingsComponent } from './routes/settings';
 import { LocationEditComponent } from './components/location-edit';
+import { TermsAndConditionsComponent } from './routes/terms';
+import { PrivacyAndCookiesComponent } from './routes/privacy';
+import { AboutComponent } from './routes/about';
 
 @NgModule({
   declarations: [
@@ -55,7 +58,10 @@ import { LocationEditComponent } from './components/location-edit';
     CreateComponent,
     WelcomeComponent,
     SettingsComponent,
-    LocationEditComponent
+    LocationEditComponent,
+    AboutComponent,
+    TermsAndConditionsComponent,
+    PrivacyAndCookiesComponent
   ],
   imports: [
     BrowserModule,
