@@ -1,0 +1,105 @@
+{
+    "general": {
+        "save": "Speichern",
+        "cancel": "Abbrechen",
+        "delete": "Löschen",
+        "edit": "Bearbeiten",
+        "menucard": "Speisekarte",
+        "name": "Name",
+        "terms_agree_1": "Ich stimme den",
+        "terms_agree_2": "Nutzungsbedingungen",
+        "terms_agree_3": "zu.",
+        "privacy_read_1": "Ich habe die",
+        "privacy_read_2": "Datenschutzerklärung",
+        "privacy_read_3": "zur Kenntnis genommen."
+    },
+    "components": {
+        "footer": {
+            "impressum": "Impressum",
+            "terms": "Nutzungsbedingungen",
+            "cookies": "Datenschutz & Cookies",
+            "allrights": "All Rights Reserved"
+        },
+        "topbar": {
+            "copy_link": "Link kopieren: {{communityLink}}"
+        },
+        "location_edit": {
+            "edit": "Bearbeite: {{name}}",
+            "new_location": "Neue Location",
+            "shortdescription": "Kurzbeschreibung / Infos",
+            "menu_link": "Link zur Speisekarte"
+        },
+        "location": {
+            "placeorder": "Bestellungen aufnehmen"
+        },
+        "orderset": {
+            "subtitle_1": "{{name}} bestellt heute bzw. holt heute etwas bei {{location}}. Hier ist die",
+            "subtitle_2": "Wenn du etwas mitbestellen möchtest, schreibe es unten hin.",
+            "comment": "Bestellhinweise / Infos",
+            "paylink": "Bezahllink",
+            "subtitle_infos": "Infos von {{name}}",
+            "yourorder": "Deine Bestellung",
+            "ownorder_1": "Dein eigener Bestellwunsch",
+            "ownorder_2": "Was möchtest du haben?",
+            "ownorder_delete": "Bestellwunsch entfernen",
+            "price": "Preis",
+            "list": "Gesamtliste",
+            "user_order_request": "Bestellwunsch",
+			"pay_now": "Jetzt bezahlen",
+            "money_received": "Geld erhalten?",
+            "sum": "Summe:",
+            "order_finished": "Die Bestellung ist beendet. Sobald das Essen da ist,",
+            "order_finished_own": "drücke auf den Knopf!",
+            "order_finished_not_own": "erhältst du eine Nachricht!",
+            "finish_order": "Bestellannahme beenden",
+            "food_arrived_btn": "Essen ist da!!",
+            "food_arrived_msg": "Das Essen ist da!!",
+            "order_delete": "Bestellung löschen",
+            "chat": "Chat",
+            "chat_msg": "Deine Nachricht",
+            "chat_msg_send": "Nachricht absenden"
+        }
+    }, "routes": {
+        "create": {
+            "welcome_text": "Willkommen",
+            "welcome_subtitle_1": "Finde dich mit deinen Arbeitskollegen zum Mittagessen zusammen.",
+            "welcome_subtitle_2": "Nie wieder hungern. Nie wieder lange überlegen, wer heute auf was Lust hat. Nie wieder alleine essen. Nie wieder beim Bestellen vergessen werden.",
+            "create_community_text": "Gründe hier deine lunch.community",
+            "create_community_subtitle_1": "Lege hier eine neue Community für dein Team oder deine Organisation an. Den erstellten",
+            "create_community_subtitle_2": "Link teilst du dann mit deinen Kollegen.",
+            "community_name": "Name deiner Community",
+            "create_community_button": "Community erstellen"
+        },
+        "main": {
+            "favorite_list": "Favoritenliste",
+            "hello": "Hallo {{name}},",
+            "welcome_text_1": "bitte wähle aus, auf was du heute Appetit hast. Mehrfachauswahl ist möglich.",
+            "welcome_text_2": "Wenn du dich dazu entscheidest, Essen für dich und deine Kollegen bei einem der Restaurants zu bestellen und abzuholen oder liefern zu lassen, dann drücke auf",
+            "welcome_text_3": "Bestellungen aufnehmen",
+            "welcome_text_4": "Ansonsten warte einfach, bis ein anderer dies tut, dann kannst du dich anschließen.",
+            "hint_1": "Hinweis: Du musst diese Website nicht neu laden (sie aktualisiert sich von alleine) und alles, was du anklickst und eintippst, ist für deine Commmunity sofort sichtbar,",
+            "hint_2": "auch ohne dass du die Eingabe-Taste dazu drücken musst (Ausnahme: Chatnachricht absenden).",
+            "community_new": "Diese Community scheint noch neu zu sein.",
+            "invite_colleagues_1": "Bitte lade deine Kollegen zu dieser Community ein, indem du den Link zu dieser Community über das Teilen-Symbol",
+            "invite_colleagues_2": "oben in der Titelzeile kopierst und an deine Kollegen sendest. Der Link enthält eine geheime, eindeutige ID zu dieser",
+            "invite_colleagues_3": "Community. Bitte sorge dafür, dass nur die Personen deines Teams oder deiner lokalen Organisation den Link kennen,",
+            "invite_colleagues_4": "damit deine Community nicht von Fremden missbraucht wird.",
+            "invite_colleagues_5": "Füge dann bitte unten über das Plus-Symbol neue Essens-Locations hinzu, um deine Community mit Leben",
+            "invite_colleagues_6": "zu füllen.",
+            "add_new_location": "Neue Location hinzufügen"
+        },
+        "settings": {
+            "card_title": "Deine aktuelle lunch.community",
+            "community_leave": "Community verlassen"
+        },
+        "welcome": {
+            "welcome_message": "Willkommen bei der lunch.community von",
+            "welcome_new_user": "Du bist neu hier. Bitte gib einen Namen ein, damit deine Kollegen dich erkennen können.",
+            "ask_for_name": "Wie heißt du?",
+            "hint_1": "Hinweis: Dein Name wird nicht zentral, sondern nur in deinem Browser gespeichert und dient nur der ",
+            "hint_2": "Kenntlichmachung deiner Bestellwünsche gegenüber den anderen. Üblicherweise reicht hier z.B. dein Vorname. Achte aber darauf, dass der Name",
+            "hint_3": "innerhalb deiner Community eindeutig ist, denn er dient auch als Identifikation für deine Person.",
+            "hungry": "Ich habe Hunger!"
+        }
+    }
+}

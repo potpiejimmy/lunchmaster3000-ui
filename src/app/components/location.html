@@ -6,11 +6,11 @@
         <div style="flex: 1 1 auto;" (mouseenter)="showEditControls=true;" (mouseleave)="showEditControls=false;">
             <div style="font-size: .7em;">
                 {{location.name}}
-                <button *ngIf="showEditControls" mat-icon-button title="Bearbeiten" (click)="edit()"><mat-icon style="font-size: 1.5em;">edit</mat-icon></button>
+                <button *ngIf="showEditControls" mat-icon-button [title]="'general.edit'|translate" (click)="edit()"><mat-icon style="font-size: 1.5em;">edit</mat-icon></button>
             </div>
             <mat-card-subtitle style="margin:0;" *ngIf="location.description">{{location.description}}</mat-card-subtitle>
             <div style="font-size: .5em;" *ngIf="location.menu_link">
-                <a target="_blank" [href]="location.menu_link">Speisekarte</a>
+                <a target="_blank" [href]="location.menu_link">{{'general.menucard'|translate}}</a>
             </div>
         </div>
         <div fxLayout="column" fxLayoutGap="1em">
@@ -20,7 +20,7 @@
                 </div>
             </div>
             <div fxFlexAlign="end">
-                <button *ngIf="location.votes && location.votes.length" mat-raised-button color="primary" (click)="takeOrdersClicked()">Bestellungen aufnehmen</button>
+                <button *ngIf="location.votes && location.votes.length" mat-raised-button color="primary" (click)="takeOrdersClicked()">{{'components.location.placeorder'|translate}}</button>
             </div>
         </div>
     </div>

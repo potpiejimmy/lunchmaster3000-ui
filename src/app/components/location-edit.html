@@ -1,22 +1,21 @@
 <mat-card class="ordercard" *ngIf="location">
-    <mat-card-title><mat-icon>edit</mat-icon> {{location.id ? 'Bearbeite: ' + origName : 'Neue Location'}}</mat-card-title>
-
+    <mat-card-title><mat-icon>edit</mat-icon> {{location.id ? ('components.location_edit.edit'|translate:{name:origName}) : 'components.location_edit.new_location'|translate }}</mat-card-title>
     <form class="settings-form">
         <div fxFlex fxLayout="column">
             <mat-form-field style="font-size: .75em;">
                 <input #inpname name="name" matInput placeholder="Name" [(ngModel)]="location.name" required>
             </mat-form-field>
             <mat-form-field style="font-size: .6em;">
-                <input #inpdescription name="description" matInput placeholder="Kurzbeschreibung / Infos" [(ngModel)]="location.description">
+                <input #inpdescription name="description" matInput [placeholder]="'components.location_edit.shortdescription'|translate" [(ngModel)]="location.description">
             </mat-form-field>
             <mat-form-field style="font-size: .5em;">
-                <input #inpmenulink name="menu_link" matInput placeholder="Link zur Speisekarte" [(ngModel)]="location.menu_link">
+                <input #inpmenulink name="menu_link" matInput [placeholder]="'components.location_edit.menu_link'|translate" [(ngModel)]="location.menu_link">
             </mat-form-field>
             <div fxLayout="row" fxLayoutGap=".5em">
-                <button mat-raised-button color="primary" (click)="save()" [disabled]="processing">Speichern</button>
-                <button mat-raised-button color="secondary" (click)="cancel()" [disabled]="processing">Abbrechen</button>
+                <button mat-raised-button color="primary" (click)="save()" [disabled]="processing">{{'general.save'|translate}}</button>
+                <button mat-raised-button color="secondary" (click)="cancel()" [disabled]="processing">{{'general.cancel'|translate}}</button>
                 <span style="flex: 1 1 auto;"></span>
-                <button *ngIf="location.id" mat-raised-button color="warn" (click)="delete()" [disabled]="processing">Löschen</button>
+                <button *ngIf="location.id" mat-raised-button color="warn" (click)="delete()" [disabled]="processing">{{'general.delete'|translate}}</button>
             </div>
         </div>
     </form>

@@ -1,7 +1,7 @@
 <mat-card fxFlex fxLayout="row" fxLayout.xs="column" id="footer">
-    <a class="footerlink" [routerLink]="['/about']">Impressum</a>
-    <a class="footerlink" [routerLink]="['/terms']">Nutzungsbedingungen</a>
-    <a class="footerlink" [routerLink]="['/privacy']">Datenschutz & Cookies</a>
+    <a class="footerlink" [routerLink]="['/about']">{{'components.footer.impressum'|translate}}</a>
+    <a class="footerlink" [routerLink]="['/terms']">{{'components.footer.terms'|translate}}</a>
+    <a class="footerlink" [routerLink]="['/privacy']">{{'components.footer.cookies'|translate}}</a>
     <span style="flex: 1 1 auto;"></span>
-    <span>All Rights Reserved</span>
+    <span>{{'components.footer.allrights'|translate}}</span>
 </mat-card>

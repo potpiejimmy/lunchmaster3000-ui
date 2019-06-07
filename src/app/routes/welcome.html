@@ -1,23 +1,23 @@
 <mat-card class="createcard">
-  <mat-card-title>Willkommen bei der lunch.community von</mat-card-title>
+  <mat-card-title>{{'routes.welcome.welcome_message'|translate}}</mat-card-title>
   <mat-card-title>{{app.community && app.community.name}}</mat-card-title>
   <mat-card-subtitle>
-    Du bist neu hier. Bitte gib einen Namen ein, damit deine Kollegen dich erkennen können.
+    {{'routes.welcome.welcome_new_user'|translate}}
   </mat-card-subtitle>
   <form class="create-form">
     <mat-form-field>
-      <input #inpname name="name" matInput placeholder="Wie heißt du?" [(ngModel)]="nameInput" [disabled]="processing">
+      <input #inpname name="name" matInput [placeholder]="'routes.welcome.ask_for_name'|translate" [(ngModel)]="nameInput" [disabled]="processing">
     </mat-form-field>
     <mat-card-subtitle>
-      Hinweis: Dein Name wird nicht zentral, sondern nur in deinem Browser gespeichert und dient nur der 
-      Kenntlichmachung deiner Bestellwünsche gegenüber den anderen. Üblicherweise reicht hier z.B. dein Vorname. Achte aber darauf, dass der Name
-      innerhalb deiner Community eindeutig ist, denn er dient auch als Identifikation für deine Person.
+      {{'routes.welcome.hint_1'|translate}} 
+      {{'routes.welcome.hint_2'|translate}} 
+      {{'routes.welcome.hint_3'|translate}} 
     </mat-card-subtitle>
     <mat-card-subtitle>
-      <mat-checkbox name="agreeTerms" [(ngModel)]="app.agreeTerms" [disabled]="processing">Ich stimme den <a [routerLink]="['/terms']" target="_blank">Nutzungsbedingungen</a> zu.</mat-checkbox>
+      <mat-checkbox name="agreeTerms" [(ngModel)]="app.agreeTerms" [disabled]="processing">{{'general.terms_agree_1'|translate}} <a [routerLink]="['/terms']" target="_blank">{{'general.terms_agree_2'|translate}}</a> {{'general.terms_agree_3'|translate}}.</mat-checkbox>
       <br/>
-      <mat-checkbox name="agreePrivacy" [(ngModel)]="app.agreePrivacy" [disabled]="processing">Ich habe die <a [routerLink]="['/privacy']" target="_blank">Datenschutzerklärung</a> zur Kenntnis genommen.</mat-checkbox>
+      <mat-checkbox name="agreePrivacy" [(ngModel)]="app.agreePrivacy" [disabled]="processing">{{'general.privacy_read_1'|translate}} <a [routerLink]="['/privacy']" target="_blank">{{'general.privacy_read_2'|translate}}</a> {{'general.privacy_read_3'|translate}}</mat-checkbox>
     </mat-card-subtitle>
-    <button mat-raised-button color="primary" (click)="submit()" [disabled]="!app.agreeTerms || !app.agreePrivacy || !nameInput || !nameInput.trim().length || processing">Ich habe Hunger!</button>
+    <button mat-raised-button color="primary" (click)="submit()" [disabled]="!app.agreeTerms || !app.agreePrivacy || !nameInput || !nameInput.trim().length || processing">{{'routes.welcome.hungry'|translate}} </button>
   </form>
 </mat-card>

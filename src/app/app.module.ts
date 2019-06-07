@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { HttpClientModule }    from '@angular/common/http';
+import { HttpClientModule, HttpClient }    from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { AppRoutes } from './app.routes';
@@ -26,6 +26,8 @@ import { MatListModule } from '@angular/material/list';
 import { LocalStorageModule } from 'angular-2-local-storage';
 import { CurrencyMaskModule } from "ng2-currency-mask";
 import { ClipboardModule } from 'ngx-clipboard';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 // App
 import { AppComponent } from './app.component';
@@ -82,7 +84,8 @@ import { AboutComponent } from './routes/about';
     CurrencyMaskModule,
     ClipboardModule,
     LocalStorageModule.forRoot({ prefix: 'lunch.community', storageType: 'localStorage' }), // or sessionStorage
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    TranslateModule.forRoot({loader: {provide: TranslateLoader, useFactory: (http: HttpClient) => new TranslateHttpLoader(http),deps: [HttpClient]}})
   ],
   providers: [
     AppService,

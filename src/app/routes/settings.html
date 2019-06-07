@@ -1,9 +1,9 @@
 <mat-card>
-  <mat-card-title>Deine aktuelle lunch.community</mat-card-title>
+  <mat-card-title>{{'routes.settings.card_title'|translate}}</mat-card-title>
   <mat-card-subtitle>
     {{app.community && app.community.name}}
   </mat-card-subtitle>
-  <button mat-raised-button color="warn" (click)="leaveCommunity()">Community verlassen</button>
+  <button mat-raised-button color="warn" (click)="leaveCommunity()">{{'routes.settings.community_leave'|translate}}</button>
 </mat-card>
 <mat-card>
   <form class="settings-form" style="font-size: .7em;">
