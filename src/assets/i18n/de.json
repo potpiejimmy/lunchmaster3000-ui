@@ -11,7 +11,9 @@
         "terms_agree_3": "zu.",
         "privacy_read_1": "Ich habe die",
         "privacy_read_2": "Datenschutzerklärung",
-        "privacy_read_3": "zur Kenntnis genommen."
+        "privacy_read_3": "zur Kenntnis genommen.",
+        "donation_btn_source": "https://www.paypalobjects.com/de_DE/i/btn/btn_donate_SM.gif",
+        "donation_text": "Deine Spende erhält die lunch.community am Leben."
     },
     "components": {
         "footer": {
