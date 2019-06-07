@@ -4,7 +4,7 @@
         "cancel": "Cancel",
         "delete": "Delete",
         "edit": "Edit",
-        "menucard": "menu card",
+        "menucard": "Menu",
         "name": "Name",
         "terms_agree_1": "Ich stimme den",
         "terms_agree_2": "Nutzungsbedingungen",
@@ -13,7 +13,7 @@
         "privacy_read_2": "Datenschutzerklärung",
         "privacy_read_3": "zur Kenntnis genommen.",
         "donation_btn_source": "https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif",
-        "donation_text": "Your donation keeps lunch.community alive!"
+        "donation_text": "Your donation keeps the lunch.community alive!"
     },
     "components": {
         "footer": {
@@ -28,14 +28,14 @@
         "location_edit": {
             "edit": "Edit: {{name}}",
             "new_location": "New location",
-            "shortdescription": "short description / info",
-            "menu_link": "Link to menu card"
+            "shortdescription": "Short description / info",
+            "menu_link": "Link to the menu"
         },
         "location": {
             "placeorder": "Bestellungen aufnehmen"
         },
         "orderset": {
-            "subtitle_1": "{{name}} bestellt heute bzw. holt heute etwas bei {{location}}. Hier ist die",
+            "subtitle_1": "{{name}} bestellt heute bzw. holt heute etwas bei {{location}}. Click here for the ",
             "subtitle_2": "Wenn du etwas mitbestellen möchtest, schreibe es unten hin.",
             "comment": "Bestellhinweise / Infos",
             "paylink": "Bezahllink",
