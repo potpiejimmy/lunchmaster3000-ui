@@ -17,9 +17,9 @@
       <input #inpname name="name" matInput [placeholder]="'routes.create.community_name'|translate" [(ngModel)]="nameInput" [disabled]="processing">
     </mat-form-field>
     <mat-card-subtitle>
-      <mat-checkbox name="agreeTerms" [(ngModel)]="app.agreeTerms" [disabled]="processing">{{'general.terms_agree_1'|translate}} <a [routerLink]="['/terms']" target="_blank">{{'general.terms_agree_2'|translate}}</a> {{'general.terms_agree_3'|translate}}</mat-checkbox>
+      <mat-checkbox name="agreeTerms" [(ngModel)]="app.agreeTerms" [disabled]="processing">{{'general.terms_agree_1'|translate}} <a [routerLink]="['/terms']" target="_blank">{{'general.terms_agree_2'|translate}}</a>{{'general.terms_agree_3'|translate}}</mat-checkbox>
       <br/>
-      <mat-checkbox name="agreePrivacy" [(ngModel)]="app.agreePrivacy" [disabled]="processing">{{'general.privacy_read_1'|translate}} <a [routerLink]="['/privacy']" target="_blank">{{'general.privacy_read_2'|translate}}</a> {{'general.privacy_read_3'|translate}}</mat-checkbox>
+      <mat-checkbox name="agreePrivacy" [(ngModel)]="app.agreePrivacy" [disabled]="processing">{{'general.privacy_read_1'|translate}} <a [routerLink]="['/privacy']" target="_blank">{{'general.privacy_read_2'|translate}}</a>{{'general.privacy_read_3'|translate}}</mat-checkbox>
     </mat-card-subtitle>
     <button mat-raised-button color="primary" (click)="create()" [disabled]="!app.agreeTerms || !app.agreePrivacy || !nameInput || !nameInput.trim().length || processing">{{'routes.create.create_community_button'|translate}}</button>
   </form>

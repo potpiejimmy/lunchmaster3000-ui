@@ -46,6 +46,7 @@ import { LocationEditComponent } from './components/location-edit';
 import { TermsAndConditionsComponent } from './routes/terms';
 import { PrivacyAndCookiesComponent } from './routes/privacy';
 import { AboutComponent } from './routes/about';
+import { DonateComponent } from './components/donate';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { AboutComponent } from './routes/about';
     LocationEditComponent,
     AboutComponent,
     TermsAndConditionsComponent,
-    PrivacyAndCookiesComponent
+    PrivacyAndCookiesComponent,
+    DonateComponent
   ],
   imports: [
     BrowserModule,

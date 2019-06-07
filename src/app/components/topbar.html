@@ -15,12 +15,6 @@
         </button>
       </div>
     </div>
-    <div>
-      <form #form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" style="display:flex; vertical-align: middle">
-        <input type="hidden" name="cmd" value="_s-xclick" />
-        <input type="hidden" name="hosted_button_id" value="6KJS5SZJ8REPW" />
-        <input type="hidden" name="return" value="https://lunch.community/" />
-        <input (click)="form.submit()" type="image" src="{{'general.donation_btn_source'|translate}}" name="submit" [title]="'general.donation_text'|translate" alt="Donate with PayPal button" />
-      </form>     
-    </div>
+    <donate fxShow fxHide.xs></donate>
 </mat-toolbar>
+<donate fxHide fxShow.xs fxLayoutAlign="end" style="padding: 12px 16px 0;"></donate>
