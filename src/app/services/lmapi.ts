@@ -1,14 +1,12 @@
 import { Injectable } from "@angular/core";
 import { HttpBaseService } from './httpbase';
 import { environment } from '../../environments/environment';
-import { LocalStorageService } from 'angular-2-local-storage';
-import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class LmApiService extends HttpBaseService {
 
-    createCommunity(name: string): Promise<any> {
-        return this.post(environment.apiUrl+"communities", {name:name});
+    createCommunity(community: string): Promise<any> {
+        return this.post(environment.apiUrl+"communities", community);
     }
 
     getCommunity(id: string): Promise<any> {
