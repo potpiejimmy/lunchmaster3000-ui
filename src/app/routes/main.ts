@@ -51,13 +51,19 @@ export class MainComponent implements AfterViewInit {
                             // name not set?
                             this.router.navigate(['/welcome'], { replaceUrl: true });
                         } else {
-                            this.app.name = this.name;
-                            this.initSocket();
+                            this.startup();
                         }
                     }
                 });
             }
         });
+    }
+
+    startup() {
+        this.app.name = this.name;
+        Notification.requestPermission(); // request notification permission
+        this.initSocket();
+        this.load();
     }
 
     initSocket() {
@@ -78,8 +84,6 @@ export class MainComponent implements AfterViewInit {
 
     ngAfterViewInit(): void {
         this.app.locationEditor = this.locationEditor;
-        this.load();
-        Notification.requestPermission();
     }
 
     data = {
