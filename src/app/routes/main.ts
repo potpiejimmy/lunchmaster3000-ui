@@ -51,6 +51,7 @@ export class MainComponent implements AfterViewInit {
                             // name not set?
                             this.router.navigate(['/welcome'], { replaceUrl: true });
                         } else {
+                            this.app.name = this.name;
                             this.startup();
                         }
                     }
@@ -60,10 +61,11 @@ export class MainComponent implements AfterViewInit {
     }
 
     startup() {
-        this.app.name = this.name;
-        Notification.requestPermission(); // request notification permission
         this.initSocket();
         this.load();
+        try {
+            Notification.requestPermission(); // request notification permission
+        } catch (err) {}
     }
 
     initSocket() {

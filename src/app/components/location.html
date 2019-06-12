@@ -19,10 +19,13 @@
                     {{v}} ⭐
                 </div>
             </div>
-            <div fxFlexAlign="end">
+            <div fxShow fxHide.xs fxFlexAlign="end">
                 <button *ngIf="location.votes && location.votes.length" mat-raised-button color="primary" (click)="takeOrdersClicked()">{{'components.location.placeorder'|translate}}</button>
             </div>
         </div>
+    </div>
+    <div fxHide fxShow.xs>
+        <button *ngIf="location.votes && location.votes.length" mat-raised-button color="primary" (click)="takeOrdersClicked()">{{'components.location.placeorder'|translate}}</button>
     </div>
     <div>
         <hr/>

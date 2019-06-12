@@ -11,7 +11,7 @@
             <mat-form-field style="font-size: .5em;">
                 <input #inpmenulink name="menu_link" matInput [placeholder]="'components.location_edit.menu_link'|translate" [(ngModel)]="location.menu_link">
             </mat-form-field>
-            <div fxLayout="row" fxLayoutGap=".5em">
+            <div fxLayout="row" fxLayout.xs="column" fxLayoutGap=".5em">
                 <button mat-raised-button color="primary" (click)="save()" [disabled]="processing">{{'general.save'|translate}}</button>
                 <button mat-raised-button color="secondary" (click)="cancel()" [disabled]="processing">{{'general.cancel'|translate}}</button>
                 <span style="flex: 1 1 auto;"></span>
