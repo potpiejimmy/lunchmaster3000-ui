@@ -35,6 +35,7 @@ export class SettingsComponent implements OnInit, AfterViewInit {
 
     leaveCommunity() {
         this.localStorage.remove("id");
+        this.app.community = null;
         this.router.navigate(['/']);
     }
 }
