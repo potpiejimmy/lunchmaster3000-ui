@@ -135,6 +135,10 @@ a.footerlink {
     background-color: white;
 }
 
+.mat-card.orderSetInfo {
+    margin: 0 0 .25em 0;
+}
+
 .mat-form-field {
     width: 100%;
 }

@@ -26,7 +26,7 @@ export class LocationEditComponent {
         delete this.location.votes;
         delete this.location.created;
         setTimeout(() => this.scrollAnchor.nativeElement.scrollIntoView({behavior: "smooth"}), 100);
-        setTimeout(() => this.inpname && this.inpname.nativeElement.focus(), 500); // doing this a little later to not interfere with the smooth scrollling
+        setTimeout(() => this.inpname && this.inpname.nativeElement.focus(), l.name ? 900 : 400); // doing this a little later to not interfere with the smooth scrollling
     }
 
     newLocation(): void {

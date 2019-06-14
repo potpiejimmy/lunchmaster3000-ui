@@ -70,17 +70,19 @@
     </div>
     <div style="clear:both;"></div>
   </mat-card>
-  <div *ngIf="orderSet.finished && !orderSet.arrived" style="font-size: .6em;">
-    {{'components.orderset.order_finished'|translate}} {{own ? ('components.orderset.order_finished_own'|translate) : ('components.orderset.order_finished_not_own'|translate) }} 
-  </div>
+  <mat-card class="orderSetInfo" *ngIf="orderSet.finished">
+    <div *ngIf="!orderSet.arrived" style="font-size: .6em;">
+      {{'components.orderset.order_finished'|translate}} {{own ? ('components.orderset.order_finished_own'|translate) : ('components.orderset.order_finished_not_own'|translate) }} 
+    </div>
+    <div *ngIf="orderSet.arrived" >
+      <mat-icon>location_on</mat-icon> {{'components.orderset.food_arrived_msg'|translate}}
+    </div>
+  </mat-card>
   <div *ngIf="!orderSet.finished && orderKeys.length" style="float:left;">
     <button *ngIf="own" mat-raised-button color="primary" (click)="finish()">{{'components.orderset.finish_order'|translate}}</button>
   </div>
   <div *ngIf="orderSet.finished && !orderSet.arrived" style="float:left;">
     <button *ngIf="own" mat-raised-button color="accent" (click)="arrive()">{{'components.orderset.food_arrived_btn'|translate}}</button>
-  </div>
-  <div *ngIf="orderSet.finished && orderSet.arrived" style="float:left;">
-    {{'components.orderset.food_arrived_msg'|translate}}
   </div>
   <div style="float:right; margin-bottom: .5em;">
     <button *ngIf="own" mat-raised-button color="warn" (click)="cancel()">{{'components.orderset.order_delete'|translate}}</button>
