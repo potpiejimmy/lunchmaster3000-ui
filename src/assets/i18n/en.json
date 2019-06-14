@@ -64,31 +64,31 @@
     }, "routes": {
         "create": {
             "welcome_text": "Welcome",
-            "welcome_subtitle_1": "Finde dich mit deinen Arbeitskollegen zum Mittagessen zusammen.",
-            "welcome_subtitle_2": "Nie wieder hungern. Nie wieder lange überlegen, wer heute auf was Lust hat. Nie wieder alleine essen. Nie wieder beim Bestellen vergessen werden.",
+            "welcome_subtitle_1": "Get together with your colleagues for lunch.",
+            "welcome_subtitle_2": "Never be hungry anymore. Never decide in long conversations what to eat today. Never eat alone again. Never get missed out for lunch.",
             "create_community_text": "Found your lunch.community",
-            "create_community_subtitle_1": "Lege hier eine neue Community für dein Team oder deine Organisation an. Den erstellten",
-            "create_community_subtitle_2": "Link teilst du dann mit deinen Kollegen.",
+            "create_community_subtitle_1": "Here you can create the lunch community for your team or organization. You can share the",
+            "create_community_subtitle_2": "link with your colleagues afterwards.",
             "community_name": "Your community's name",
             "create_community_button": "Create community"
         },
         "main": {
             "favorite_list": "Today's favorites",
-            "hello": "Hallo {{name}},",
-            "welcome_text_1": "bitte wähle aus, auf was du heute Appetit hast. Mehrfachauswahl ist möglich.",
-            "welcome_text_2": "Wenn du dich dazu entscheidest, Essen für dich und deine Kollegen bei einem der Restaurants zu bestellen und abzuholen oder liefern zu lassen, dann drücke auf",
-            "welcome_text_3": "Bestellungen aufnehmen",
-            "welcome_text_4": "Ansonsten warte einfach, bis ein anderer dies tut, dann kannst du dich anschließen.",
-            "hint_1": "Hinweis: Du musst diese Website nicht neu laden (sie aktualisiert sich von alleine) und alles, was du anklickst und eintippst, ist für deine Commmunity sofort sichtbar,",
-            "hint_2": "auch ohne dass du die Eingabe-Taste dazu drücken musst (Ausnahme: Chatnachricht absenden).",
-            "community_new": "Diese Community scheint noch neu zu sein.",
-            "invite_colleagues_1": "Bitte lade deine Kollegen zu dieser Community ein, indem du den Link zu dieser Community über das Teilen-Symbol",
-            "invite_colleagues_2": "oben in der Titelzeile kopierst und an deine Kollegen sendest. Der Link enthält eine geheime, eindeutige ID zu dieser",
-            "invite_colleagues_3": "Community. Bitte sorge dafür, dass nur die Personen deines Teams oder deiner lokalen Organisation den Link kennen,",
-            "invite_colleagues_4": "damit deine Community nicht von Fremden missbraucht wird.",
-            "invite_colleagues_5": "Füge dann bitte unten über das Plus-Symbol neue Essens-Locations hinzu, um deine Community mit Leben",
-            "invite_colleagues_6": "zu füllen.",
-            "add_new_location": "Neue Location hinzufügen"
+            "hello": "Hello {{name}},",
+            "welcome_text_1": "please select what you want to eat today. You can select more than one option.",
+            "welcome_text_2": "If you decided to place the order and collect the food (or letting it deliver), please press",
+            "welcome_text_3": "place order",
+            "welcome_text_4": "If not, just wait until someone else presses the button so you can hook up with them.",
+            "hint_1": "Hint: You never have to reload this website and everything you click or write will be visible to the community right away",
+            "hint_2": "without pressing the 'Enter' button (Exception: sending a chat message).",
+            "community_new": "This community seems to be new.",
+            "invite_colleagues_1": "Please invite your colleagues to this lunch community by clicking the share symbol",
+            "invite_colleagues_2": "in the topbar. The link to this community will automatically be copied to your clipboard and contains a secret, unique ID to this community.",
+            "invite_colleagues_3": "Please make sure that only people from your team or your local organization have this link to avoid ",
+            "invite_colleagues_4": "misuse by foreigners.",
+            "invite_colleagues_5": "Please add new locations to your community to bring it alive. Press the '+' symbol to add new locations.",
+            "invite_colleagues_6": "",
+            "add_new_location": "Add new location."
         },
         "settings": {
             "card_title": "Your current lunch.community",
@@ -96,11 +96,11 @@
         },
         "welcome": {
             "welcome_message": "Welcome to the lunch.community of",
-            "welcome_new_user": "Du bist neu hier. Bitte gib einen Namen ein, damit deine Kollegen dich erkennen können.",
+            "welcome_new_user": "You are new here. Please enter your name so your colleagues know who you are.",
             "ask_for_name": "What's your name?",
-            "hint_1": "Hinweis: Dein Name wird nicht zentral, sondern nur in deinem Browser gespeichert und dient nur der ",
-            "hint_2": "Kenntlichmachung deiner Bestellwünsche gegenüber den anderen. Üblicherweise reicht hier z.B. dein Vorname. Achte aber darauf, dass der Name",
-            "hint_3": "innerhalb deiner Community eindeutig ist, denn er dient auch als Identifikation für deine Person.",
+            "hint_1": "Hint: Your name is not stored on our servers but stored only in your browser. Your name is important ",
+            "hint_2": "to identify your orders. Usually your pre name is all that matters. But please be aware that your name",
+            "hint_3": "must be unique within your community. It is also the identification of your person.",
             "hungry": "I'm hungry!"
         }
     }
