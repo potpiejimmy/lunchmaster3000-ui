@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { TypeWriter } from '../util/TypeWriter';
 import { AppService } from '../services/app';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { environment } from '../../environments/environment';
 
 @Component({
     selector: 'app-topbar',
@@ -28,6 +29,6 @@ export class AppTopbarComponent implements OnInit {
     }
 
     get communityLink(): string {
-        return 'https://lunch.community?id='+this.app.community.webid;
+        return environment.shareUrl+'?id='+this.app.community.webid;
     }
 }
