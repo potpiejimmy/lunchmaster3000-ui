@@ -13,7 +13,8 @@
         "privacy_read_2": "Datenschutzerklärung",
         "privacy_read_3": " zur Kenntnis genommen.",
         "donation_btn_source": "https://www.paypalobjects.com/de_DE/i/btn/btn_donate_SM.gif",
-        "donation_text": "Deine Spende erhält die lunch.community am Leben!"
+        "donation_text": "Deine Spende erhält die lunch.community am Leben!",
+        "enable_js": "Bitte aktivieren Sie JavaScript um diese Anwendung benutzen zu können."
     },
     "components": {
         "footer": {
@@ -102,6 +103,12 @@
             "hint_2": "Kenntlichmachung deiner Bestellwünsche gegenüber den anderen. Üblicherweise reicht hier z.B. dein Vorname. Achte aber darauf, dass der Name",
             "hint_3": "innerhalb deiner Community eindeutig ist, denn er dient auch als Identifikation für deine Person.",
             "hungry": "Ich habe Hunger!"
+        },
+        "about": {
+            "company_name":"My EV Ride GbR - Thorsten Liese und Daniel Siedentopf",
+            "company_street": "Bindingstr. 16, 60598 Frankfurt am Main",
+            "company_country": "Deutschland",
+            "mail_contact": "Kontakt:"
         }
     }
 }
