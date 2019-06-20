@@ -13,8 +13,7 @@
         "privacy_read_2": "Privacy & Cookies",
         "privacy_read_3": " statement.",
         "donation_btn_source": "https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif",
-        "donation_text": "Your donation keeps the lunch.community alive!",
-        "enable_js": "Please enable JavaScript to continue using this application."
+        "donation_text": "Your donation keeps the lunch.community alive!"
     },
     "components": {
         "footer": {
