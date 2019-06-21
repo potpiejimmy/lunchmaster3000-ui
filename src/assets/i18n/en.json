@@ -9,7 +9,7 @@
         "terms_agree_1": "I agree to the",
         "terms_agree_2": "Terms & Conditions",
         "terms_agree_3": ".",
-        "privacy_read_1": "I have read the",
+        "privacy_read_1": "I acknowledge the",
         "privacy_read_2": "Privacy & Cookies",
         "privacy_read_3": " statement.",
         "donation_btn_source": "https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif",
@@ -27,7 +27,7 @@
         },
         "location_edit": {
             "edit": "Edit: {{name}}",
-            "new_location": "New location",
+            "new_location": "New place",
             "shortdescription": "Short description / info",
             "menu_link": "Link to the menu"
         },
@@ -64,31 +64,30 @@
     }, "routes": {
         "create": {
             "welcome_text": "Welcome",
-            "welcome_subtitle_1": "Get together with your colleagues for lunch.",
-            "welcome_subtitle_2": "Never be hungry again. Never have long discussions about todays lunch again. Never eat alone again. Never get missed out for lunch again.",
+            "welcome_subtitle_1": "Get together with your co-workers for lunch.",
+            "welcome_subtitle_2": "No more being hungry. No more having tiresome discussions about today's lunch. No more eating alone. No more missing out on a lunch.",
             "create_community_text": "Found your lunch.community",
-            "create_community_subtitle_1": "In this section you can create the lunch community for your team or organization. You can share the",
-            "create_community_subtitle_2": "link with your colleagues afterwards.",
+            "create_community_subtitle": "Create the lunch community for your team or organization here. Then, share the link to your community with your co-workers and friends.",
             "community_name": "Your community's name",
             "create_community_button": "Create community"
         },
         "main": {
             "favorite_list": "Today's favorites",
-            "hello": "Hello {{name}},",
-            "welcome_text_1": "please select what you want to eat today. You can select more than one option.",
-            "welcome_text_2": "If you decideed to place the order and collect the food (or letting it deliver), please press",
-            "welcome_text_3": "place order",
-            "welcome_text_4": "If not, just wait until someone else presses the button so you can hook up with them.",
-            "hint_1": "Hint: You never have to reload this website and everything you click or write will be visible to the community right away",
-            "hint_2": "without pressing the 'Enter' button (Exception: sending a chat message).",
-            "community_new": "This community seems to be new.",
-            "invite_colleagues_1": "Please invite your colleagues to this lunch community by clicking the share symbol",
-            "invite_colleagues_2": "in the topbar. The link to this community will automatically be copied to your clipboard and contains a secret, unique ID to this community.",
-            "invite_colleagues_3": "Please make sure that only people from your team or your local organization have this link to avoid ",
-            "invite_colleagues_4": "misuse by foreigners.",
-            "invite_colleagues_5": "Please add new locations to your community to bring it alive. Press the '+' symbol to add new locations.",
+            "hello": "Hi {{name}},",
+            "welcome_text_1": "please choose your favorite food places for today. You can select one or more places - anything you would like to eat today.",
+            "welcome_text_2": "If you feel like ordering or picking up food for you and your co-workers from one of the places, please press ",
+            "welcome_text_3": "Take orders",
+            "welcome_text_4": "Otherwise, just wait until someone else presses the button and then you can join in.",
+            "hint_1": "Note: You never need to reload this website and anything you click or type will be immediately visible to your community ",
+            "hint_2": "without pressing the Enter button (except when sending out chat messages).",
+            "community_new": "This community seems to be newly-created.",
+            "invite_colleagues_1": "Please invite your co-workers and friends to this lunch community by clicking the share symbol",
+            "invite_colleagues_2": "in the topbar. The link to this community will be copied to your clipboard and contains a secret unique ID to this community.",
+            "invite_colleagues_3": "Please make sure to share the link only with people from your team or your local organization to avoid ",
+            "invite_colleagues_4": "misuse by others.",
+            "invite_colleagues_5": "Please add places to your community to get going. Press the '+' symbol below to add a new place.",
             "invite_colleagues_6": "",
-            "add_new_location": "Add new location."
+            "add_new_location": "Add new place."
         },
         "settings": {
             "card_title": "Your current lunch.community",
@@ -96,11 +95,11 @@
         },
         "welcome": {
             "welcome_message": "Welcome to the lunch.community of",
-            "welcome_new_user": "You are new here. Please enter your name so your colleagues know who you are.",
+            "welcome_new_user": "You are new here. Please enter your name so your co-workers know who you are.",
             "ask_for_name": "What's your name?",
-            "hint_1": "Hint: Your name is not stored on our servers but stored only in your browser. Your name is important ",
-            "hint_2": "to identify your orders. Usually your pre name is all that matters. But please be aware that your name",
-            "hint_3": "must be unique within your community. It is also the identification of your person.",
+            "hint_1": "Note: Your name is not stored on our servers. It is only stored in your current browser instance and it is used ",
+            "hint_2": "to identify your orders. Usually your first name should be sufficient, but since the name is also used as an ",
+            "hint_3": "identification for your person, your should make sure it is unique within your community.",
             "hungry": "I'm hungry!"
         },
         "about": {
