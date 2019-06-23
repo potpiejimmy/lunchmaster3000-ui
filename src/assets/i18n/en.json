@@ -39,6 +39,7 @@
             "subtitle_2": "If you'd like to have something from that place, put it into the text field below.",
             "comment": "Info / your remarks",
             "paylink": "Payment link",
+            "deliverycost": "Delivery Cost",
             "subtitle_infos": "{{name}}'s remarks",
             "yourorder": "Your order",
             "ownorder_1": "Your own order",

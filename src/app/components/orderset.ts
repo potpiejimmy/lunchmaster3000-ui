@@ -50,6 +50,7 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
 
     _commentInput: string;
     _payLinkInput: string;
+    _deliveryCostInput: number;
     _adminInputDeferrer: any;
 
     chatInput: string;
@@ -62,6 +63,7 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
         this._priceInput = this.orderSet.orders[this.name] && this.orderSet.orders[this.name].price;
         this._commentInput = this.orderSet.comment;
         this._payLinkInput = this.orderSet.payLink;
+        this._deliveryCostInput = this.orderSet.deliverycost;
     }
 
     ngAfterViewInit(): void {
@@ -117,6 +119,15 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
 
     set payLinkInput(s) {
         this._payLinkInput = s;
+        this.submitAdminDeferred();
+    }
+
+    get payDeliveryCostInput() {
+        return this._deliveryCostInput;
+    }
+
+    set payDeliveryCostInput(n) {
+        this._deliveryCostInput = n;
         this.submitAdminDeferred();
     }
 
