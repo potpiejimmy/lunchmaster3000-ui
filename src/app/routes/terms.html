@@ -1,96 +1,191 @@
-<mat-card>
+<mat-card [ngSwitch]="currentLang">
 
-    <mat-card-title>Nutzungsbedingungen</mat-card-title>
+    <ng-template ngSwitchCase="de">
+        
+        <mat-card-title>Nutzungsbedingungen</mat-card-title>
 
-    <mat-card-subtitle><h3>1. Geltungsbereich</h3></mat-card-subtitle>
+        <mat-card-subtitle><h3>1. Geltungsbereich</h3></mat-card-subtitle>
 
-    <mat-card-subtitle>(1)	Diese Nutzungsbedingungen gelten für https://lunch.community, eine Online-Plattform (im Folgenden Plattform), auf der Nutzer Essensgemeinschaften („lunch communities“, im Folgenden Community) anlegen können und Essensbestellungen organisieren können.</mat-card-subtitle>
-    <mat-card-subtitle>(2)	Die derzeit gültigen Nutzungsbedingungen können unter https://lunch.community/terms abgerufen werden.</mat-card-subtitle>
+        <mat-card-subtitle>(1)	Diese Nutzungsbedingungen gelten für https://lunch.community, eine Online-Plattform (im Folgenden Plattform), auf der Nutzer Essensgemeinschaften („lunch communities“, im Folgenden Community) anlegen können und Essensbestellungen organisieren können.</mat-card-subtitle>
+        <mat-card-subtitle>(2)	Die derzeit gültigen Nutzungsbedingungen können unter https://lunch.community/terms abgerufen werden.</mat-card-subtitle>
 
-    <mat-card-subtitle><h3>2. Vertragsschluss</h3></mat-card-subtitle>
+        <mat-card-subtitle><h3>2. Vertragsschluss</h3></mat-card-subtitle>
 
-    <mat-card-subtitle>(1)	Durch die Gründung einer neuen Community oder durch das Beitreten zu einer bestehenden Community kommt ein Nutzungsvertrag mit dem Betreiber der Plattform zustande. Gegenstand des Nutzungsvertrages ist die Nutzung dieser Community.</mat-card-subtitle>
-    <mat-card-subtitle>(2)	Für die Gründung einer Community ist die Angabe eines Community-Namens erforderlich. Nach der Erstellung der Community ist das Beitreten zu dieser Community über einen mit anderen Personen teilbaren Link möglich. Der Link enthält eine eindeutige, zufällig gewählte Identifikationsnummer (im Folgenden ID).</mat-card-subtitle>
-    <mat-card-subtitle>(3)	Das Beitreten zu einer bestehenden Community ist über den geteilten Link oder unmittelbar nach Gründung durch Angabe eines Benutzer-Namens möglich. Der Benutzername kann frei gewählt werden, die Verwendung von Pseudonymen ist zulässig. Der Name gilt fortan als Identifikation des Nutzers innerhalb einer Community.</mat-card-subtitle>
-    <mat-card-subtitle>(4)	Der Nutzer sichert zu, den teilbaren Link zur Community und im Speziellen die ID der Community ausschließlich zum Zwecke der Nutzung der Plattform im dafür vorgesehenen Sinne weiterzuverbreiten und diese nicht missbräuchlich zu verwenden. Insbesondere dürfen der Link und die ID nicht in einer frei zugänglichen Form publiziert werden, welche auf eine nicht bestimmungsgemäße Verwendung der Plattform schließen lässt. Dies beinhaltet beispielsweise das Teilen des Links mit Personen, die nach Kenntnis des Teilenden zum Zeitpunkt des Teilens und in absehbarer Zukunft nicht zu einer gemeinsamen Mahlzeit zur Verfügung stehen.</mat-card-subtitle>
-    <mat-card-subtitle>(5)	Der Nutzer sichert zu, den von ihm gewählten Benutzer-Namen nicht missbräuchlich zu verwenden. Unter eine missbräuchliche Verwendung fällt insbesondere, aber nicht ausschließlich, die Wahl eines Namens, der dazu dient, sich als eine andere Person auszugeben oder die anderen Nutzer der Community über die wahre Identität des Nutzers zu täuschen.</mat-card-subtitle>
-    <mat-card-subtitle>(6)	Die Vertragssprache ist deutsch.</mat-card-subtitle>
-    <mat-card-subtitle>(7)	Bei jedweder Kommunikation des Nutzers mit anderen Nutzern entstehen etwaige Vertragsbeziehungen ausschließlich zwischen den beteiligten Nutzern. Der Betreiber ist weder Stellvertreter noch wird er selbst Vertragspartner.</mat-card-subtitle>
+        <mat-card-subtitle>(1)	Durch die Gründung einer neuen Community oder durch das Beitreten zu einer bestehenden Community kommt ein Nutzungsvertrag mit dem Betreiber der Plattform zustande. Gegenstand des Nutzungsvertrages ist die Nutzung dieser Community.</mat-card-subtitle>
+        <mat-card-subtitle>(2)	Für die Gründung einer Community ist die Angabe eines Community-Namens erforderlich. Nach der Erstellung der Community ist das Beitreten zu dieser Community über einen mit anderen Personen teilbaren Link möglich. Der Link enthält eine eindeutige, zufällig gewählte Identifikationsnummer (im Folgenden ID).</mat-card-subtitle>
+        <mat-card-subtitle>(3)	Das Beitreten zu einer bestehenden Community ist über den geteilten Link oder unmittelbar nach Gründung durch Angabe eines Benutzer-Namens möglich. Der Benutzername kann frei gewählt werden, die Verwendung von Pseudonymen ist zulässig. Der Name gilt fortan als Identifikation des Nutzers innerhalb einer Community.</mat-card-subtitle>
+        <mat-card-subtitle>(4)	Der Nutzer sichert zu, den teilbaren Link zur Community und im Speziellen die ID der Community ausschließlich zum Zwecke der Nutzung der Plattform im dafür vorgesehenen Sinne weiterzuverbreiten und diese nicht missbräuchlich zu verwenden. Insbesondere dürfen der Link und die ID nicht in einer frei zugänglichen Form publiziert werden, welche auf eine nicht bestimmungsgemäße Verwendung der Plattform schließen lässt. Dies beinhaltet beispielsweise das Teilen des Links mit Personen, die nach Kenntnis des Teilenden zum Zeitpunkt des Teilens und in absehbarer Zukunft nicht zu einer gemeinsamen Mahlzeit zur Verfügung stehen.</mat-card-subtitle>
+        <mat-card-subtitle>(5)	Der Nutzer sichert zu, den von ihm gewählten Benutzer-Namen nicht missbräuchlich zu verwenden. Unter eine missbräuchliche Verwendung fällt insbesondere, aber nicht ausschließlich, die Wahl eines Namens, der dazu dient, sich als eine andere Person auszugeben oder die anderen Nutzer der Community über die wahre Identität des Nutzers zu täuschen.</mat-card-subtitle>
+        <mat-card-subtitle>(6)	Die Vertragssprache ist deutsch.</mat-card-subtitle>
+        <mat-card-subtitle>(7)	Bei jedweder Kommunikation des Nutzers mit anderen Nutzern entstehen etwaige Vertragsbeziehungen ausschließlich zwischen den beteiligten Nutzern. Der Betreiber ist weder Stellvertreter noch wird er selbst Vertragspartner.</mat-card-subtitle>
 
-    <mat-card-subtitle><h3>3. Nutzung einer Community</h3></mat-card-subtitle>
+        <mat-card-subtitle><h3>3. Nutzung einer Community</h3></mat-card-subtitle>
 
-    <mat-card-subtitle>(1)	Bei der Nutzung einer Community kann der Nutzer verschiedene Dienste in Anspruch nehmen:
-        <ul>
-            <li>Der Nutzer hat die Möglichkeit, eigene Essensorte oder Lieferdienste („Locations“) in der Plattform zu benennen und zu speichern und den anderen Nutzern seiner Community zur Auswahl zur Verfügung zu stellen.</li>
-            <li>Der Nutzer hat die Möglichkeit, täglich seine eigenen Essensfavoriten auszuwählen und seine Auswahl in einer Community-weiten Favoritenliste mit den anderen Nutzern zu teilen.</li>
-            <li>Der Nutzer hat die Möglichkeit, Essensbestellungen zu organisieren. Dies umfasst unter anderem die Eröffnung von Bestellannahmen, das Erfassen von Bestellwünschen und das Teilen von Informationen zur Erfassung und zum Fortschritt einer Bestellung.</li>
-            <li>Der Nutzer hat die Möglichkeit, sich über eine Chat-Funktion mit den anderen Teilnehmern einer Essensbestellung auszutauschen.</li>
-        </ul>
-    </mat-card-subtitle>
-    <mat-card-subtitle>(2)	Der Betreiber ist jederzeit berechtigt, den Zugang zu einzelnen Inhalten zu sperren, z.B. wenn der Verdacht besteht, dass diese gegen geltenden Recht oder Rechte Dritter verstoßen. Es besteht kein Anspruch des Nutzers auf Aufrechterhaltung einzelner Funktionalitäten der Plattform.</mat-card-subtitle>
-    <mat-card-subtitle>(3)	Der Betreiber ist um einen störungsfreien Betrieb der Plattform bemüht. Dies beschränkt sich naturgemäß auf Leistungen, auf die der Betreiber einen Einfluss hat. Dem Betreiber ist es unbenommen, den Zugang zur Plattform aufgrund von Wartungsarbeiten, Kapazitätsbelangen und aufgrund anderer Ereignisse, die nicht in seinem Machtbereich stehen, ganz oder teilweise, zeitweise oder auf Dauer, einzuschränken.</mat-card-subtitle>
+        <mat-card-subtitle>(1)	Bei der Nutzung einer Community kann der Nutzer verschiedene Dienste in Anspruch nehmen:
+            <ul>
+                <li>Der Nutzer hat die Möglichkeit, eigene Essensorte oder Lieferdienste („Locations“) in der Plattform zu benennen und zu speichern und den anderen Nutzern seiner Community zur Auswahl zur Verfügung zu stellen.</li>
+                <li>Der Nutzer hat die Möglichkeit, täglich seine eigenen Essensfavoriten auszuwählen und seine Auswahl in einer Community-weiten Favoritenliste mit den anderen Nutzern zu teilen.</li>
+                <li>Der Nutzer hat die Möglichkeit, Essensbestellungen zu organisieren. Dies umfasst unter anderem die Eröffnung von Bestellannahmen, das Erfassen von Bestellwünschen und das Teilen von Informationen zur Erfassung und zum Fortschritt einer Bestellung.</li>
+                <li>Der Nutzer hat die Möglichkeit, sich über eine Chat-Funktion mit den anderen Teilnehmern einer Essensbestellung auszutauschen.</li>
+            </ul>
+        </mat-card-subtitle>
+        <mat-card-subtitle>(2)	Der Betreiber ist jederzeit berechtigt, den Zugang zu einzelnen Inhalten zu sperren, z.B. wenn der Verdacht besteht, dass diese gegen geltenden Recht oder Rechte Dritter verstoßen. Es besteht kein Anspruch des Nutzers auf Aufrechterhaltung einzelner Funktionalitäten der Plattform.</mat-card-subtitle>
+        <mat-card-subtitle>(3)	Der Betreiber ist um einen störungsfreien Betrieb der Plattform bemüht. Dies beschränkt sich naturgemäß auf Leistungen, auf die der Betreiber einen Einfluss hat. Dem Betreiber ist es unbenommen, den Zugang zur Plattform aufgrund von Wartungsarbeiten, Kapazitätsbelangen und aufgrund anderer Ereignisse, die nicht in seinem Machtbereich stehen, ganz oder teilweise, zeitweise oder auf Dauer, einzuschränken.</mat-card-subtitle>
 
-    <mat-card-subtitle><h3>4. Mitwirkungspflicht des Nutzers: Einstellen von Inhalten</h3></mat-card-subtitle>
+        <mat-card-subtitle><h3>4. Mitwirkungspflicht des Nutzers: Einstellen von Inhalten</h3></mat-card-subtitle>
 
-    <mat-card-subtitle>(1)	Der Nutzer verpflichtet sich, bei der Erstellung und Verwendung eigener Inhalte geltendes Recht (z.B. Straf-, Wettbewerbs- und Jugendschutzrecht) zu beachten und keine Rechte Dritter (z.B. Namens-, Marken-, Urheber- und Datenschutzrechte) zu verletzen.</mat-card-subtitle>
-    <mat-card-subtitle>(2)	Der Nutzer verpflichtet sich gegenüber dem Betreiber, dass jedwede Inhalte, die in die Plattform eingestellt werden, weder durch ihren Inhalt oder die Form gegen geltendes Recht oder die guten Sitten verstoßen. Das Gleiche gilt für das Setzen von externen Links. Nicht erlaubt ist insbesondere das Verbreiten von Inhalten, die
-        <ul>
-            <li>Rassismus</li>
-            <li>Gewaltverherrlichung und Extremismus irgendwelcher Art</li>
-            <li>Aufrufe und Anstiftung zu Straftaten und Gesetzesverstößen, Drohungen gegen Leib, Leben oder Eigentum</li>
-            <li>Hetzen gegen Personen oder Unternehmen</li>
-            <li>persönlichkeitsverletzende Äußerungen, Verleumdung, Ehrverletzung und üble Nachrede von Nutzern und Dritten sowie Verstöße gegen das Lauterkeitsrecht</li>
-            <li>urheberrechtsverletzende Inhalte oder andere Verletzungen von Immaterialgüterrechten</li>
-            <li>sexuelle Belästigung von Nutzerinnen und Nutzern und Dritten</li>
-            <li>Pornografie</li>
-            <li>anstößige, sexistische, obszöne, vulgäre, abscheuliche oder ekelerregende Materialien und Ausdrucksweisen</li>
-        </ul>
-        darstellen, betreffen oder beinhalten.
-    </mat-card-subtitle>
-    <mat-card-subtitle>(3)	Urheberrechtlich geschützte Inhalte dürfen ohne Zustimmung des jeweiligen Rechteinhabers nur im Rahmen des anwendbaren Zitatrechts wörtlich in Beiträge aufgenommen werden. Zitate sind durch Hervorheben mittels Zitatfunktion und Quellenangabe zu kennzeichnen. Fremdsprachige Zitate sind zusätzlich soweit auf Deutsch zu übersetzen, dass der Inhalt grob ersichtlich ist. Insbesondere nicht korrekt zitierte Beiträge können von den Moderatoren entfernt oder berichtigt werden. Die Verbreitung und/oder öffentliche Wiedergabe von jedweden Inhalten der Plattform ohne Einwilligung des Betreibers ist untersagt.</mat-card-subtitle>
+        <mat-card-subtitle>(1)	Der Nutzer verpflichtet sich, bei der Erstellung und Verwendung eigener Inhalte geltendes Recht (z.B. Straf-, Wettbewerbs- und Jugendschutzrecht) zu beachten und keine Rechte Dritter (z.B. Namens-, Marken-, Urheber- und Datenschutzrechte) zu verletzen.</mat-card-subtitle>
+        <mat-card-subtitle>(2)	Der Nutzer verpflichtet sich gegenüber dem Betreiber, dass jedwede Inhalte, die in die Plattform eingestellt werden, weder durch ihren Inhalt oder die Form gegen geltendes Recht oder die guten Sitten verstoßen. Das Gleiche gilt für das Setzen von externen Links. Nicht erlaubt ist insbesondere das Verbreiten von Inhalten, die
+            <ul>
+                <li>Rassismus</li>
+                <li>Gewaltverherrlichung und Extremismus irgendwelcher Art</li>
+                <li>Aufrufe und Anstiftung zu Straftaten und Gesetzesverstößen, Drohungen gegen Leib, Leben oder Eigentum</li>
+                <li>Hetzen gegen Personen oder Unternehmen</li>
+                <li>persönlichkeitsverletzende Äußerungen, Verleumdung, Ehrverletzung und üble Nachrede von Nutzern und Dritten sowie Verstöße gegen das Lauterkeitsrecht</li>
+                <li>urheberrechtsverletzende Inhalte oder andere Verletzungen von Immaterialgüterrechten</li>
+                <li>sexuelle Belästigung von Nutzerinnen und Nutzern und Dritten</li>
+                <li>Pornografie</li>
+                <li>anstößige, sexistische, obszöne, vulgäre, abscheuliche oder ekelerregende Materialien und Ausdrucksweisen</li>
+            </ul>
+            darstellen, betreffen oder beinhalten.
+        </mat-card-subtitle>
+        <mat-card-subtitle>(3)	Urheberrechtlich geschützte Inhalte dürfen ohne Zustimmung des jeweiligen Rechteinhabers nur im Rahmen des anwendbaren Zitatrechts wörtlich in Beiträge aufgenommen werden. Zitate sind durch Hervorheben mittels Zitatfunktion und Quellenangabe zu kennzeichnen. Fremdsprachige Zitate sind zusätzlich soweit auf Deutsch zu übersetzen, dass der Inhalt grob ersichtlich ist. Insbesondere nicht korrekt zitierte Beiträge können von den Moderatoren entfernt oder berichtigt werden. Die Verbreitung und/oder öffentliche Wiedergabe von jedweden Inhalten der Plattform ohne Einwilligung des Betreibers ist untersagt.</mat-card-subtitle>
 
-    <mat-card-subtitle><h3>5. Weitere Mitwirkungspflichten des Nutzers</h3></mat-card-subtitle>
+        <mat-card-subtitle><h3>5. Weitere Mitwirkungspflichten des Nutzers</h3></mat-card-subtitle>
 
-    <mat-card-subtitle>(1)	Der Nutzer darf, ohne ausdrückliche Gestattung des Betreibers, die Plattform nur für private Zwecke nutzen und keine Werbung für sich oder Dritte machen. Das bedeutet insbesondere, dass der Nutzer keine Nachrichten werbenden Inhalts ohne eine Einwilligung des Betreibers und des Empfängers verwenden darf (insbesondere: Spam-Nachrichten).</mat-card-subtitle>
-    <mat-card-subtitle>(2)	Für den Fall, dass der Nutzer die Möglichkeit nutzt, Dritte über die Existenz der Plattform über die von dem Betreiber bereitgestellte Empfehlungsfunktion zu informieren, hat er sicherzustellen, dass der Dritte mit der Übersendung der werbenden Empfehlungs-E-Mail einverstanden ist.</mat-card-subtitle>
-    <mat-card-subtitle>(3)	Für den Fall, dass die Inhalte Hyperlinks auf Seiten Dritter enthalten, sichert der Nutzer zu, dass er die Berechtigung zur Nutzung des Hyperlinks hat und die Website, auf die verwiesen wird, mit geltendem Recht und Rechten Dritter vereinbar ist.</mat-card-subtitle>
-    <mat-card-subtitle>(4)	Der Nutzer muss jedwede Tätigkeit unterlassen, die geeignet ist, den Betrieb der Plattform oder der dahinterstehenden technischen Infrastruktur zu beeinträchtigen und/oder übermäßig zu belasten. Dazu zählen insbesondere:
-        <ul>
-            <li>die Verwendung von Software, Skripten oder Datenbanken in Verbindung mit der Nutzung der Plattform</li>
-            <li>das automatische Auslesen, Blockieren, Überschreiben, Modifizieren, Kopieren von Daten und/oder sonstigen Inhalten, soweit dies nicht für die ordnungsgemäße Nutzung der Plattform erforderlich ist</li>
-        </ul>
-    </mat-card-subtitle>
-    <mat-card-subtitle>(5)	Sollte es bei der Nutzung der Plattform oder seiner Funktionalitäten zu Störungen kommen, wird der Nutzer den Betreiber von dieser Störung unverzüglich in Kenntnis setzen. Gleiches gilt, wenn der Nutzer Informationen über von Dritten veröffentlichte Inhalte erlangt, die offensichtlich gegen geltendes Recht oder Rechte Dritter verstoßen.</mat-card-subtitle>
+        <mat-card-subtitle>(1)	Der Nutzer darf, ohne ausdrückliche Gestattung des Betreibers, die Plattform nur für private Zwecke nutzen und keine Werbung für sich oder Dritte machen. Das bedeutet insbesondere, dass der Nutzer keine Nachrichten werbenden Inhalts ohne eine Einwilligung des Betreibers und des Empfängers verwenden darf (insbesondere: Spam-Nachrichten).</mat-card-subtitle>
+        <mat-card-subtitle>(2)	Für den Fall, dass der Nutzer die Möglichkeit nutzt, Dritte über die Existenz der Plattform über die von dem Betreiber bereitgestellte Empfehlungsfunktion zu informieren, hat er sicherzustellen, dass der Dritte mit der Übersendung der werbenden Empfehlungs-E-Mail einverstanden ist.</mat-card-subtitle>
+        <mat-card-subtitle>(3)	Für den Fall, dass die Inhalte Hyperlinks auf Seiten Dritter enthalten, sichert der Nutzer zu, dass er die Berechtigung zur Nutzung des Hyperlinks hat und die Website, auf die verwiesen wird, mit geltendem Recht und Rechten Dritter vereinbar ist.</mat-card-subtitle>
+        <mat-card-subtitle>(4)	Der Nutzer muss jedwede Tätigkeit unterlassen, die geeignet ist, den Betrieb der Plattform oder der dahinterstehenden technischen Infrastruktur zu beeinträchtigen und/oder übermäßig zu belasten. Dazu zählen insbesondere:
+            <ul>
+                <li>die Verwendung von Software, Skripten oder Datenbanken in Verbindung mit der Nutzung der Plattform</li>
+                <li>das automatische Auslesen, Blockieren, Überschreiben, Modifizieren, Kopieren von Daten und/oder sonstigen Inhalten, soweit dies nicht für die ordnungsgemäße Nutzung der Plattform erforderlich ist</li>
+            </ul>
+        </mat-card-subtitle>
+        <mat-card-subtitle>(5)	Sollte es bei der Nutzung der Plattform oder seiner Funktionalitäten zu Störungen kommen, wird der Nutzer den Betreiber von dieser Störung unverzüglich in Kenntnis setzen. Gleiches gilt, wenn der Nutzer Informationen über von Dritten veröffentlichte Inhalte erlangt, die offensichtlich gegen geltendes Recht oder Rechte Dritter verstoßen.</mat-card-subtitle>
 
-    <mat-card-subtitle><h3>6. Nutzungsrechte</h3></mat-card-subtitle>
+        <mat-card-subtitle><h3>6. Nutzungsrechte</h3></mat-card-subtitle>
 
-    <mat-card-subtitle>(1)	Der Nutzer räumt dem Betreiber ein räumlich und zeitlich unbeschränktes, unwiderrufliches auf Dritte übertragbares, nicht exklusives, unentgeltliches Recht ein, die eingestellten Inhalte in dem Online-Angebot zu verwerten. Der Betreiber ist jederzeit berechtigt, die Inhalte zu verwenden, zu bearbeiten und zu verwerten, sofern dies dem Zwecke der Plattform dienlich ist. Das schließt auch das Vervielfältigungsrecht, das Verbreitungsrecht und das Recht der öffentlichen Wiedergabe und das Recht der öffentlichen Zugänglichmachung mit ein, wenn diese vom Betreiber in einer anonymisierten Form ausgeübt werden. Von dieser Regelung unberührt bleibt die Möglichkeit des Nutzers, Dritten Rechte an eingestellten Inhalten nach bestimmten Lizenzmodellen einzuräumen.</mat-card-subtitle>
-    <mat-card-subtitle>(2)	Der Betreiber darf personenbezogene oder Community-bezogene und von den Nutzern der Plattform erstellte Inhalte nicht in einer Form öffentlich außerhalb der jeweiligen Community zugänglich machen oder wiedergeben, die den veröffentlichten Inhalt zusammen mit dem Namen eines Nutzers oder einer Community darstellen oder in Verbindung bringen.</mat-card-subtitle>
-    <mat-card-subtitle>(3)	Sämtliche Rechte an den Inhalten der Plattform liegen bei dem Betreiber. Dem Nutzer ist die Vervielfältigung, Verbreitung und/oder Veröffentlichung von Inhalten untersagt, die der Betreiber, andere Nutzer oder Dritte in die Plattform eingestellt haben.</mat-card-subtitle>
+        <mat-card-subtitle>(1)	Der Nutzer räumt dem Betreiber ein räumlich und zeitlich unbeschränktes, unwiderrufliches auf Dritte übertragbares, nicht exklusives, unentgeltliches Recht ein, die eingestellten Inhalte in dem Online-Angebot zu verwerten. Der Betreiber ist jederzeit berechtigt, die Inhalte zu verwenden, zu bearbeiten und zu verwerten, sofern dies dem Zwecke der Plattform dienlich ist. Das schließt auch das Vervielfältigungsrecht, das Verbreitungsrecht und das Recht der öffentlichen Wiedergabe und das Recht der öffentlichen Zugänglichmachung mit ein, wenn diese vom Betreiber in einer anonymisierten Form ausgeübt werden. Von dieser Regelung unberührt bleibt die Möglichkeit des Nutzers, Dritten Rechte an eingestellten Inhalten nach bestimmten Lizenzmodellen einzuräumen.</mat-card-subtitle>
+        <mat-card-subtitle>(2)	Der Betreiber darf personenbezogene oder Community-bezogene und von den Nutzern der Plattform erstellte Inhalte nicht in einer Form öffentlich außerhalb der jeweiligen Community zugänglich machen oder wiedergeben, die den veröffentlichten Inhalt zusammen mit dem Namen eines Nutzers oder einer Community darstellen oder in Verbindung bringen.</mat-card-subtitle>
+        <mat-card-subtitle>(3)	Sämtliche Rechte an den Inhalten der Plattform liegen bei dem Betreiber. Dem Nutzer ist die Vervielfältigung, Verbreitung und/oder Veröffentlichung von Inhalten untersagt, die der Betreiber, andere Nutzer oder Dritte in die Plattform eingestellt haben.</mat-card-subtitle>
 
-    <mat-card-subtitle><h3>7. Haftung</h3></mat-card-subtitle>
+        <mat-card-subtitle><h3>7. Haftung</h3></mat-card-subtitle>
 
-    <mat-card-subtitle>(1)	Unbeschränkte Haftung: Der Betreiber haftet unbeschränkt für Vorsatz und grobe Fahrlässigkeit sowie nach Maßgabe des Produkthaftungsgesetzes. Für leichte Fahrlässigkeit haftet der Betreiber bei Schäden aus der Verletzung des Lebens, des Körpers und der Gesundheit von Personen.</mat-card-subtitle>
-    <mat-card-subtitle>(2)	Im Übrigen gilt folgende beschränkte Haftung: Bei leichter Fahrlässigkeit haftet der Betreiber nur im Falle der Verletzung einer wesentlichen Vertragspflicht, deren Erfüllung die ordnungsgemäße Durchführung des Vertrags überhaupt erst ermöglicht und auf deren Einhaltung der Nutzer regelmäßig vertrauen darf (Kardinalpflicht). Die Haftung für leichte Fahrlässigkeit ist der Höhe nach beschränkt auf die bei Vertragsschluss vorhersehbaren Schäden, mit deren Entstehung typischerweise gerechnet werden muss. Diese Haftungsbeschränkung gilt auch zugunsten der Erfüllungsgehilfen des Betreibers.</mat-card-subtitle>
+        <mat-card-subtitle>(1)	Unbeschränkte Haftung: Der Betreiber haftet unbeschränkt für Vorsatz und grobe Fahrlässigkeit sowie nach Maßgabe des Produkthaftungsgesetzes. Für leichte Fahrlässigkeit haftet der Betreiber bei Schäden aus der Verletzung des Lebens, des Körpers und der Gesundheit von Personen.</mat-card-subtitle>
+        <mat-card-subtitle>(2)	Im Übrigen gilt folgende beschränkte Haftung: Bei leichter Fahrlässigkeit haftet der Betreiber nur im Falle der Verletzung einer wesentlichen Vertragspflicht, deren Erfüllung die ordnungsgemäße Durchführung des Vertrags überhaupt erst ermöglicht und auf deren Einhaltung der Nutzer regelmäßig vertrauen darf (Kardinalpflicht). Die Haftung für leichte Fahrlässigkeit ist der Höhe nach beschränkt auf die bei Vertragsschluss vorhersehbaren Schäden, mit deren Entstehung typischerweise gerechnet werden muss. Diese Haftungsbeschränkung gilt auch zugunsten der Erfüllungsgehilfen des Betreibers.</mat-card-subtitle>
 
-    <mat-card-subtitle><h3>8. Freistellungsanspruch</h3></mat-card-subtitle>
+        <mat-card-subtitle><h3>8. Freistellungsanspruch</h3></mat-card-subtitle>
 
-    <mat-card-subtitle>Der Nutzer stellt den Betreiber und seine Mitarbeiter bzw. Beauftragten für den Fall der Inanspruchnahme wegen vermeintlicher oder tatsächlicher Rechtsverletzung und/oder Verletzung von Rechten Dritter durch von dem Nutzer im Zusammenhang mit der Nutzung der Plattform vorgenommenen Handlungen von sämtlichen sich daraus ergebenen Ansprüchen Dritter frei. Darüber hinaus verpflichtet sich der Nutzer, alle Kosten zu ersetzen, die dem Betreiber durch die Inanspruchnahme durch Dritte entstehen. Zu den erstattungsfähigen Kosten zählen auch die Kosten einer angemessenen Rechtsverteidigung.</mat-card-subtitle>
+        <mat-card-subtitle>Der Nutzer stellt den Betreiber und seine Mitarbeiter bzw. Beauftragten für den Fall der Inanspruchnahme wegen vermeintlicher oder tatsächlicher Rechtsverletzung und/oder Verletzung von Rechten Dritter durch von dem Nutzer im Zusammenhang mit der Nutzung der Plattform vorgenommenen Handlungen von sämtlichen sich daraus ergebenen Ansprüchen Dritter frei. Darüber hinaus verpflichtet sich der Nutzer, alle Kosten zu ersetzen, die dem Betreiber durch die Inanspruchnahme durch Dritte entstehen. Zu den erstattungsfähigen Kosten zählen auch die Kosten einer angemessenen Rechtsverteidigung.</mat-card-subtitle>
 
-    <mat-card-subtitle><h3>9. Personenbezogene Daten</h3></mat-card-subtitle>
+        <mat-card-subtitle><h3>9. Personenbezogene Daten</h3></mat-card-subtitle>
 
-    <mat-card-subtitle>(1)	Der Nutzer willigt hiermit in die Speicherung der von ihm eingegebenen personenbezogenen Daten ein. Dies gilt auch für die Speicherung der IP-Adressen, die bei jeder Nutzung der Plattform übermittelt werden. Der Nutzer willigt insbesondere auch in die Darstellung der von ihm eingegebenen personenbezogenen Daten in seiner Community innerhalb der Plattform und für andere Nutzer der Plattform ein.</mat-card-subtitle>
-    <mat-card-subtitle>(2)	Der Nutzer willigt auch in die Nutzung seiner personenbezogenen Daten für die Personalisierung von in der Plattform geschalteten Werbeanzeigen ein (eine Weitergabe personenbezogener Daten an die Werbetreibenden erfolgt nicht). Der Nutzer ist ferner damit einverstanden, dass Werbeanzeigen Dritter, gleich welcher Art, auf der Plattform geschaltet werden.</mat-card-subtitle>
-    <mat-card-subtitle>(3)	Die Nutzung der Plattform macht die Erhebung, Verarbeitung und Nutzung personenbezogener Daten durch den Betreiber unumgänglich. Der Betreiber versichert, alle gespeicherten Daten sorgsam zu behandeln und ausschließlich im Rahmen der datenschutzrechtlichen Einwilligungen des Nutzers zu verarbeiten. Eine darüberhinausgehende Nutzung personenbezogener Daten erfolgt durch den Betreiber nur, sofern dies gesetzlich zulässig ist oder der Nutzer vorab eingewilligt hat.</mat-card-subtitle>
+        <mat-card-subtitle>(1)	Der Nutzer willigt hiermit in die Speicherung der von ihm eingegebenen personenbezogenen Daten ein. Dies gilt auch für die Speicherung der IP-Adressen, die bei jeder Nutzung der Plattform übermittelt werden. Der Nutzer willigt insbesondere auch in die Darstellung der von ihm eingegebenen personenbezogenen Daten in seiner Community innerhalb der Plattform und für andere Nutzer der Plattform ein.</mat-card-subtitle>
+        <mat-card-subtitle>(2)	Der Nutzer willigt auch in die Nutzung seiner personenbezogenen Daten für die Personalisierung von in der Plattform geschalteten Werbeanzeigen ein (eine Weitergabe personenbezogener Daten an die Werbetreibenden erfolgt nicht). Der Nutzer ist ferner damit einverstanden, dass Werbeanzeigen Dritter, gleich welcher Art, auf der Plattform geschaltet werden.</mat-card-subtitle>
+        <mat-card-subtitle>(3)	Die Nutzung der Plattform macht die Erhebung, Verarbeitung und Nutzung personenbezogener Daten durch den Betreiber unumgänglich. Der Betreiber versichert, alle gespeicherten Daten sorgsam zu behandeln und ausschließlich im Rahmen der datenschutzrechtlichen Einwilligungen des Nutzers zu verarbeiten. Eine darüberhinausgehende Nutzung personenbezogener Daten erfolgt durch den Betreiber nur, sofern dies gesetzlich zulässig ist oder der Nutzer vorab eingewilligt hat.</mat-card-subtitle>
 
-    <mat-card-subtitle><h3>10. Vertragsdauer/Kündigung</h3></mat-card-subtitle>
+        <mat-card-subtitle><h3>10. Vertragsdauer/Kündigung</h3></mat-card-subtitle>
 
-    <mat-card-subtitle>(1)	Der Vertrag läuft auf unbestimmte Zeit und kann von beiden Seiten jederzeit ohne Einhaltung einer Kündigungsfrist und Angabe von Gründen gekündigt werden.</mat-card-subtitle>
-    <mat-card-subtitle>(2)	Daneben und darüber hinaus bleibt das Recht der Parteien, das Vertragsverhältnis durch außerordentliche Kündigung aus wichtigem Grund zu beenden, unbenommen. </mat-card-subtitle>
-    <mat-card-subtitle>(3)	Für den Betreiber liegt ein wichtiger Grund zur Kündigung dieses Vertrages vor, wenn der Kunde seine Verpflichtungen nach Ziff. 4 oder 5 dieses Vertrages nachhaltig verletzt.</mat-card-subtitle>
+        <mat-card-subtitle>(1)	Der Vertrag läuft auf unbestimmte Zeit und kann von beiden Seiten jederzeit ohne Einhaltung einer Kündigungsfrist und Angabe von Gründen gekündigt werden.</mat-card-subtitle>
+        <mat-card-subtitle>(2)	Daneben und darüber hinaus bleibt das Recht der Parteien, das Vertragsverhältnis durch außerordentliche Kündigung aus wichtigem Grund zu beenden, unbenommen. </mat-card-subtitle>
+        <mat-card-subtitle>(3)	Für den Betreiber liegt ein wichtiger Grund zur Kündigung dieses Vertrages vor, wenn der Kunde seine Verpflichtungen nach Ziff. 4 oder 5 dieses Vertrages nachhaltig verletzt.</mat-card-subtitle>
 
-    <mat-card-subtitle><h3>11. Schlussbestimmungen</h3></mat-card-subtitle>
+        <mat-card-subtitle><h3>11. Schlussbestimmungen</h3></mat-card-subtitle>
 
-    <mat-card-subtitle>(1)	Sollte der Vertrag unwirksame Regelungen enthalten, bleibt die Wirksamkeit des Vertrages im Übrigen unberührt.</mat-card-subtitle>
-    <mat-card-subtitle>(2)	Auf den vorliegenden Vertrag ist ausschließlich deutsches Recht anwendbar.</mat-card-subtitle>
+        <mat-card-subtitle>(1)	Sollte der Vertrag unwirksame Regelungen enthalten, bleibt die Wirksamkeit des Vertrages im Übrigen unberührt.</mat-card-subtitle>
+        <mat-card-subtitle>(2)	Auf den vorliegenden Vertrag ist ausschließlich deutsches Recht anwendbar.</mat-card-subtitle>
+        
+    </ng-template>
+
+    <ng-template ngSwitchDefault>
+
+        <mat-card-title>Terms and conditions of use</mat-card-title>
+
+        <mat-card-subtitle><h3>1. Scope</h3></mat-card-subtitle>
+
+        <mat-card-subtitle>(1)	These terms and conditions govern the use of https://lunch.community, an online platform (the ”Platform“) that allows users (the ”User“) to create lunch communities (the ”Community“) and to organize lunches with friends and co-workers.</mat-card-subtitle>
+        <mat-card-subtitle>(2)	The current terms and conditions can be viewed and downloaded from https://lunch.community/terms.</mat-card-subtitle>
+
+        <mat-card-subtitle><h3>2. Agreement</h3></mat-card-subtitle>
+
+        <mat-card-subtitle>(1)	By founding a new Community or by joining an existing Community, the User enters a legally binding agreement (the “Agreement”) with the operating authority (the ”Operator“) of the Platform concerning the use of the Community.</mat-card-subtitle>
+        <mat-card-subtitle>(2)	To found a Community, a community name needs to be specified by the User. After founding the Community, other users may join the Community via a shareable link. The link contains a unique and random identification number (“ID”).</mat-card-subtitle>
+        <mat-card-subtitle>(3)	To join a Community, the User needs to enter a user name - either after invoking the shareable link or directly after founding a new community. The user name can be chosen freely, the use of aliases is allowed. The user name serves as an identification within the Community.</mat-card-subtitle>
+        <mat-card-subtitle>(4)	The User must not share or publish the link to the community or the community’s ID in a publicly accessible form that implies that the platform is not used as intended. This includes, for example, sharing the link with people who, to the knowledge of the User sharing the link, are not available for a joint meal at the time of sharing and in the foreseeable future.</mat-card-subtitle>
+        <mat-card-subtitle>(5)	The User must not misuse the user name chosen by him. Misuse includes, but is not limited to, choosing a name to impersonate another person or to purposely mislead other users of the Community about the true identity of the User.</mat-card-subtitle>
+        <mat-card-subtitle>(6)	The contractual language is English.</mat-card-subtitle>
+        <mat-card-subtitle>(7)	Any communication between the User and other users will result exclusively in a contractual relationship between the users involved. The Operator is neither a representative nor do the Operator and its officers, directors, employees, agents, affiliates, representatives or sublicensees become a contract partner themselves.</mat-card-subtitle>
+
+        <mat-card-subtitle><h3>3. General use</h3></mat-card-subtitle>
+
+        <mat-card-subtitle>(1)	While using the Community, the User may:
+            <ul>
+                <li>specify and save their own food places or delivery services ("Places") in the platform and make them available for selection to the other users of his Community.</li>
+                <li>select their own food favorites on a daily basis and share their selection with the other users in a community-wide favorites list.</li>
+                <li>organize food orders. This includes, among other things, taking orders, collecting of order requests and sharing of information about the progress of an order.</li>
+                <li>chat with the other participants of a lunch order via a chat function.</li>
+            </ul>
+        </mat-card-subtitle>
+        <mat-card-subtitle>(2)	The Operator reserves the right to discontinue or alter any or all of the Platform’s services and to stop publishing the Platform’s contents at any time in the Operator’s sole discretion without notice or explanation. Save to the extent expressly provided otherwise in these terms and conditions, the User will not be entitled to any compensation or other payment upon the discontinuance or alteration of any Platform services, or if the Operator stops publishing the Platform’s contents.</mat-card-subtitle>
+
+        <mat-card-subtitle><h3>4. Acceptable use</h3></mat-card-subtitle>
+
+        <mat-card-subtitle>(1)	The User must comply with applicable law (such as criminal, competition and child protection laws) when creating and using their own content and must not violate any rights of third parties (such as name, trademark, copyright and data protection rights).</mat-card-subtitle>
+        <mat-card-subtitle>(2)	The User agrees that any content posted on the Platform does not violate, by its content or its form, applicable law. The same applies to the setting of external links. In particular, the User’s content must not depict, refer to, include or constitute any of the following:
+            <ul>
+                <li>racial or religious hatred</li>
+                <li>violence in an explicit, graphic or gratuitous manner</li>
+                <li>incitement to commit a crime, instructions for the commission of a crime or the promotion of criminal activity</li>
+                <li>content that is offensive, deceptive, fraudulent, threatening, abusive, harassing, anti-social, menacing, hateful, discriminatory or inflammatory</li>
+                <li>content that causes annoyance, inconvenience or needless anxiety to any person</li>
+                <li>content that is libelous or maliciously false</li>
+                <li>infringement of any copyright, moral right, database right, trade mark right, design right, right in passing off, or other intellectual property right</li>
+                <li>content that is pornographic, lewd, suggestive or sexually explicit</li>
+            </ul>
+        </mat-card-subtitle>
+
+        <mat-card-subtitle><h3>5. Platform use</h3></mat-card-subtitle>
+
+        <mat-card-subtitle>(1)	The User must not:
+            <ul>
+                <li>use the Platform in any way or take any action that causes, or may cause, damage to the Platform or impairment of the performance, availability or accessibility of the Platform.</li>
+                <li>use the Platform in any way that is unlawful, illegal, fraudulent or harmful, or in connection with any unlawful, illegal, fraudulent or harmful purpose or activity.</li>
+                <li>use the Platform to copy, store, host, transmit, send, use, publish or distribute any material which consists of (or is linked to) any spyware, computer virus, Trojan horse, worm, keystroke logger, rootkit or other malicious computer software.</li>
+            </ul>
+        </mat-card-subtitle>
+
+        <mat-card-subtitle><h3>6. Rights to content</h3></mat-card-subtitle>
+
+        <mat-card-subtitle>(1)	The User grants to the Operator the unlimited, nonexclusive right and license to copy, distribute, transmit, display, perform, create derivative works from, modify, and otherwise use the content provided by the User in conjunction with these Terms and Conditions for the purpose of rendering the Platform’s services.</mat-card-subtitle>
+        <mat-card-subtitle>(2)	The Operator may not reproduce or make publicly accessible personal or community-related content created by the User outside of the User’s Community in a form that depicts or represents the published content in conjunction with the name of the User or the Community.</mat-card-subtitle>
+        <mat-card-subtitle>(3)	Subject to the express provisions of these terms and conditions, the Operator, together with its licensors, owns and controls all the copyright and other intellectual property rights and the material on the Platform. All the copyright and other intellectual property rights on the Platform and the material on the Platform are reserved.</mat-card-subtitle>
+
+        <mat-card-subtitle><h3>7. Limitation of liability</h3></mat-card-subtitle>
+
+        <mat-card-subtitle>(1)	The liability of the Operator and its licensors and suppliers is limited to the maximum extent permitted by law. In no event shall the Operator or its licensors or suppliers be liable for special, incidental, or consequential damages, lost profits, lost data or confidential or other information, loss of privacy, costs of procurement of substitute goods or services, failure to meet any duty including without limitation of good faith or of reasonable care, negligence, or otherwise, regardless of the foreseeability of those damages or of any advice or notice given to the Operator or its licensors and suppliers arising out of or in connection with the use of the Platform’s services. This limitation shall apply regardless of whether the damages arise out of breach of contract, tort, or any other legal theory or form of action.</mat-card-subtitle>
+        <mat-card-subtitle>(2)	The above disclaimers, waivers and limitations do not in any way limit any other disclaimer of warranties or any other limitation of liability in any other agreement between the User and the Operator or between the User and any of the Operator's licensors and suppliers. Some jurisdictions may not allow the exclusion of certain implied warranties or the limitation of certain damages, so some of the above disclaimers, waivers and limitations of liability may not apply. Unless limited or modified by applicable law, the foregoing disclaimers, waivers and limitations shall apply to the maximum extent permitted, even if any remedy fails its essential purpose. The Operator’s licensors and suppliers are intended third-party beneficiaries of these disclaimers, waivers and limitations. No advice or information, whether oral or written, obtained by the User through the Platform or otherwise shall alter any of the disclaimers or limitations stated in this section.</mat-card-subtitle>
+
+        <mat-card-subtitle><h3>8. Indemnification</h3></mat-card-subtitle>
+
+        <mat-card-subtitle>Without limiting any indemnification provision of this Agreement, the User agrees to defend, indemnify and hold harmless the Operator and its officers, directors, employees, agents, affiliates, representatives, sublicensees, successors, assigns, and Industry Professionals (collectively, the "Indemnified Parties") from and against any and all claims, actions, demands, causes of action and other proceedings (collectively, "Claims"), including but not limited to legal costs and fees, arising out of or relating to: (i) The User’s breach of this Agreement, including without limitation any representation or warranty contained in this Agreement; (ii) The User’s access to or use of the Platform’s services; (iii) access to or use of the Platform by users; (iv) User content posted to the Platform; (v) the User’s provision to the Operator or any of the Indemnified Parties of information or other data; (vi) the User’s violation or alleged violation of any foreign or domestic, federal, state or local law or regulation; (vii) the User’s violation or alleged violation of any third party's copyrights, trademarks, or other intellectual property or proprietary rights; or (viii) any goods or services the User advertises or solicits through the Platform and/or the Platform’s services.</mat-card-subtitle>
+        <mat-card-subtitle>The Indemnified Parties will have the right, but not the obligation, to participate through counsel of their choice in any defense by the User of any Claim as to which the User is required to defend, indemnify or hold harmless the Indemnified Parties. The User may not settle any Claim without the prior written consent of the concerned Indemnified Parties.</mat-card-subtitle>
+
+        <mat-card-subtitle><h3>9. Personal information</h3></mat-card-subtitle>
+
+        <mat-card-subtitle>(1)	The User hereby consents to the storage of the personal data entered by them. This also applies to the storage of the IP addresses that are transmitted each time the Platform is used. The User agrees in particular to the presentation of personal data entered by them in their community within the Platform and for other Users of the Platform.</mat-card-subtitle>
+        <mat-card-subtitle>(2)	The User also agrees to the use of their personal data for the personalization of advertisements placed on the Platform (The Platform does not transfer personal data to the advertisers). The User further agrees that advertisements of third parties, of whatever kind, are shown on the Platform.</mat-card-subtitle>
+        <mat-card-subtitle>(3)	The collection, processing and use of personal data by the Operator is necessary to provide the Platform’s services. The Operator assures that all stored data is handled carefully and processed exclusively in the context of the data protection consent of the User. Any additional use of personal data will only be made by the Operator if it is permitted by law or if the User has given his prior consent.</mat-card-subtitle>
+
+        <mat-card-subtitle><h3>10. Termination</h3></mat-card-subtitle>
+
+        <mat-card-subtitle>(1)	This Agreement is valid for an unlimited period and can be terminated by both parties at any time without notice.</mat-card-subtitle>
+        <mat-card-subtitle>(2)	In addition, either party may terminate the Agreement by extraordinary cancelation for cause, particularly if the User does not comply with their obligations as stated in section 4 and 5 of this Agreement.</mat-card-subtitle>
+
+        <mat-card-subtitle><h3>11. Jurisdiction</h3></mat-card-subtitle>
+
+        <mat-card-subtitle>(1)	If a provision of these terms and conditions is determined by any court or other competent authority to be unlawful and/or unenforceable, the other provisions will continue in effect. In addition, if any unlawful and/or unenforceable provision of these terms and conditions would be lawful or enforceable if part of it were deleted, that part will be deemed to be deleted, and the rest of the provision will continue in effect.</mat-card-subtitle>
+        <mat-card-subtitle>(2)	This Agreement shall be governed by and construed in accordance with German law only.</mat-card-subtitle>
+
+    </ng-template>
 </mat-card>
