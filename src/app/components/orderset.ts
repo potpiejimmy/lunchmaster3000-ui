@@ -1,5 +1,4 @@
 import { Component, Input, Output, EventEmitter, OnInit, ViewChild, AfterViewInit } from "@angular/core";
-import { formatCurrency } from '@angular/common';
 import * as moment from 'moment';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -51,12 +50,12 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
 
     _commentInput: string;
     _payLinkInput: string;
-    _deliveryCostInput: number;
+    _feeInput: number;
     _adminInputDeferrer: any;
 
     chatInput: string;
 
-    displayedColumns: string[] = ['name', 'order', 'price', 'deliverycost', 'paylink', 'moneyrec'];
+    displayedColumns: string[] = ['name', 'order', 'price', 'fee', 'total', 'paylink', 'moneyrec'];
 
     constructor(private translate: TranslateService) {
         
@@ -68,7 +67,7 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
         this._priceInput = this.orderSet.orders[this.name] && this.orderSet.orders[this.name].price;
         this._commentInput = this.orderSet.comment;
         this._payLinkInput = this.orderSet.payLink;
-        this._deliveryCostInput = this.orderSet.deliverycost;
+        this._feeInput = this.orderSet.fee;
     }
 
     ngAfterViewInit(): void {
@@ -127,18 +126,16 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
         this.submitAdminDeferred();
     }
 
-    get deliveryCostInput() {
-        return this._deliveryCostInput;
+    get feeInput() {
+        return this._feeInput;
     }
 
-    set deliveryCostInput(d) {
-        console.log("settings del cost: " + d);
-        this._deliveryCostInput = d;
+    set feeInput(d) {
+        this._feeInput = d ? d : 0;
         this.submitAdminDeferred();
     }
 
     submitAdminDeferred() {
-        console.log("del cost:" + this._deliveryCostInput);
         clearTimeout(this._adminInputDeferrer);
         this.isTyping.emit(true);
         this._adminInputDeferrer = setTimeout(() => {
@@ -148,7 +145,7 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
                 update: {
                     comment: this._commentInput,
                     payLink: this._payLinkInput,
-                    deliverycost: this._deliveryCostInput
+                    fee: this._feeInput
                 }
             })
         }, 1000);
@@ -172,32 +169,47 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
 
     formatPrice(p: number): string {
         if (!p) return '';
-        return formatCurrency(p, this.translate.currentLang, '');
+        return this.formatNumberInLocale(p);
     }
 
-    get sum(): string {
+    get sum(): number {
         let sum = 0;
         for (let o of Object.values<any>(this.orderSet.orders)) {
             sum += o.price ? o.price : 0;
         }
 
-        console.log("del costs:" + this.orderSet.deliverycost)
-
-        if(this.orderSet.deliverycost)
-            sum += this.orderSet.deliverycost;
+        if(this.orderSet.fee)
+            sum += this.orderSet.fee;
         
-        return this.formatPrice(sum);
+        return sum;
     }
 
-    deliveryPerPerson() : number {
-        if(this.orderSet && this.orderSet.orders && this.orderKeys.length)
-            return Math.ceil(this.orderSet.deliverycost / this.orderKeys.length*100)/100;
+    feePerPerson() : number {
+        if(this.orderSet && this.orderSet.orders && this.orderKeys.length && this.orderSet.fee)
+            return Math.ceil(this.orderSet.fee / this.orderKeys.length*100)/100;
         else
             return 0;
     }
 
+    totalPerPerson(p): number {
+        return p + this.feePerPerson();
+    }
+
+    get decimalSeparator(): string {
+        return (1.1).toLocaleString().substring(1, 2);
+    }
+
+    get thousandsSeparator(): string {
+        return (1000).toLocaleString().substring(1, 2);
+    } 
+
+    formatNumberInLocale(n: number) {
+        if (!n) return '';
+        return n.toLocaleString(this.translate.currentLang, {minimumFractionDigits: 2});
+    }
+
     formatPayLink(o) {
-        return this.orderSet.payLink && o.price ? this.orderSet.payLink + '/' + o.price : "";
+        return this.orderSet.payLink && o.price ? this.orderSet.payLink + '/' + (o.price + this.feePerPerson()) : "";
     }
 
     moneyReceivedClicked(name: string, e: any) {

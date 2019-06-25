@@ -123,7 +123,7 @@ export class MainComponent implements AfterViewInit {
                 orderset.chat = o.chat;
                 orderset.comment = o.comment;
                 orderset.payLink = o.payLink;
-                orderset.deliverycost = o.deliverycost;
+                orderset.fee = o.fee;
             }
         }
         for (let o of Object.values<any>(this.data.ordersets)) {
