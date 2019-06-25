@@ -1,4 +1,6 @@
-<mat-card>
+<mat-card [ngSwitch]="currentLang">
+
+    <ng-template ngSwitchCase="de">
 
 <mat-card-title>Datenschutzerklärung</mat-card-title>
 
@@ -93,4 +95,109 @@ Weitere Informationen zum Datenschutz durch Google finden Sie unter: <a href="ht
 <mat-card-subtitle>
 Quelle: <a href="https://www.anwalt.de/vorlage/muster-datenschutzerklaerung.php">Muster-Datenschutzerklärung von anwalt.de</a>
 </mat-card-subtitle>
+
+</ng-template>
+
+<ng-template ngSwitchDefault>
+
+<mat-card-title>Privacy Policy</mat-card-title>
+
+<mat-card-subtitle>
+This privacy policy will explain how our organization uses the personal data we collect from you when you use our website.
+</mat-card-subtitle>
+
+<mat-card-subtitle><h3>Contact & Responsibility</h3></mat-card-subtitle>
+
+<mat-card-subtitle>
+The data controller responsible for your personal information is: My EV Ride GbR – Thorsten Liese und Daniel Siedentopf, Bindingstraße 16, 60598 Frankfurt am Main, Germany, info@lunch.community. If you have any questions about lunch.community’s privacy policy, the data we hold on you, or you would like to exercise one of your data protection rights, please do not hesitate to contact us.
+</mat-card-subtitle>
+
+<mat-card-subtitle><h3>Personal data</h3></mat-card-subtitle>
+
+<mat-card-subtitle>
+Personal data means any information relating to an identified or identifiable natural person (‘data subject’). An identifiable natural person is one who can be identified, directly or indirectly, in particular by reference to an identifier such as a name, an identification number, location data, an online identifier or to one or more factors specific to the physical, physiological, genetic, mental, economic, cultural or social identity of that natural person.
+</mat-card-subtitle>
+
+<mat-card-subtitle><h3>Collection of data</h3></mat-card-subtitle>
+
+<mat-card-subtitle>
+If you only use this website to obtain information and do not provide any data, we only process the data required to display the website on the internet-enabled device you are using. These are in particular:
+    <ul>
+        <li>IP address</li>
+        <li>date and time of your request</li>
+        <li>the size of the transmitted data</li>
+        <li>the website URL refering to lunch.community</li>
+        <li>browser type und version</li>
+        <li>operating system</li>
+    </ul>
+The legal basis for the processing of this data are legitimate interests in accordance with Art. 6 Abs. 1 UAbs. 1 Buchst. f) of the German DSGVO law (GDPR) in order to enable the presentation of this website.
+</mat-card-subtitle>
+<mat-card-subtitle>
+In addition, you may use various services on the website that process other personal and non-personal information.
+</mat-card-subtitle>
+
+<mat-card-subtitle><h3>Your rights</h3></mat-card-subtitle>
+
+<mat-card-subtitle>
+lunch.community would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following:
+    <ul>
+        <li>You have the right to request lunch.community for copies of your personal data (Art. 15 DSGVO),</li>
+        <li>You have the right to request that lunch.community correct any information you believe is inaccurate. You also have the right to request lunch.community to complete the information you believe is incomplete (Art. 16 DSGVO),</li>
+        <li>You have the right to request that lunch.community erase your personal data, under certain conditions (Art. 17 DSGVO),</li>
+        <li>You have the right to request that lunch.community restrict the processing of your personal data, under certain conditions (Art. 18 DSGVO),</li>
+        <li>You have the right to request that lunch.community transfer the data that we have collected to another organization, or directly to you, under certain conditions (Art. 20 DSGVO),</li>
+        <li>You have the right to object to lunch.community’s processing of your personal data, under certain conditions (Art. 21 DSGVO),</li>
+        <li>You have rights in relation to automated decision making and profiling (Art. 22 DSGVO),</li>
+        <li>Your have the right to lodge a complaint with a supervisory authority (Art. 77 DSGVO).</li>
+    </ul>
+</mat-card-subtitle>
+
+<mat-card-subtitle><h3>Cookies</h3></mat-card-subtitle>
+
+<mat-card-subtitle>
+Our website uses the following types of cookies:
+    <ul>
+        <li>Functionality – lunch.community uses these cookies so that we recognize you on our website and remember your previously selected preferences. These could include what language you prefer and location you are in. A mix of first-party and third-party cookies are used.</li>
+        <li>Advertising – lunch.community uses these cookies to collect information about your visit to our website, the content you viewed, the links you followed and information about your browser, device, and your IP address. lunch.community sometimes shares some limited aspects of this data with third parties for advertising purposes. We may also share online data collected through cookies with our advertising partners. This means that when you visit another website, you may be shown advertising based on your browsing patterns on our website.</li>
+    </ul>
+</mat-card-subtitle>
+<mat-card-subtitle>
+You can set your browser not to accept cookies, and the above website tells you how to remove cookies from your browser. However, in a few cases, some of our website features may not function as a result.
+</mat-card-subtitle>
+
+<mat-card-subtitle><h3>Google Analytics</h3></mat-card-subtitle>
+
+<mat-card-subtitle>
+This website uses Google Analytics, a website analytics service by Google Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. For this purpose, Google sets cookies on your device to allow an analysis of the website usage. The collected information is usually transmitted to a Google server in the United States and recorded there - including the IP address. Google Analytics is set up so that IP addresses are stored only anonymously. Due to this setting, Google truncates the IP addresses that are registered within member states of the European Union or in other contracting states of the Agreement on the European Economic Area before storing them. Google uses the collected information to evaluate the use of the website and to generate reports. Google Analytics is set to erase the data within 14 months of its creation.
+</mat-card-subtitle>
+<mat-card-subtitle>
+The legal basis for the processing of this data are legitimate interests in accordance with Art. 6 Abs. 1 UAbs. 1 Buchst. f) of the German DSGVO law (GDPR) to improve the functionality of our website.
+</mat-card-subtitle>
+<mat-card-subtitle>
+Setting the Analytics cookie can be prevented by setting the browser to reject all cookies. However, this may affect the use of this website. You may also prevent Google's data collection by installing the following browser plug-in: <a href="https://tools.google.com/dlpage/gaoptout?hl=de">https://tools.google.com/dlpage/gaoptout?hl=de</a>. You may also prevent the data collection by Google Analytics by clicking on the following link. This sets a corresponding opt-out cookie: <a href="javascript:gaOptout();alert('Google%20Analytics%20deactivated');">Deactivate data collection by Google Analytics for this website</a>.
+</mat-card-subtitle>
+<mat-card-subtitle>
+For more information about Google's privacy, please visit: <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>.
+</mat-card-subtitle>
+
+<mat-card-subtitle><h3>Google AdSense</h3></mat-card-subtitle>
+
+<mat-card-subtitle>
+This website uses Google AdSense, a website analytics service by  Google Inc., 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA. Google AdSense allows the display of advertisements on websites. For this purpose, Google sets cookies on your device or it displays web beacons (invisible pixels) to allow an analysis of the website visits. The ad serving cookies allow Google and its partners to provide advertisements to users based on the views of this site or other sites. The collected information is usually transmitted to a Google server in the US and stored there - including the IP address. Google may share this information with others.
+</mat-card-subtitle>
+<mat-card-subtitle>
+The legal basis for the processing of this data are legitimate interests in accordance with Art. 6 Abs. 1 UAbs. 1 Buchst. f) of the German DSGVO law (GDPR) to improve the services and advertisements on our website.
+</mat-card-subtitle>
+<mat-card-subtitle>
+Setting the AdSense cookie can be prevented by setting the browser to reject all cookies. However, this may affect the use of this website. You may also disable personalized advertising on the following page: <a href="https://adssettings.google.com/anonymous">https://adssettings.google.com/anonymous</a>.
+</mat-card-subtitle>
+<mat-card-subtitle>
+For more information about Google's privacy, please visit: <a href="https://policies.google.com/privacy">https://policies.google.com/privacy</a>.
+</mat-card-subtitle>
+<mat-card-subtitle>
+Source: <a href="https://www.anwalt.de/vorlage/muster-datenschutzerklaerung.php">Muster-Datenschutzerklärung von anwalt.de</a>
+</mat-card-subtitle>
+
+</ng-template>
+
 </mat-card>

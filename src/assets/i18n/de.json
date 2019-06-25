@@ -68,8 +68,7 @@
             "welcome_subtitle_1": "Finde dich mit deinen Arbeitskollegen zum Mittagessen zusammen.",
             "welcome_subtitle_2": "Nie wieder hungern. Nie wieder lange überlegen, wer heute auf was Lust hat. Nie wieder alleine essen. Nie wieder beim Bestellen vergessen werden.",
             "create_community_text": "Gründe hier deine lunch.community",
-            "create_community_subtitle_1": "Lege hier eine neue Community für dein Team oder deine Organisation an. Den erstellten",
-            "create_community_subtitle_2": "Link teilst du dann mit deinen Kollegen.",
+            "create_community_subtitle": "Lege hier eine neue Community für dein Team oder deine Organisation an. Den erstellten Link teilst du dann mit deinen Kollegen.",
             "community_name": "Name deiner Community",
             "create_community_button": "Community erstellen"
         },
@@ -103,6 +102,12 @@
             "hint_2": "Kenntlichmachung deiner Bestellwünsche gegenüber den anderen. Üblicherweise reicht hier z.B. dein Vorname. Achte aber darauf, dass der Name",
             "hint_3": "innerhalb deiner Community eindeutig ist, denn er dient auch als Identifikation für deine Person.",
             "hungry": "Ich habe Hunger!"
+        },
+        "about": {
+            "company_name":"My EV Ride GbR - Thorsten Liese und Daniel Siedentopf",
+            "company_street": "Bindingstr. 16, 60598 Frankfurt am Main",
+            "company_country": "Deutschland",
+            "mail_contact": "Kontakt:"
         }
     }
 }

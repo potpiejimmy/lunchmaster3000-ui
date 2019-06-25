@@ -12,14 +12,13 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent implements OnInit {
     constructor(private translate: TranslateService, private router: Router) {
         // this language will be used as a fallback when a translation isn't found in the current language
-        // TODO Use fixed DE for now:
-        translate.setDefaultLang('de');
+        translate.setDefaultLang('en');
         
-        // if (environment.supportedLanguages.includes(translate.getBrowserCultureLang())){
-        //     this.translate.use(translate.getBrowserCultureLang());
-        // } else if (environment.supportedLanguages.includes(translate.getBrowserLang())){
-        //     this.translate.use(translate.getBrowserLang());
-        // }
+        if (environment.supportedLanguages.includes(translate.getBrowserCultureLang())){
+            this.translate.use(translate.getBrowserCultureLang());
+        } else if (environment.supportedLanguages.includes(translate.getBrowserLang())){
+            this.translate.use(translate.getBrowserLang());
+        }
     }
 
     ngOnInit() {
