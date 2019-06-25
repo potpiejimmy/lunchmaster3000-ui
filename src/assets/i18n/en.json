@@ -61,7 +61,8 @@
             "chat_msg": "Your message",
             "chat_msg_send": "Send message"
         }
-    }, "routes": {
+    },
+    "routes": {
         "create": {
             "welcome_text": "Welcome",
             "welcome_subtitle_1": "Get together with your co-workers for lunch.",
@@ -108,5 +109,9 @@
             "company_country": "Germany",
             "mail_contact": "Contact:"
         }
+    },
+    "push": {
+        "is_taking_orders": "{{name}} is taking orders for {{place}}",
+        "food_arrived": "Lunch is here!"
     }
 }

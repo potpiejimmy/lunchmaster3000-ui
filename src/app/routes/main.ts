@@ -1,16 +1,17 @@
-import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
 import { LmApiService } from '../services/lmapi';
 import * as io from 'socket.io-client';
 import { environment } from '../../environments/environment';
 import { LocalStorageService } from 'angular-2-local-storage';
 import { AppService } from '../services/app';
 import { Router, ActivatedRoute } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
     selector: 'main',
     templateUrl: 'main.html'
 })
-export class MainComponent implements AfterViewInit {
+export class MainComponent implements AfterViewInit, OnDestroy {
 
     @ViewChild('locationEditor') locationEditor;
 
@@ -25,7 +26,8 @@ export class MainComponent implements AfterViewInit {
         private api: LmApiService,
         public app: AppService,
         private router: Router,
-        private route: ActivatedRoute) {
+        private route: ActivatedRoute,
+        private translate: TranslateService) {
 
         // initialize name from local storage
         this.name = this.localStorageService.get('name');
@@ -74,10 +76,10 @@ export class MainComponent implements AfterViewInit {
         this.socket.on('data', data => {
             if (!this.isTyping) this.adaptDataFromServer(data);
         })
-        this.socket.on('push', msg => {
+        this.socket.on('push', async msg => {
             if (msg.name != this.name) {
                 new Notification(msg.title, {
-                    body: msg.body,
+                    body: msg.type != 'chat' ? await this.translate.get("push."+msg.body, msg.params).toPromise() : msg.body,
                     requireInteraction: msg.type != 'chat'
                 });
             }
@@ -86,6 +88,10 @@ export class MainComponent implements AfterViewInit {
 
     ngAfterViewInit(): void {
         this.app.locationEditor = this.locationEditor;
+    }
+
+    ngOnDestroy(): void {
+        if (this.socket) this.socket.close();
     }
 
     data = {

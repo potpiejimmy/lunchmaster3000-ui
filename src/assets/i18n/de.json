@@ -61,7 +61,8 @@
             "chat_msg": "Deine Nachricht",
             "chat_msg_send": "Nachricht absenden"
         }
-    }, "routes": {
+    },
+    "routes": {
         "create": {
             "welcome_text": "Willkommen",
             "welcome_subtitle_1": "Finde dich mit deinen Arbeitskollegen zum Mittagessen zusammen.",
@@ -108,5 +109,9 @@
             "company_country": "Deutschland",
             "mail_contact": "Kontakt:"
         }
+    },
+    "push": {
+        "is_taking_orders": "{{name}} bestellt heute bei {{place}}",
+        "food_arrived": "Das Essen ist da!"
     }
 }
