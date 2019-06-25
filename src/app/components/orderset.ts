@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter, OnInit, ViewChild, AfterViewInit } from "@angular/core";
 import { formatCurrency } from '@angular/common';
 import * as moment from 'moment';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
     selector: "orderset",
@@ -55,7 +56,11 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
 
     chatInput: string;
 
-    displayedColumns: string[] = ['name', 'order', 'price', 'paylink', 'moneyrec'];
+    displayedColumns: string[] = ['name', 'order', 'price', 'deliverycost', 'paylink', 'moneyrec'];
+
+    constructor(private translate: TranslateService) {
+        
+    }
 
     ngOnInit() {
         this.own = this.name == this.orderSet.name;
@@ -122,16 +127,18 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
         this.submitAdminDeferred();
     }
 
-    get payDeliveryCostInput() {
+    get deliveryCostInput() {
         return this._deliveryCostInput;
     }
 
-    set payDeliveryCostInput(n) {
-        this._deliveryCostInput = n;
+    set deliveryCostInput(d) {
+        console.log("settings del cost: " + d);
+        this._deliveryCostInput = d;
         this.submitAdminDeferred();
     }
 
     submitAdminDeferred() {
+        console.log("del cost:" + this._deliveryCostInput);
         clearTimeout(this._adminInputDeferrer);
         this.isTyping.emit(true);
         this._adminInputDeferrer = setTimeout(() => {
@@ -140,7 +147,8 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
                 orderSet: this.orderSet,
                 update: {
                     comment: this._commentInput,
-                    payLink: this._payLinkInput
+                    payLink: this._payLinkInput,
+                    deliverycost: this._deliveryCostInput
                 }
             })
         }, 1000);
@@ -164,7 +172,7 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
 
     formatPrice(p: number): string {
         if (!p) return '';
-        return formatCurrency(p, "de", "€");
+        return formatCurrency(p, this.translate.currentLang, '');
     }
 
     get sum(): string {
@@ -172,7 +180,20 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
         for (let o of Object.values<any>(this.orderSet.orders)) {
             sum += o.price ? o.price : 0;
         }
+
+        console.log("del costs:" + this.orderSet.deliverycost)
+
+        if(this.orderSet.deliverycost)
+            sum += this.orderSet.deliverycost;
+        
         return this.formatPrice(sum);
+    }
+
+    deliveryPerPerson() : number {
+        if(this.orderSet && this.orderSet.orders && this.orderKeys.length)
+            return Math.ceil(this.orderSet.deliverycost / this.orderKeys.length*100)/100;
+        else
+            return 0;
     }
 
     formatPayLink(o) {
