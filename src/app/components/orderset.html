@@ -25,7 +25,6 @@
     <mat-card class="notecard">
       <mat-card-subtitle style="font-size: 1em;">{{'components.orderset.subtitle_infos'|translate:{name: orderSet.name} }}:</mat-card-subtitle>
       <span style="white-space: pre-line;">{{orderSet.comment}}</span>
-      <span *ngIf="orderSet.fee" style="white-space: pre-line;"><br/><b>{{'components.orderset.fee'|translate}}:</b> {{formatNumberInLocale(orderSet.fee)}}</span>
     </mat-card>
   </div>
   <div *ngIf="!orderSet.finished">
@@ -64,8 +63,8 @@
                 <td mat-cell *matCellDef="let element"> {{formatNumberInLocale(orderSet.orders[element].price)}} </td>
             </ng-container>
             <ng-container matColumnDef="fee">
-              <th mat-header-cell *matHeaderCellDef> {{'components.orderset.fee'|translate}} </th>
-              <td mat-cell *matCellDef="let element"> {{formatNumberInLocale(feePerPerson())}} </td>
+              <th mat-header-cell *matHeaderCellDef fxShow fxHide.sm> {{'components.orderset.fee'|translate}} </th>
+              <td mat-cell *matCellDef="let element" fxShow fxHide.sm> {{formatNumberInLocale(feePerPerson())}} </td>
             </ng-container>
             <ng-container matColumnDef="total">
               <th mat-header-cell *matHeaderCellDef> {{'components.orderset.total'|translate}} </th>
@@ -82,10 +81,14 @@
             <tr fxShow fxHide.xs mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr fxLayout.xs="column" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-    <div *ngIf="sum" style="float:right; font-size: .75em;">
-      {{'components.orderset.total'|translate}} {{formatNumberInLocale(sum)}}
+    <div fxLayout="column" style="font-weight: bold; text-align: right;">
+      <div *ngIf="sum" style="font-size: .75em;">
+          {{'components.orderset.total'|translate}}: {{formatNumberInLocale(sum)}}
+      </div>
+      <div *ngIf="orderSet.fee" style="font-size: .4em;">
+          {{'components.orderset.fee'|translate}}: {{formatNumberInLocale(orderSet.fee)}}
+      </div>      
     </div>
-    <div style="clear:both;"></div>
   </mat-card>
   <mat-card class="orderSetInfo" *ngIf="orderSet.finished">
     <div *ngIf="!orderSet.arrived" style="font-size: .6em;">

@@ -39,7 +39,7 @@
             "subtitle_2": "Wenn du etwas mitbestellen möchtest, schreibe es unten hin.",
             "comment": "Bestellhinweise / Infos",
             "paylink": "Bezahllink",
-            "fee": "Gebühr",
+            "fee": "Liefergebühr",
             "total": "Gesamt",
             "subtitle_infos": "Infos von {{name}}",
             "yourorder": "Deine Bestellung",
