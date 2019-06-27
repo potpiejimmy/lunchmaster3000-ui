@@ -28,6 +28,7 @@ import { CurrencyMaskModule } from "ng2-currency-mask";
 import { ClipboardModule } from 'ngx-clipboard';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { NgxPrintModule } from 'ngx-print';
 
 // App
 import { AppComponent } from './app.component';
@@ -85,6 +86,7 @@ import { DonateComponent } from './components/donate';
     // Special
     CurrencyMaskModule,
     ClipboardModule,
+    NgxPrintModule,
     LocalStorageModule.forRoot({ prefix: 'lunch.community', storageType: 'localStorage' }), // or sessionStorage
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     TranslateModule.forRoot({loader: {provide: TranslateLoader, useFactory: (http: HttpClient) => new TranslateHttpLoader(http),deps: [HttpClient]}})

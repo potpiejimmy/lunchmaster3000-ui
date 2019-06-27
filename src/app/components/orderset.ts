@@ -209,7 +209,7 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
     }
 
     formatPayLink(o) {
-        return this.orderSet.payLink && o.price ? this.orderSet.payLink + '/' + (o.price + this.feePerPerson()) : "";
+        return this.orderSet.payLink && o.price ? this.orderSet.payLink + '/' + Math.round((o.price + this.feePerPerson())*100)/100 : "";
     }
 
     moneyReceivedClicked(name: string, e: any) {

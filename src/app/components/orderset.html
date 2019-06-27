@@ -47,8 +47,14 @@
       </form>
     </mat-card>
   </div>
-  <mat-card class="orderlist">
-    <mat-card-title><mat-icon>reorder</mat-icon> {{'components.orderset.list'|translate}}</mat-card-title>
+  <mat-card class="orderlist" [id]="orderSet.id">
+    <mat-card-title>
+      <div fxFlex fxLayout="row">
+        <mat-icon>reorder</mat-icon> {{'components.orderset.list'|translate}}
+        <span style="flex: 1 1 auto;"></span>
+        <button mat-icon-button [printSectionId]="orderSet.id" [useExistingCss]="true" ngxPrint><mat-icon>print</mat-icon></button>
+      </div>
+    </mat-card-title>
     <table mat-table [dataSource]="orderKeys" style="width:100%; margin-bottom: 1em;">
             <ng-container matColumnDef="name">
                 <th mat-header-cell *matHeaderCellDef> {{'general.name'|translate}} </th>
