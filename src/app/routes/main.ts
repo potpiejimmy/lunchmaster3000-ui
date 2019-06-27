@@ -129,6 +129,7 @@ export class MainComponent implements AfterViewInit, OnDestroy {
                 orderset.chat = o.chat;
                 orderset.comment = o.comment;
                 orderset.payLink = o.payLink;
+                orderset.fee = o.fee;
             }
         }
         for (let o of Object.values<any>(this.data.ordersets)) {

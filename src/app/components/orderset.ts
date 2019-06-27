@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, OnInit, ViewChild, AfterViewInit } from "@angular/core";
-import { formatCurrency } from '@angular/common';
 import * as moment from 'moment';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
     selector: "orderset",
@@ -50,11 +50,16 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
 
     _commentInput: string;
     _payLinkInput: string;
+    _feeInput: number;
     _adminInputDeferrer: any;
 
     chatInput: string;
 
-    displayedColumns: string[] = ['name', 'order', 'price', 'paylink', 'moneyrec'];
+    displayedColumns: string[] = ['name', 'order', 'price', 'fee', 'total', 'paylink', 'moneyrec'];
+
+    constructor(private translate: TranslateService) {
+        
+    }
 
     ngOnInit() {
         this.own = this.name == this.orderSet.name;
@@ -62,6 +67,7 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
         this._priceInput = this.orderSet.orders[this.name] && this.orderSet.orders[this.name].price;
         this._commentInput = this.orderSet.comment;
         this._payLinkInput = this.orderSet.payLink;
+        this._feeInput = this.orderSet.fee;
     }
 
     ngAfterViewInit(): void {
@@ -120,6 +126,15 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
         this.submitAdminDeferred();
     }
 
+    get feeInput() {
+        return this._feeInput;
+    }
+
+    set feeInput(d) {
+        this._feeInput = d ? d : 0;
+        this.submitAdminDeferred();
+    }
+
     submitAdminDeferred() {
         clearTimeout(this._adminInputDeferrer);
         this.isTyping.emit(true);
@@ -129,7 +144,8 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
                 orderSet: this.orderSet,
                 update: {
                     comment: this._commentInput,
-                    payLink: this._payLinkInput
+                    payLink: this._payLinkInput,
+                    fee: this._feeInput
                 }
             })
         }, 1000);
@@ -153,19 +169,47 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
 
     formatPrice(p: number): string {
         if (!p) return '';
-        return formatCurrency(p, "de", "€");
+        return this.formatNumberInLocale(p);
     }
 
-    get sum(): string {
+    get sum(): number {
         let sum = 0;
         for (let o of Object.values<any>(this.orderSet.orders)) {
             sum += o.price ? o.price : 0;
         }
-        return this.formatPrice(sum);
+
+        if(this.orderSet.fee)
+            sum += this.orderSet.fee;
+        
+        return sum;
+    }
+
+    feePerPerson() : number {
+        if(this.orderSet && this.orderSet.orders && this.orderKeys.length && this.orderSet.fee)
+            return Math.ceil(this.orderSet.fee / this.orderKeys.length*100)/100;
+        else
+            return 0;
+    }
+
+    totalPerPerson(p): number {
+        return p + this.feePerPerson();
+    }
+
+    get decimalSeparator(): string {
+        return (1.1).toLocaleString().substring(1, 2);
+    }
+
+    get thousandsSeparator(): string {
+        return (1000).toLocaleString().substring(1, 2);
+    } 
+
+    formatNumberInLocale(n: number) {
+        if (!n) return '';
+        return n.toLocaleString(this.translate.currentLang, {minimumFractionDigits: 2});
     }
 
     formatPayLink(o) {
-        return this.orderSet.payLink && o.price ? this.orderSet.payLink + '/' + o.price : "";
+        return this.orderSet.payLink && o.price ? this.orderSet.payLink + '/' + (o.price + this.feePerPerson()) : "";
     }
 
     moneyReceivedClicked(name: string, e: any) {
