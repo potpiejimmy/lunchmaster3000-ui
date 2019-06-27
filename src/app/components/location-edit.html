@@ -3,13 +3,13 @@
     <form class="settings-form">
         <div fxFlex fxLayout="column">
             <mat-form-field style="font-size: .75em;">
-                <input #inpname name="name" matInput placeholder="Name" [(ngModel)]="location.name" required>
+                <input #inpname name="name" matInput maxLength="64" placeholder="Name" [(ngModel)]="location.name" required>
             </mat-form-field>
             <mat-form-field style="font-size: .6em;">
-                <input #inpdescription name="description" matInput [placeholder]="'components.location_edit.shortdescription'|translate" [(ngModel)]="location.description">
+                <input #inpdescription name="description" matInput maxLength="255" [placeholder]="'components.location_edit.shortdescription'|translate" [(ngModel)]="location.description">
             </mat-form-field>
             <mat-form-field style="font-size: .5em;">
-                <input #inpmenulink name="menu_link" matInput [placeholder]="'components.location_edit.menu_link'|translate" [(ngModel)]="location.menu_link">
+                <input #inpmenulink name="menu_link" matInput maxLength="1024" [placeholder]="'components.location_edit.menu_link'|translate" [(ngModel)]="location.menu_link">
             </mat-form-field>
             <div fxLayout="row" fxLayout.xs="column" fxLayoutGap=".5em">
                 <button mat-raised-button color="primary" (click)="save()" [disabled]="processing">{{'general.save'|translate}}</button>
