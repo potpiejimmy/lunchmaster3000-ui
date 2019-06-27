@@ -20,10 +20,12 @@
             "impressum": "Impressum",
             "terms": "Nutzungsbedingungen",
             "cookies": "Datenschutz & Cookies",
-            "allrights": "All Rights Reserved"
+            "allrights": "https://lunch.community"
         },
         "topbar": {
-            "copy_link": "Link kopieren: {{communityLink}}"
+            "copy_link": "Link kopieren: {{communityLink}}",
+            "link_copied": "Der Link zu dieser Community wurde in die Zwischenablage kopiert.",
+            "slogan": "„Was essen wir heute Mittag?“"
         },
         "location_edit": {
             "edit": "Bearbeite: {{name}}",

@@ -20,10 +20,12 @@
             "impressum": "About",
             "terms": "Terms & Conditions",
             "cookies": "Privacy & Cookies",
-            "allrights": "All Rights Reserved"
+            "allrights": "https://lunch.community"
         },
         "topbar": {
-            "copy_link": "Copy link: {{communityLink}}"
+            "copy_link": "Copy link: {{communityLink}}",
+            "link_copied": "The link to this community was copied to your clipboard.",
+            "slogan": "“What are we having for lunch today?”"
         },
         "location_edit": {
             "edit": "Edit: {{name}}",
