@@ -49,10 +49,10 @@
   </div>
   <mat-card class="orderlist" [id]="orderSet.id">
     <mat-card-title>
-      <div fxFlex fxLayout="row">
+      <div fxFlex fxLayout="row" fxLayoutGap="0.25em">
         <mat-icon>reorder</mat-icon> {{'components.orderset.list'|translate}}
         <span style="flex: 1 1 auto;"></span>
-        <button mat-icon-button [printSectionId]="orderSet.id" [useExistingCss]="true" ngxPrint><mat-icon>print</mat-icon></button>
+        <button mat-icon-button title="print" [printSectionId]="orderSet.id" [useExistingCss]="true" ngxPrint><mat-icon>print</mat-icon></button>
       </div>
     </mat-card-title>
     <table mat-table [dataSource]="orderKeys" style="width:100%; margin-bottom: 1em;">
@@ -92,7 +92,7 @@
           {{'components.orderset.total'|translate}}: {{formatNumberInLocale(sum)}}
       </div>
       <div *ngIf="orderSet.fee" style="font-size: .4em;">
-          {{'components.orderset.fee'|translate}}: {{formatNumberInLocale(orderSet.fee)}}
+          {{'components.orderset.incl_fee'|translate}}: {{formatNumberInLocale(orderSet.fee)}}
       </div>      
     </div>
   </mat-card>

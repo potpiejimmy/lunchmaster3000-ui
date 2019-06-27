@@ -42,6 +42,7 @@
             "comment": "Bestellhinweise / Infos",
             "paylink": "Bezahllink",
             "fee": "Liefergebühr",
+            "incl_fee": "inkl. Liefergebühr",
             "total": "Gesamt",
             "subtitle_infos": "Infos von {{name}}",
             "yourorder": "Deine Bestellung",

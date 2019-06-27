@@ -42,6 +42,7 @@
             "comment": "Info / your remarks",
             "paylink": "Payment link",
             "fee": "Delivery fee",
+            "incl_fee": "incl. delivery fee",
             "total": "Total",
             "subtitle_infos": "{{name}}'s remarks",
             "yourorder": "Your order",
