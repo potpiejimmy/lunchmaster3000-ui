@@ -12,6 +12,10 @@ body {
     height: 100%;
 }
 
+::-webkit-scrollbar { 
+    display: none;
+}
+
 .mat-card {
     font-family: 'PT Sans', sans-serif;
 }
