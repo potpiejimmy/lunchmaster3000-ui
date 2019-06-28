@@ -4,8 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 
 @Component({
     selector: "orderset",
-    templateUrl: "orderset.html",
-    styles: ["@media(max-width: 599px) {.mat-cell {border: none;padding:0 !important;} .mat-row {border-bottom: solid 1px rgba(0,0,0,.12); padding: .5em 0 2.5em;}}"]
+    templateUrl: "orderset.html"
 })
 export class OrderSetComponent implements OnInit, AfterViewInit {
 

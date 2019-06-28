@@ -2,7 +2,7 @@
     <a [routerLink]="['/']"><div class="topbar-logo"></div></a>
     <div style="margin-left: .5em; font-weight: bold;">{{title}}</div>
     <span style="flex: 1 1 auto;"></span>
-    <button *ngIf="app.community" mat-icon-button title="Settings" [routerLink]="['/settings']">
+    <button *ngIf="app.community" mat-icon-button [title]="'general.settings'|translate" [routerLink]="['/settings']">
         <mat-icon>settings_applications</mat-icon>
     </button>
 </mat-toolbar>

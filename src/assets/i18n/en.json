@@ -4,6 +4,8 @@
         "cancel": "Cancel",
         "delete": "Delete",
         "edit": "Edit",
+        "print": "Print",
+        "settings": "Settings",
         "menucard": "Menu",
         "name": "Name",
         "terms_agree_1": "I agree to the",
@@ -53,7 +55,7 @@
             "list": "Order list",
             "user_order_request": "Order",
 			"pay_now": "Pay now",
-            "money_received": "Money received?",
+            "money_received": "Money received",
             "sum": "Sum:",
             "order_finished": "Ordering has been closed. As soon as the food arrives,",
             "order_finished_own": "hit the button!",
@@ -93,7 +95,7 @@
             "invite_colleagues_4": "misuse by others.",
             "invite_colleagues_5": "Please add places to your community to get going. Press the '+' symbol below to add a new place.",
             "invite_colleagues_6": "",
-            "add_new_location": "Add new place."
+            "add_new_location": "Add new place"
         },
         "settings": {
             "card_title": "Your current lunch.community",

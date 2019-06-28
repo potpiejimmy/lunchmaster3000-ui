@@ -52,7 +52,7 @@
       <div fxFlex fxLayout="row" fxLayoutGap="0.25em">
         <mat-icon>reorder</mat-icon> {{'components.orderset.list'|translate}}
         <span style="flex: 1 1 auto;"></span>
-        <button mat-icon-button title="print" [printSectionId]="orderSet.id" [useExistingCss]="true" ngxPrint><mat-icon>print</mat-icon></button>
+        <button mat-icon-button [title]="'general.print'|translate" [printSectionId]="orderSet.id" [useExistingCss]="true" ngxPrint><mat-icon>print</mat-icon></button>
       </div>
     </mat-card-title>
     <table mat-table [dataSource]="orderKeys" style="width:100%; margin-bottom: 1em;">
@@ -82,7 +82,7 @@
             </ng-container>
             <ng-container matColumnDef="moneyrec">
               <th mat-header-cell *matHeaderCellDef> {{'components.orderset.money_received'|translate}} </th>
-              <td fxShow fxHide.xs mat-cell *matCellDef="let element"><mat-checkbox *ngIf="element!=orderSet.name && orderSet.finished" [(ngModel)]="orderSet.orders[element].moneyReceived" [disabled]="orderSet.name!=name" (change)="moneyReceivedClicked(element,$event)"></mat-checkbox></td>
+              <td mat-cell *matCellDef="let element"><mat-checkbox *ngIf="element!=orderSet.name && orderSet.finished" [(ngModel)]="orderSet.orders[element].moneyReceived" [disabled]="orderSet.name!=name" (change)="moneyReceivedClicked(element,$event)"><span fxHide fxShow.xs>{{'components.orderset.money_received'|translate}}</span></mat-checkbox></td>
             </ng-container>
             <tr fxShow fxHide.xs mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr fxLayout.xs="column" mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
