@@ -30,4 +30,8 @@ export class CoilComponent {
 
         return this.streamedValue;
     }
+
+    convertToXrp(): number {
+        return this.streamedValue;
+    }
 }
