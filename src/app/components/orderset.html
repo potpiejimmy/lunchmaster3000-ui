@@ -1,5 +1,5 @@
 <mat-card class="orderSet">
-  <mat-card-title><mat-icon>fastfood</mat-icon> {{orderSet.location.name}}</mat-card-title>
+  <mat-card-title><div class="center-alignment"><mat-icon>fastfood</mat-icon>&nbsp;{{orderSet.location.name}}</div></mat-card-title>
   <mat-card-subtitle>{{'components.orderset.subtitle_1'|translate:{name:orderSet.name, location:orderSet.location.name} }} <a target="_blank" [href]="orderSet.location.menu_link">{{'general.menucard'|translate}}</a>.</mat-card-subtitle>
   <mat-card-subtitle>{{'components.orderset.subtitle_2'|translate}}</mat-card-subtitle>
   <div *ngIf="own" style="font-size: .5em;">
@@ -29,7 +29,7 @@
   </div>
   <div *ngIf="!orderSet.finished">
     <mat-card class="ordercard">
-      <mat-card-title><mat-icon>edit</mat-icon> {{'components.orderset.yourorder'|translate}}</mat-card-title>
+      <mat-card-title><div class="center-alignment"><mat-icon>edit</mat-icon>&nbsp;{{'components.orderset.yourorder'|translate}}</div></mat-card-title>
       <form class="order-form" fxLayout="row" fxLayout.xs="column" fxLayoutGap="1em" fxLayoutGap.xs="0">
         <div style="font-size: .75em; flex: 1 1 auto;">
           <mat-form-field>
@@ -49,8 +49,8 @@
   </div>
   <mat-card class="orderlist" [id]="orderSet.id">
     <mat-card-title>
-      <div fxFlex fxLayout="row" fxLayoutGap="0.25em">
-        <mat-icon>reorder</mat-icon> {{'components.orderset.list'|translate}}
+      <div fxFlex fxLayout="row" class="center-alignment">
+        <mat-icon>reorder</mat-icon>&nbsp;{{'components.orderset.list'|translate}}
         <span style="flex: 1 1 auto;"></span>
         <button mat-icon-button [title]="'general.print'|translate" [printSectionId]="orderSet.id" [useExistingCss]="true" ngxPrint><mat-icon>print</mat-icon></button>
       </div>
@@ -116,7 +116,7 @@
   <div style="clear:both;"></div>
 
   <mat-card class="chatcard">
-    <mat-card-title><mat-icon>chat</mat-icon> {{'components.orderset.chat'|translate}}</mat-card-title>
+    <mat-card-title><div class="center-alignment"><mat-icon>chat</mat-icon>&nbsp;{{'components.orderset.chat'|translate}}</div></mat-card-title>
     <div style="font-size: .5em;">
       <div *ngFor="let msg of orderSet.chat" style="margin: .5em 0;">
         <span style="color: #777; font-size: .75em;">{{msg.name}} [{{formatMoment(msg.date)}}]</span><br/>

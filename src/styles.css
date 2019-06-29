@@ -112,8 +112,23 @@ a.footerlink {
     background-color: lightgoldenrodyellow;
 }
 
+.mat-expansion-panel.hint {
+    background-color: rgb(251, 251, 221);
+    margin-bottom: 1em;
+    color: rgba(0,0,0,.54);
+}
+
 .mat-card.favlist {
     background-color: white;
+}
+
+.mat-expansion-panel.favlist {
+    color: rgba(0,0,0,.54);
+}
+
+.mat-expansion-panel-header-title {
+    color: rgba(0,0,0,.54);
+    align-items: center;
 }
 
 .mat-card.orderSet {
@@ -170,11 +185,20 @@ pre {
     font-size: .5em;
 }
 
+.favorites-form {
+    margin-top: 0.5em;
+}
+
 .favorites-form .mat-icon-button {
     color: #2E7D32;
     width: 24px;
     height: 24px;
     line-height: 24px;
+}
+
+.center-alignment {
+    display: flex;
+    align-items: center;
 }
 
 /* responsive mat-table */

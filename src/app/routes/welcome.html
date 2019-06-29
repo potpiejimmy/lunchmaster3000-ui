@@ -8,11 +8,18 @@
     <mat-form-field>
       <input #inpname name="name" matInput [placeholder]="'routes.welcome.ask_for_name'|translate" [(ngModel)]="nameInput" [disabled]="processing">
     </mat-form-field>
-    <mat-card-subtitle>
-      {{'routes.welcome.hint_1'|translate}} 
-      {{'routes.welcome.hint_2'|translate}} 
-      {{'routes.welcome.hint_3'|translate}} 
-    </mat-card-subtitle>
+    <mat-expansion-panel class="hint">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <mat-icon>info</mat-icon>&nbsp;{{'routes.welcome.hint_title'|translate}}  
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>
+        {{'routes.welcome.hint_1'|translate}}
+        {{'routes.welcome.hint_2'|translate}} 
+        {{'routes.welcome.hint_3'|translate}}
+      </p>
+    </mat-expansion-panel>
     <mat-card-subtitle>
       <mat-checkbox name="agreeTerms" [(ngModel)]="app.agreeTerms" [disabled]="processing">{{'general.terms_agree_1'|translate}} <a [routerLink]="['/terms']" target="_blank">{{'general.terms_agree_2'|translate}}</a>{{'general.terms_agree_3'|translate}}</mat-checkbox>
       <br/>

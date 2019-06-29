@@ -21,6 +21,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 // Special
 import { LocalStorageModule } from 'angular-2-local-storage';
@@ -83,6 +84,7 @@ import { DonateComponent } from './components/donate';
     MatSnackBarModule,
     MatIconModule,
     MatListModule,
+    MatExpansionModule,
     // Special
     CurrencyMaskModule,
     ClipboardModule,

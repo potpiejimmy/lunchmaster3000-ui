@@ -12,7 +12,7 @@
                 <input #inpmenulink name="menu_link" matInput maxLength="1024" [placeholder]="'components.location_edit.menu_link'|translate" [(ngModel)]="location.menu_link">
             </mat-form-field>
             <div fxLayout="row" fxLayout.xs="column" fxLayoutGap=".5em">
-                <button mat-raised-button color="primary" (click)="save()" [disabled]="processing">{{'general.save'|translate}}</button>
+                <button mat-raised-button color="primary" (click)="save()" [disabled]="processing || !location.name">{{'general.save'|translate}}</button>
                 <button mat-raised-button color="secondary" (click)="cancel()" [disabled]="processing">{{'general.cancel'|translate}}</button>
                 <span style="flex: 1 1 auto;"></span>
                 <button *ngIf="location.id" mat-raised-button color="warn" (click)="delete()" [disabled]="processing">{{'general.delete'|translate}}</button>
