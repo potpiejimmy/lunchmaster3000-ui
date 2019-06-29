@@ -49,6 +49,8 @@ import { TermsAndConditionsComponent } from './routes/terms';
 import { PrivacyAndCookiesComponent } from './routes/privacy';
 import { AboutComponent } from './routes/about';
 import { DonateComponent } from './components/donate';
+import { CoilComponent } from './components/coil';
+import { CoilEventListenerComponent } from './components/coilEventListener';
 
 @NgModule({
   declarations: [
@@ -65,7 +67,9 @@ import { DonateComponent } from './components/donate';
     AboutComponent,
     TermsAndConditionsComponent,
     PrivacyAndCookiesComponent,
-    DonateComponent
+    DonateComponent,
+    CoilComponent,
+    CoilEventListenerComponent
   ],
   imports: [
     BrowserModule,

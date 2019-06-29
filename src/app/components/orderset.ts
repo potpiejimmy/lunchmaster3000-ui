@@ -70,7 +70,8 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit(): void {
-        setTimeout(()=>this.inporder.nativeElement.focus(), 10);
+        if(this.inporder)
+            setTimeout(()=>this.inporder.nativeElement.focus(), 10);
     }
 
     get orderInput() {

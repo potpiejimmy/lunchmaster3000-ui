@@ -102,6 +102,7 @@
     </div>
     <div *ngIf="orderSet.arrived" >
       <mat-icon>location_on</mat-icon> {{'components.orderset.food_arrived_msg'|translate}}
+      <coil></coil>
     </div>
   </mat-card>
   <div *ngIf="!orderSet.finished && orderKeys.length" style="float:left;">
