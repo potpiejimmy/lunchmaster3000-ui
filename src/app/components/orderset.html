@@ -1,6 +1,6 @@
 <mat-card class="orderSet">
   <mat-card-title><div class="center-alignment"><mat-icon>fastfood</mat-icon>&nbsp;{{orderSet.location.name}}</div></mat-card-title>
-  <mat-card-subtitle>{{'components.orderset.subtitle_1'|translate:{name:orderSet.name, location:orderSet.location.name} }} <a target="_blank" [href]="orderSet.location.menu_link">{{'general.menucard'|translate}}</a>.</mat-card-subtitle>
+  <mat-card-subtitle>{{'components.orderset.subtitle_1'|translate:{name:orderSet.name, location:orderSet.location.name} }} <span *ngIf="orderSet.location.menu_link">{{'components.orderset.subtitle_menu_card'|translate}} <a target="_blank" [href]="orderSet.location.menu_link">{{'general.menucard'|translate}}</a>.</span></mat-card-subtitle>
   <mat-card-subtitle>{{'components.orderset.subtitle_2'|translate}}</mat-card-subtitle>
   <div *ngIf="own" style="font-size: .5em;">
     <form class="comment-form">

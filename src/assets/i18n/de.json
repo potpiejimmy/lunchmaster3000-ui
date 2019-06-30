@@ -39,8 +39,9 @@
             "placeorder": "Bestellungen aufnehmen"
         },
         "orderset": {
-            "subtitle_1": "{{name}} bestellt heute bzw. holt heute etwas bei {{location}}. Hier ist die",
+            "subtitle_1": "{{name}} bestellt heute bzw. holt heute etwas bei {{location}}.",
             "subtitle_2": "Wenn du etwas mitbestellen möchtest, schreibe es unten hin.",
+            "subtitle_menu_card": "Hier ist die",
             "comment": "Bestellhinweise / Infos",
             "paylink": "Bezahllink",
             "fee": "Liefergebühr",

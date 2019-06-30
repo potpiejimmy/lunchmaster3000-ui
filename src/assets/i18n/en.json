@@ -39,8 +39,9 @@
             "placeorder": "Take orders"
         },
         "orderset": {
-            "subtitle_1": "{{name}} is taking orders for {{location}} today. Click here for the ",
+            "subtitle_1": "{{name}} is taking orders for {{location}} today.",
             "subtitle_2": "If you'd like to have something from that place, put it into the text field below.",
+            "subtitle_menu_card": "Click here for the",
             "comment": "Info / your remarks",
             "paylink": "Payment link",
             "fee": "Delivery fee",
