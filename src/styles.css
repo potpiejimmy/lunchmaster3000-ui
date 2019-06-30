@@ -29,10 +29,6 @@ body {
     font-size: .5em;
 }
 
-body {
-    margin: 0;
-}
-
 a, a:visited {
     text-decoration: none;
     color: #2E7D32;
@@ -129,6 +125,15 @@ a.footerlink {
 .mat-expansion-panel-header-title {
     color: rgba(0,0,0,.54);
     align-items: center;
+}
+
+.mat-expansion-panel-header {
+    padding: 0px 12px !important;
+}
+
+.mat-expansion-panel-body {
+    padding: 0px 12px 12px !important;
+    color: rgba(0,0,0,.54);
 }
 
 .mat-card.orderSet {
