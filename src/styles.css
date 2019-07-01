@@ -98,12 +98,6 @@ a.footerlink {
     background-color: white;
 }
 
-@media (min-width: 960px) {
-    .mat-card {
-        margin: 32px 128px;
-    }
-}
-
 .mat-card.createcard {
     background-color: lightgoldenrodyellow;
 }
@@ -186,10 +180,6 @@ pre {
     font-size: 14px;
 }
 
-.chat-form {
-    font-size: .5em;
-}
-
 .favorites-form {
     margin-top: 0.5em;
 }
@@ -201,13 +191,29 @@ pre {
     line-height: 24px;
 }
 
+.favorites-form .add-location-button {
+    padding: 0;
+    min-width: 36px;
+}
+
 .center-alignment {
     display: flex;
     align-items: center;
 }
 
-/* responsive mat-table */
-@media(max-width: 600px) {
+.font-size-small {
+    font-size: .5em;
+}
+
+.font-size-middle {
+    font-size: .7em;
+}
+
+/* Extra small devices (phones, less than 768px) */
+@media (max-width:600px) {
+    .mat-form-field {font-size:0.6em;}
+    
+    /* responsive mat-table */
     td.mat-cell {
         border: none !important;
         padding: 1px 0 !important;
@@ -217,4 +223,15 @@ pre {
         padding: .25em 0 !important;
         height: auto !important;
     }
+}
+  
+/* Small devices (tablets, 768px and up) */
+@media (min-width:601px) {
+    .mat-form-field {font-size:0.7em;}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width:992px) {
+    .mat-card {margin: 32px 128px;}
+    .mat-form-field {font-size:0.8em;}
 }

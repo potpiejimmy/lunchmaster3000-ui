@@ -33,7 +33,10 @@
       <div *ngFor="let l of data.locations">
         <location [location]="l" [name]="name" (change)="checkboxChanged($event)" (takeOrders)="takeOrders($event)"></location>
       </div>
-      <div gdAlignRows="start" *ngIf="!app.locationEditor || !app.locationEditor.location" (click)="app.locationEditor.newLocation()"><button mat-icon-button [title]="'routes.main.add_new_location'|translate"><mat-icon style="font-size: 36px;">add_box</mat-icon></button></div>
+      <div gdAlignRows="start" *ngIf="!app.locationEditor || !app.locationEditor.location" (click)="app.locationEditor.newLocation()">
+        <button *ngIf="!data || !data.locations.length" mat-raised-button color="primary" [title]="'routes.main.add_new_location'|translate"><mat-icon>add</mat-icon> {{'components.location_edit.new_location'|translate}}</button>
+        <button *ngIf="data && data.locations.length" mat-raised-button color="primary" class="add-location-button" [title]="'routes.main.add_new_location'|translate"><mat-icon>add</mat-icon></button>
+      </div>
     </div>
   </form>
   <div style="margin-bottom: 1em;">

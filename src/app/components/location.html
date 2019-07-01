@@ -12,11 +12,16 @@
             <div style="font-size: .5em;" *ngIf="location.menu_link">
                 <a target="_blank" [href]="location.menu_link">{{'general.menucard'|translate}}</a>
             </div>
+            <div fxHide fxShow.xs style="font-size: .4em; margin-top: .2em;">
+                <div *ngFor="let v of location.votes">
+                    ⭐ {{v}}
+                </div>
+            </div>
         </div>
         <div fxLayout="column" fxLayoutGap="1em">
-            <div style="font-size: .4em;">
+            <div fxShow fxHide.xs style="font-size: .4em;">
                 <div gdAlignRows="end" *ngFor="let v of location.votes">
-                    {{v}} ⭐
+                   {{v}} ⭐
                 </div>
             </div>
             <div fxShow fxHide.xs fxFlexAlign="end">

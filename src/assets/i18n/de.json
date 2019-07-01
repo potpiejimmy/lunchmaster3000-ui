@@ -31,7 +31,7 @@
         },
         "location_edit": {
             "edit": "Bearbeite: {{name}}",
-            "new_location": "Neue Location",
+            "new_location": "Neue Location hinzufügen",
             "shortdescription": "Kurzbeschreibung / Infos",
             "menu_link": "Link zur Speisekarte"
         },
@@ -46,7 +46,7 @@
             "paylink": "Bezahllink",
             "fee": "Liefergebühr",
             "incl_fee": "inkl. Liefergebühr",
-            "total": "Gesamt",
+            "total": "Zu zahlen",
             "subtitle_infos": "Infos von {{name}}",
             "yourorder": "Deine Bestellung",
             "ownorder_1": "Dein eigener Bestellwunsch",
@@ -57,7 +57,7 @@
             "user_order_request": "Bestellwunsch",
 			"pay_now": "Jetzt bezahlen",
             "money_received": "Geld erhalten",
-            "sum": "Summe:",
+            "sum": "Gesamt",
             "order_finished": "Die Bestellung ist beendet. Sobald das Essen da ist,",
             "order_finished_own": "drücke auf den Knopf!",
             "order_finished_not_own": "erhältst du eine Nachricht!",
@@ -101,7 +101,8 @@
         },
         "settings": {
             "card_title": "Deine aktuelle lunch.community",
-            "community_leave": "Community verlassen"
+            "community_leave": "Community verlassen",
+            "your_name": "Dein Name"
         },
         "welcome": {
             "welcome_message": "Willkommen bei der lunch.community von",
