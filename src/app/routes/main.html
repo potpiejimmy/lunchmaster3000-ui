@@ -6,50 +6,49 @@
 
 <mat-card *ngIf="name && name.length > 2" class="favlist">
   <mat-card-title><div class="center-alignment"><mat-icon>star</mat-icon>&nbsp;{{'routes.main.favorite_list'|translate}}</div></mat-card-title>
-  <mat-card-subtitle>{{'routes.main.hello'|translate:{name: name} }}</mat-card-subtitle>
-  <mat-card-subtitle>
+  <mat-card-subtitle *ngIf="data && data.locations.length">{{'routes.main.hello'|translate:{name: name} }}</mat-card-subtitle>
+  <mat-card-subtitle *ngIf="data && data.locations.length">
     {{'routes.main.welcome_text_1'|translate}}
     <br/>
     {{'routes.main.welcome_text_2'|translate}} <i>{{'routes.main.welcome_text_3'|translate}}</i>.
     {{'routes.main.welcome_text_4'|translate}}
   </mat-card-subtitle>
-  <mat-accordion multi="true">
-    <mat-expansion-panel class="favlistt">
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          <mat-icon>info</mat-icon>&nbsp;{{'routes.main.hint_title'|translate}}
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-      <p>
-        {{'routes.main.hint_1'|translate}}
-        {{'routes.main.hint_2'|translate}}
-      </p>
-    </mat-expansion-panel>
-    <mat-expansion-panel class="favlist" *ngIf="!data || !data.locations.length">
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-            <mat-icon>info</mat-icon>&nbsp;{{'routes.main.community_new'|translate}} 
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-      <p>
-        {{'routes.main.invite_colleagues_1'|translate}} <mat-icon style="font-size: .8em; width: 1em; height: 1em;">share</mat-icon>
-        {{'routes.main.invite_colleagues_2'|translate}}
-        {{'routes.main.invite_colleagues_3'|translate}}
-        {{'routes.main.invite_colleagues_4'|translate}}
-      </p>
-      <p>
-        {{'routes.main.invite_colleagues_5'|translate}}
-        {{'routes.main.invite_colleagues_6'|translate}}
-      </p>
-    </mat-expansion-panel>
-  </mat-accordion>
+  <mat-card class="ordercard" *ngIf="!data || !data.locations.length">
+    <mat-card-subtitle>
+      <mat-icon>info</mat-icon> {{'routes.main.community_new'|translate}}
+    </mat-card-subtitle>
+    <mat-card-subtitle>
+      {{'routes.main.invite_colleagues_1'|translate}} <mat-icon style="font-size: .8em; width: 1em; height: 1em;">share</mat-icon>
+      {{'routes.main.invite_colleagues_2'|translate}}
+      {{'routes.main.invite_colleagues_3'|translate}}
+      {{'routes.main.invite_colleagues_4'|translate}}
+    </mat-card-subtitle>
+    <mat-card-subtitle>
+      {{'routes.main.invite_colleagues_5'|translate}}
+      {{'routes.main.invite_colleagues_6'|translate}}
+    </mat-card-subtitle>
+  </mat-card>
   <form class="favorites-form">
     <div fxFlex fxLayout="column">
       <div *ngFor="let l of data.locations">
         <location [location]="l" [name]="name" (change)="checkboxChanged($event)" (takeOrders)="takeOrders($event)"></location>
       </div>
-      <div gdAlignRows="start" *ngIf="!app.locationEditor || !app.locationEditor.location" (click)="app.locationEditor.newLocation()"><button mat-icon-button [title]="'routes.main.add_new_location'|translate"><mat-icon style="font-size: 36px;">add_box</mat-icon></button></div>
+      <div gdAlignRows="start" *ngIf="!app.locationEditor || !app.locationEditor.location" (click)="app.locationEditor.newLocation()">
+        <button *ngIf="!data || !data.locations.length" mat-raised-button color="primary" [title]="'routes.main.add_new_location'|translate"><mat-icon>add</mat-icon> {{'components.location_edit.new_location'|translate}}</button>
+        <button *ngIf="data && data.locations.length" mat-raised-button color="primary" class="add-location-button" [title]="'routes.main.add_new_location'|translate"><mat-icon>add</mat-icon></button>
+      </div>
     </div>
   </form>
-  <location-edit #locationEditor></location-edit>
+  <div style="margin-bottom: 1em;">
+    <location-edit #locationEditor></location-edit>
+  </div>
+  <mat-expansion-panel class="favlistt">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon>info</mat-icon>&nbsp;{{'routes.main.hint_title'|translate}}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+      {{'routes.main.hint_1'|translate}}
+      {{'routes.main.hint_2'|translate}}
+  </mat-expansion-panel>
 </mat-card>

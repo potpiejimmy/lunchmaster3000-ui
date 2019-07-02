@@ -31,7 +31,7 @@
         },
         "location_edit": {
             "edit": "Bearbeite: {{name}}",
-            "new_location": "Neue Location",
+            "new_location": "Neue Location hinzufügen",
             "shortdescription": "Kurzbeschreibung / Infos",
             "menu_link": "Link zur Speisekarte"
         },
@@ -39,13 +39,14 @@
             "placeorder": "Bestellungen aufnehmen"
         },
         "orderset": {
-            "subtitle_1": "{{name}} bestellt heute bzw. holt heute etwas bei {{location}}. Hier ist die",
+            "subtitle_1": "{{name}} bestellt heute bzw. holt heute etwas bei {{location}}.",
             "subtitle_2": "Wenn du etwas mitbestellen möchtest, schreibe es unten hin.",
+            "subtitle_menu_card": "Hier ist die",
             "comment": "Bestellhinweise / Infos",
             "paylink": "Bezahllink",
             "fee": "Liefergebühr",
             "incl_fee": "inkl. Liefergebühr",
-            "total": "Gesamt",
+            "total": "Zu zahlen",
             "subtitle_infos": "Infos von {{name}}",
             "yourorder": "Deine Bestellung",
             "ownorder_1": "Dein eigener Bestellwunsch",
@@ -56,7 +57,7 @@
             "user_order_request": "Bestellwunsch",
 			"pay_now": "Jetzt bezahlen",
             "money_received": "Geld erhalten",
-            "sum": "Summe:",
+            "sum": "Gesamt",
             "order_finished": "Die Bestellung ist beendet. Sobald das Essen da ist,",
             "order_finished_own": "drücke auf den Knopf!",
             "order_finished_not_own": "erhältst du eine Nachricht!",
@@ -86,7 +87,7 @@
             "welcome_text_2": "Wenn du dich dazu entscheidest, Essen für dich und deine Kollegen bei einem der Restaurants zu bestellen und abzuholen oder liefern zu lassen, dann drücke auf",
             "welcome_text_3": "Bestellungen aufnehmen",
             "welcome_text_4": "Ansonsten warte einfach, bis ein anderer dies tut, dann kannst du dich anschließen.",
-            "hint_title": "Hinweis zur Benutzung der Website",
+            "hint_title": "Hinweise zur Verwendung dieser Website",
             "hint_1": "Du musst diese Website nicht neu laden (sie aktualisiert sich von alleine) und alles, was du anklickst und eintippst, ist für deine Commmunity sofort sichtbar,",
             "hint_2": "auch ohne dass du die Eingabe-Taste dazu drücken musst (Ausnahme: Chatnachricht absenden).",
             "community_new": "Diese Community scheint noch neu zu sein.",
@@ -100,13 +101,14 @@
         },
         "settings": {
             "card_title": "Deine aktuelle lunch.community",
-            "community_leave": "Community verlassen"
+            "community_leave": "Community verlassen",
+            "your_name": "Dein Name"
         },
         "welcome": {
             "welcome_message": "Willkommen bei der lunch.community von",
             "welcome_new_user": "Du bist neu hier. Bitte gib einen Namen ein, damit deine Kollegen dich erkennen können.",
             "ask_for_name": "Wie heißt du?",
-            "hint_title": "Hinweis zur Benutzung deines Namens",
+            "hint_title": "Hinweise zur Verwendung deines Namens",
             "hint_1": "Dein Name wird nicht zentral, sondern nur in deinem Browser gespeichert und dient nur der ",
             "hint_2": "Kenntlichmachung deiner Bestellwünsche gegenüber den anderen. Üblicherweise reicht hier z.B. dein Vorname. Achte aber darauf, dass der Name",
             "hint_3": "innerhalb deiner Community eindeutig ist, denn er dient auch als Identifikation für deine Person.",

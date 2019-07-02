@@ -29,10 +29,6 @@ body {
     font-size: .5em;
 }
 
-body {
-    margin: 0;
-}
-
 a, a:visited {
     text-decoration: none;
     color: #2E7D32;
@@ -66,7 +62,15 @@ a, a:visited {
 }
 
 #secondarybar.mat-toolbar-single-row {
+    height: auto;
+    white-space: normal;
+    line-height: 1em;
+}
+
+#secondarybar.mat-toolbar-single-row .mat-icon-button {
     height: 30px;
+    width: 30px;
+    line-height: 30px;
 }
 
 #secondarybar .material-icons {
@@ -102,12 +106,6 @@ a.footerlink {
     background-color: white;
 }
 
-@media (min-width: 960px) {
-    .mat-card {
-        margin: 32px 128px;
-    }
-}
-
 .mat-card.createcard {
     background-color: lightgoldenrodyellow;
 }
@@ -129,6 +127,15 @@ a.footerlink {
 .mat-expansion-panel-header-title {
     color: rgba(0,0,0,.54);
     align-items: center;
+}
+
+.mat-expansion-panel-header {
+    padding: 0px 12px !important;
+}
+
+.mat-expansion-panel-body {
+    padding: 0px 12px 12px !important;
+    color: rgba(0,0,0,.54);
 }
 
 .mat-card.orderSet {
@@ -181,10 +188,6 @@ pre {
     font-size: 14px;
 }
 
-.chat-form {
-    font-size: .5em;
-}
-
 .favorites-form {
     margin-top: 0.5em;
 }
@@ -196,13 +199,38 @@ pre {
     line-height: 24px;
 }
 
+.favorites-form .add-location-button {
+    padding: 0;
+    min-width: 36px;
+}
+
 .center-alignment {
     display: flex;
     align-items: center;
 }
 
-/* responsive mat-table */
-@media(max-width: 600px) {
+.font-size-small {
+    font-size: .5em;
+}
+
+.font-size-middle {
+    font-size: .7em;
+}
+
+.title, .title-long {
+    margin-left: .5em;
+    font-weight: bold;
+}
+
+/* Extra small devices (phones, less than 768px) */
+@media (max-width:600px) {
+    .mat-form-field {font-size:0.6em;}
+    .title-long {
+        margin-left: .5em;
+        font-weight: bold;
+        font-size: .8em;
+    }
+    /* responsive mat-table */
     td.mat-cell {
         border: none !important;
         padding: 1px 0 !important;
@@ -212,4 +240,15 @@ pre {
         padding: .25em 0 !important;
         height: auto !important;
     }
+}
+  
+/* Small devices (tablets, 768px and up) */
+@media (min-width:601px) {
+    .mat-form-field {font-size:0.7em;}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width:992px) {
+    .mat-card {margin: 32px 128px;}
+    .mat-form-field {font-size:0.8em;}
 }

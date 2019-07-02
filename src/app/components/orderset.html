@@ -1,9 +1,9 @@
 <mat-card class="orderSet">
   <mat-card-title><div class="center-alignment"><mat-icon>fastfood</mat-icon>&nbsp;{{orderSet.location.name}}</div></mat-card-title>
-  <mat-card-subtitle>{{'components.orderset.subtitle_1'|translate:{name:orderSet.name, location:orderSet.location.name} }} <a target="_blank" [href]="orderSet.location.menu_link">{{'general.menucard'|translate}}</a>.</mat-card-subtitle>
+  <mat-card-subtitle>{{'components.orderset.subtitle_1'|translate:{name:orderSet.name, location:orderSet.location.name} }} <span *ngIf="orderSet.location.menu_link">{{'components.orderset.subtitle_menu_card'|translate}} <a target="_blank" [href]="orderSet.location.menu_link">{{'general.menucard'|translate}}</a>.</span></mat-card-subtitle>
   <mat-card-subtitle>{{'components.orderset.subtitle_2'|translate}}</mat-card-subtitle>
-  <div *ngIf="own" style="font-size: .5em;">
-    <form class="comment-form">
+  <div *ngIf="own">
+    <form class="font-size-middle">
         <mat-form-field>
             <textarea #inpcomment name="comment" matInput [placeholder]="'components.orderset.comment'|translate" [(ngModel)]="commentInput" cdkTextareaAutosize="true"></textarea>
         </mat-form-field>
@@ -21,7 +21,7 @@
         </div>
     </form>
   </div>
-  <div *ngIf="orderSet.comment" style="font-size: .5em;">
+  <div *ngIf="orderSet.comment" class="font-size-small">
     <mat-card class="notecard">
       <mat-card-subtitle style="font-size: 1em;">{{'components.orderset.subtitle_infos'|translate:{name: orderSet.name} }}:</mat-card-subtitle>
       <span style="white-space: pre-line;">{{orderSet.comment}}</span>
@@ -66,15 +66,15 @@
             </ng-container>
             <ng-container matColumnDef="price">
                 <th mat-header-cell *matHeaderCellDef> {{'components.orderset.price'|translate}} </th>
-                <td mat-cell *matCellDef="let element"> {{formatNumberInLocale(orderSet.orders[element].price)}} </td>
+                <td mat-cell *matCellDef="let element"><span fxHide fxShow.xs>{{'components.orderset.price'|translate}}: </span>{{formatNumberInLocale(orderSet.orders[element].price)}} </td>
             </ng-container>
             <ng-container matColumnDef="fee">
-              <th mat-header-cell *matHeaderCellDef fxShow fxHide.sm> {{'components.orderset.fee'|translate}} </th>
-              <td mat-cell *matCellDef="let element" fxShow fxHide.sm> {{formatNumberInLocale(feePerPerson())}} </td>
+              <th mat-header-cell *matHeaderCellDef fxShow fxHide.lt-md> {{'components.orderset.fee'|translate}} </th>
+              <td mat-cell *matCellDef="let element" fxShow fxHide.lt-md>{{formatNumberInLocale(feePerPerson())}} </td>
             </ng-container>
             <ng-container matColumnDef="total">
               <th mat-header-cell *matHeaderCellDef> {{'components.orderset.total'|translate}} </th>
-              <td mat-cell *matCellDef="let element"> <b>{{formatNumberInLocale(totalPerPerson(orderSet.orders[element].price))}}</b> </td>
+              <td mat-cell *matCellDef="let element"><b><span fxHide fxShow.xs>{{'components.orderset.total'|translate}}: </span>{{formatNumberInLocale(totalPerPerson(orderSet.orders[element].price))}}</b> </td>
             </ng-container>
             <ng-container matColumnDef="paylink">
               <th mat-header-cell *matHeaderCellDef> </th>
@@ -89,7 +89,7 @@
     </table>
     <div fxLayout="column" style="font-weight: bold; text-align: right;">
       <div *ngIf="sum" style="font-size: .75em;">
-          {{'components.orderset.total'|translate}}: {{formatNumberInLocale(sum)}}
+          {{'components.orderset.sum'|translate}}: {{formatNumberInLocale(sum)}}
       </div>
       <div *ngIf="orderSet.fee" style="font-size: .4em;">
           {{'components.orderset.incl_fee'|translate}}: {{formatNumberInLocale(orderSet.fee)}}
@@ -97,7 +97,7 @@
     </div>
   </mat-card>
   <mat-card class="orderSetInfo" *ngIf="orderSet.finished">
-    <div *ngIf="!orderSet.arrived" style="font-size: .6em;">
+    <div *ngIf="!orderSet.arrived" class="font-size-small">
       {{'components.orderset.order_finished'|translate}} {{own ? ('components.orderset.order_finished_own'|translate) : ('components.orderset.order_finished_not_own'|translate) }} 
     </div>
     <div *ngIf="orderSet.arrived" >
@@ -105,26 +105,22 @@
       <coil></coil>
     </div>
   </mat-card>
-  <div *ngIf="!orderSet.finished && orderKeys.length" style="float:left;">
-    <button *ngIf="own" mat-raised-button color="primary" (click)="finish()">{{'components.orderset.finish_order'|translate}}</button>
-  </div>
-  <div *ngIf="orderSet.finished && !orderSet.arrived" style="float:left;">
-    <button *ngIf="own" mat-raised-button color="accent" (click)="arrive()">{{'components.orderset.food_arrived_btn'|translate}}</button>
-  </div>
-  <div style="float:right; margin-bottom: .5em;">
+  <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="0.5em" style="margin-bottom: .5em;">
+    <button *ngIf="own && !orderSet.finished && orderKeys.length" mat-raised-button color="primary" (click)="finish()">{{'components.orderset.finish_order'|translate}}</button>
+    <button *ngIf="own && orderSet.finished && !orderSet.arrived" mat-raised-button color="accent" (click)="arrive()">{{'components.orderset.food_arrived_btn'|translate}}</button>
+    <span fxShow fxHide.xs style="flex: 1 1 auto;"></span>
     <button *ngIf="own" mat-raised-button color="warn" (click)="cancel()">{{'components.orderset.order_delete'|translate}}</button>
   </div>
-  <div style="clear:both;"></div>
 
   <mat-card class="chatcard">
     <mat-card-title><div class="center-alignment"><mat-icon>chat</mat-icon>&nbsp;{{'components.orderset.chat'|translate}}</div></mat-card-title>
-    <div style="font-size: .5em;">
+    <div class="font-size-small">
       <div *ngFor="let msg of orderSet.chat" style="margin: .5em 0;">
         <span style="color: #777; font-size: .75em;">{{msg.name}} [{{formatMoment(msg.date)}}]</span><br/>
         <span style="color: black;">{{msg.msg}}</span>
       </div>
     </div>
-    <form class="chat-form">
+    <form class="font-size-middle">
       <mat-form-field>
         <input #inpchat name="chatmsg" matInput [placeholder]="'components.orderset.chat_msg'|translate" [(ngModel)]="chatInput">
         <button type="submit" mat-button *ngIf="chatInput && chatInput.trim().length" matSuffix mat-icon-button (click)="sendChatMsg()" [title]="'components.orderset.chat_msg_send'|translate">

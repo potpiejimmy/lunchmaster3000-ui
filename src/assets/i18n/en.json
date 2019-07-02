@@ -31,7 +31,7 @@
         },
         "location_edit": {
             "edit": "Edit: {{name}}",
-            "new_location": "New place",
+            "new_location": "Add new place",
             "shortdescription": "Short description / info",
             "menu_link": "Link to the menu"
         },
@@ -39,13 +39,14 @@
             "placeorder": "Take orders"
         },
         "orderset": {
-            "subtitle_1": "{{name}} is taking orders for {{location}} today. Click here for the ",
+            "subtitle_1": "{{name}} is taking orders for {{location}} today.",
             "subtitle_2": "If you'd like to have something from that place, put it into the text field below.",
+            "subtitle_menu_card": "Click here for the",
             "comment": "Info / your remarks",
             "paylink": "Payment link",
             "fee": "Delivery fee",
             "incl_fee": "incl. delivery fee",
-            "total": "Total",
+            "total": "To pay",
             "subtitle_infos": "{{name}}'s remarks",
             "yourorder": "Your order",
             "ownorder_1": "Your own order",
@@ -56,7 +57,7 @@
             "user_order_request": "Order",
 			"pay_now": "Pay now",
             "money_received": "Money received",
-            "sum": "Sum:",
+            "sum": "Total",
             "order_finished": "Ordering has been closed. As soon as the food arrives,",
             "order_finished_own": "hit the button!",
             "order_finished_not_own": "you will be notified!",
@@ -86,7 +87,7 @@
             "welcome_text_2": "If you feel like ordering or picking up food for you and your co-workers from one of the places, please press ",
             "welcome_text_3": "Take orders",
             "welcome_text_4": "Otherwise, just wait until someone else presses the button and then you can join in.",
-            "hint_title": "Note regading the usage of this website",
+            "hint_title": "Notes regarding the usage of this website",
             "hint_1": "You never need to reload this website and anything you click or type will be immediately visible to your community ",
             "hint_2": "without pressing the Enter button (except when sending out chat messages).",
             "community_new": "This community seems to be newly-created.",
@@ -100,14 +101,15 @@
         },
         "settings": {
             "card_title": "Your current lunch.community",
-            "community_leave": "Leave community"
+            "community_leave": "Leave community",
+            "your_name": "Your Name"
         },
         "welcome": {
             "welcome_message": "Welcome to the lunch.community of",
             "welcome_new_user": "You are new here. Please enter your name so your co-workers know who you are.",
             "ask_for_name": "What's your name?",
-            "hint_title": "Hint regarding the usage of you name",
-            "hint_1": "Note: Your name is not stored on our servers. It is only stored in your current browser instance and it is used ",
+            "hint_title": "Click here for info about how we use your name",
+            "hint_1": "Your name is not stored on our servers. It is only stored in your current browser instance and it is used ",
             "hint_2": "to identify your orders. Usually your first name should be sufficient, but since the name is also used as an ",
             "hint_3": "identification for your person, your should make sure it is unique within your community.",
             "hungry": "I'm hungry!"
