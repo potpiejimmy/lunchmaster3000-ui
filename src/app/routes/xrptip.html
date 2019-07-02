@@ -12,14 +12,14 @@
             </mat-form-field>
             <mat-form-field class="select">
                 <mat-label>Network</mat-label>
-                <mat-select [(value)]="network">
+                <mat-select [(value)]="networkInput">
                     <mat-option value="twitter">Twitter</mat-option>
                     <mat-option value="reddit">Reddit</mat-option>
                     <mat-option value="discord">Discord</mat-option>
                     <mat-option value="coil">Coil</mat-option>
                 </mat-select>
             </mat-form-field>
-            <button style="width: auto;" mat-raised-button color="primary" (click)="claim()" [disabled]="!handleInput || !handleInput.trim().length || processing">{{'routes.xrptip.claim_reward'|translate}}</button>
+            <button style="width: auto;" mat-raised-button color="primary" (click)="claim()" [disabled]="!handleInput || !handleInput.trim().length || !networkInput || !networkInput.trim().length || processing">{{'routes.xrptip.claim_reward'|translate}}</button>
         </form>
     </div>
 </mat-card>

@@ -134,8 +134,14 @@
             "subtitle": "Bitte trage deinen Tipbot-Namen ein und wähle dein Netwerk aus.",
             "xrphandle": "Username",
             "claim_reward": "Hol dir jetzt deine XRP!",
+            "tip_sent": "Wir haben dir einen tip gesendet! Vielen Dank! :)",
+            "error_no_coil": "Anscheinend hast du kein Coil. Leider kannst du keine XRP claimen.",
+            "error_tip_yourself": "Danke, aber leider können wir uns nicht selbst einen Tip senden :)",
+            "error_tipbot_disabled": "Sorry, dieser Nutzer hat seinen XRPTipbot account deaktiviert",
+            "error_unknown_user": "Sorry, aber dieser User hat noch keinen XRPTipbot account.",
             "error_already_tipped": "Sorry, aber du hast schon die XRP erhalten! Du kannst leider nur einmal teilnehmen.",
-            "error_no_balance": "Sorry, wir haben leider nicht mehr genug XRP um dir einen Tip zu senden."
+            "error_no_balance": "Sorry, wir haben leider nicht mehr genug XRP um dir einen Tip zu senden.",
+            "error_generic_response": "Leider ist etwas schwiefgelaufen."
         }
     },
     "push": {
