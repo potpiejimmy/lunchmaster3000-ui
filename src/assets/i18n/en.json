@@ -79,8 +79,7 @@
             "create_community_subtitle": "Create the lunch community for your team or organization here. Then, share the link to your community with your co-workers and friends.",
             "community_name": "Your community's name",
             "create_community_button": "Create community",
-            "join_community_1": "You can also ",
-            "join_community_2": " an exisiting community.",
+            "join_community": "You can also join an exisiting community. Please click here:",
             "join_community_link": "join"
         },
         "main": {
