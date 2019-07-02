@@ -9,7 +9,8 @@
 <mat-card class="createcard">
   <mat-card-title>{{'routes.create.create_community_text'|translate}}</mat-card-title>
   <mat-card-subtitle>
-    {{'routes.create.create_community_subtitle'|translate}} 
+    {{'routes.create.create_community_subtitle'|translate}}<br/>
+    {{'routes.create.join_community'|translate}}<a [routerLink]="['/join']"><b> {{'routes.create.join_community_link'|translate}}</b></a>
   </mat-card-subtitle>
   <form class="create-form">
     <mat-form-field>

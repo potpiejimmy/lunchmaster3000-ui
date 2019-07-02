@@ -7,6 +7,7 @@ import { SettingsComponent } from './routes/settings';
 import { TermsAndConditionsComponent } from './routes/terms';
 import { PrivacyAndCookiesComponent } from './routes/privacy';
 import { AboutComponent } from './routes/about';
+import { JoinComponent } from './routes/join';
 
 export const routes: Routes = [
     {path: '', component: MainComponent},
@@ -15,7 +16,8 @@ export const routes: Routes = [
     {path: 'settings', component: SettingsComponent},
     {path: 'about', component: AboutComponent},
     {path: 'terms', component: TermsAndConditionsComponent},
-    {path: 'privacy', component: PrivacyAndCookiesComponent}
+    {path: 'privacy', component: PrivacyAndCookiesComponent},
+    {path: 'join', component: JoinComponent}
 ];
 
 export const AppRoutes: ModuleWithProviders = RouterModule.forRoot(routes);

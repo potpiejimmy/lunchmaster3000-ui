@@ -78,7 +78,9 @@
             "create_community_text": "Found your lunch.community",
             "create_community_subtitle": "Create the lunch community for your team or organization here. Then, share the link to your community with your co-workers and friends.",
             "community_name": "Your community's name",
-            "create_community_button": "Create community"
+            "create_community_button": "Create community",
+            "join_community": "You can also join an exisiting community. Please click here:",
+            "join_community_link": "join"
         },
         "main": {
             "favorite_list": "Today's favorites",
@@ -119,6 +121,13 @@
             "company_street": "Bindingstr. 16, 60598 Frankfurt am Main",
             "company_country": "Germany",
             "mail_contact": "Contact:"
+        },
+        "join": {
+            "title": "Join an existing community",
+            "subtitle": "Please insert the link to the community into the field below.",
+            "community_link": "Link of the community",
+            "join_community_button": "Join community",
+            "error": "This is not a valid link for a community!"
         }
     },
     "push": {

@@ -78,7 +78,9 @@
             "create_community_text": "Gründe hier deine lunch.community",
             "create_community_subtitle": "Lege hier eine neue Community für dein Team oder deine Organisation an. Den erstellten Link teilst du dann mit deinen Kollegen.",
             "community_name": "Name deiner Community",
-            "create_community_button": "Community erstellen"
+            "create_community_button": "Community erstellen",
+            "join_community": "Du kannst auch einer bestehenden Community beitreten. Bitte klicke dazu hier:",
+            "join_community_link": "beitreten"
         },
         "main": {
             "favorite_list": "Favoritenliste",
@@ -119,6 +121,13 @@
             "company_street": "Bindingstr. 16, 60598 Frankfurt am Main",
             "company_country": "Deutschland",
             "mail_contact": "Kontakt:"
+        },
+        "join": {
+            "title": "Einer bestehenden Community beitreten",
+            "subtitle": "Bitte trage den Link zu der Community, der du beitreten willst, unten in das Feld ein.",
+            "community_link": "Link zu der Community",
+            "join_community_button": "Community beitreten",
+            "error": "Dies ist kein Link zu einer Community!"
         }
     },
     "push": {

@@ -1,0 +1,12 @@
+<mat-card>
+    <mat-card-title>{{'routes.join.title'|translate}}</mat-card-title>
+    <mat-card-subtitle>
+        {{'routes.join.subtitle'|translate}}
+    </mat-card-subtitle>
+    <form>
+        <mat-form-field>
+            <input #inplink name="link" matInput [placeholder]="'routes.join.community_link'|translate" [(ngModel)]="linkInput">
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="join()" [disabled]="!linkInput || !linkInput.trim().length">{{'routes.join.join_community_button'|translate}}</button>
+    </form>
+</mat-card>

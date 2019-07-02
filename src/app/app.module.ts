@@ -51,6 +51,8 @@ import { AboutComponent } from './routes/about';
 import { DonateComponent } from './components/donate';
 import { CoilComponent } from './components/coil';
 import { CoilEventListenerComponent } from './components/coilEventListener';
+import { JoinComponent } from './routes/join';
+
 
 @NgModule({
   declarations: [
@@ -69,7 +71,8 @@ import { CoilEventListenerComponent } from './components/coilEventListener';
     PrivacyAndCookiesComponent,
     DonateComponent,
     CoilComponent,
-    CoilEventListenerComponent
+    CoilEventListenerComponent,
+    JoinComponent
   ],
   imports: [
     BrowserModule,
