@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-
+import { Router } from '@angular/router';
 
 @Component({
     selector: "coil",
@@ -11,27 +11,16 @@ export class CoilComponent {
     streamedValue:number = 0;
     checkValue:boolean = true;
     
-    constructor() {}
+    constructor(private router: Router) {}
 
     isCoilRunning(): boolean {
         //console.log(JSON.stringify(document['monetization']));
-        return document['monetization'] && document['monetization'].state === 'started';
+        //return document['monetization'] && document['monetization'].state === 'started';
+        return true;
     }
 
-    getStreamedValue(): number {
-        if(this.checkValue) {
-            if(document['monetization'] && document['monetization'].overallStreamed)
-                this.streamedValue = document['monetization'].overallStreamed.amount;
-            else
-                this.streamedValue = 0;
-
-            this.checkValue = false;
-        }
-
-        return this.streamedValue;
-    }
-
-    convertToXrp(): number {
-        return this.streamedValue;
+    redirect() {
+        console.log("navigate")
+        this.router.navigate(['/xrptip']);
     }
 }

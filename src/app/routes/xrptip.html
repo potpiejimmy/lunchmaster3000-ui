@@ -1,0 +1,25 @@
+<mat-card fxFlex >
+    <div fxLayout="column">
+        <mat-card-title>{{'routes.xrptip.title'|translate}}</mat-card-title>
+        <mat-card-subtitle>
+            {{'routes.xrptip.subtitle'|translate}}
+        </mat-card-subtitle>
+    </div>
+    <div style="width: 60%">
+        <form fxLayout="column">
+            <mat-form-field>
+                <input #inphandle name="handle" matInput [placeholder]="'routes.xrptip.xrphandle'|translate" [(ngModel)]="handleInput">
+            </mat-form-field>
+            <mat-form-field class="select">
+                <mat-label>Network</mat-label>
+                <mat-select [(value)]="network">
+                    <mat-option value="twitter">Twitter</mat-option>
+                    <mat-option value="reddit">Reddit</mat-option>
+                    <mat-option value="discord">Discord</mat-option>
+                    <mat-option value="coil">Coil</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button style="width: auto;" mat-raised-button color="primary" (click)="claim()" [disabled]="!handleInput || !handleInput.trim().length || processing">{{'routes.xrptip.claim_reward'|translate}}</button>
+        </form>
+    </div>
+</mat-card>

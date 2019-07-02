@@ -172,6 +172,11 @@ a.footerlink {
     width: 100%;
 }
 
+.mat-form-field.select {
+    width: auto;
+    font-size: 0.5em;
+}
+
 .locfavcheck .mat-checkbox-inner-container {
     height: 32px !important;
     width: 32px !important;

@@ -22,6 +22,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatSelectModule } from '@angular/material/select';
 
 // Special
 import { LocalStorageModule } from 'angular-2-local-storage';
@@ -50,8 +51,9 @@ import { PrivacyAndCookiesComponent } from './routes/privacy';
 import { AboutComponent } from './routes/about';
 import { DonateComponent } from './components/donate';
 import { CoilComponent } from './components/coil';
-import { CoilEventListenerComponent } from './components/coilEventListener';
 import { JoinComponent } from './routes/join';
+import { XrpTipComponent } from './routes/xrptip';
+import { TipbotApiService } from './services/tipbotapi';
 
 
 @NgModule({
@@ -71,8 +73,8 @@ import { JoinComponent } from './routes/join';
     PrivacyAndCookiesComponent,
     DonateComponent,
     CoilComponent,
-    CoilEventListenerComponent,
-    JoinComponent
+    JoinComponent,
+    XrpTipComponent
   ],
   imports: [
     BrowserModule,
@@ -92,6 +94,7 @@ import { JoinComponent } from './routes/join';
     MatIconModule,
     MatListModule,
     MatExpansionModule,
+    MatSelectModule,
     // Special
     CurrencyMaskModule,
     ClipboardModule,
@@ -102,7 +105,8 @@ import { JoinComponent } from './routes/join';
   ],
   providers: [
     AppService,
-    LmApiService
+    LmApiService,
+    TipbotApiService
   ],
   bootstrap: [AppComponent]
 })

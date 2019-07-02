@@ -128,6 +128,14 @@
             "community_link": "Link zu der Community",
             "join_community_button": "Community beitreten",
             "error": "Dies ist kein Link zu einer Community!"
+        },
+        "xrptip": {
+            "title": "Hier kannst du deine verdienten XRP claimen",
+            "subtitle": "Bitte trage deinen Tipbot-Namen ein und wähle dein Netwerk aus.",
+            "xrphandle": "Username",
+            "claim_reward": "Hol dir jetzt deine XRP!",
+            "error_already_tipped": "Sorry, aber du hast schon die XRP erhalten! Du kannst leider nur einmal teilnehmen.",
+            "error_no_balance": "Sorry, wir haben leider nicht mehr genug XRP um dir einen Tip zu senden."
         }
     },
     "push": {
