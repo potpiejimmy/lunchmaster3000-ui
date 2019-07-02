@@ -65,6 +65,7 @@ a, a:visited {
     height: auto;
     white-space: normal;
     line-height: 1em;
+    min-height: 30px;
 }
 
 #secondarybar.mat-toolbar-single-row .mat-icon-button {
@@ -163,6 +164,8 @@ a.footerlink {
 
 .mat-card.orderSetInfo {
     margin: 0 0 .25em 0;
+    background-color: #2E7D32;
+    color: white;
 }
 
 .mat-form-field {

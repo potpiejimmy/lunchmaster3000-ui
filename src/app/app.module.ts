@@ -49,6 +49,7 @@ import { TermsAndConditionsComponent } from './routes/terms';
 import { PrivacyAndCookiesComponent } from './routes/privacy';
 import { AboutComponent } from './routes/about';
 import { DonateComponent } from './components/donate';
+import { JoinComponent } from './routes/join';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { DonateComponent } from './components/donate';
     AboutComponent,
     TermsAndConditionsComponent,
     PrivacyAndCookiesComponent,
-    DonateComponent
+    DonateComponent,
+    JoinComponent
   ],
   imports: [
     BrowserModule,
