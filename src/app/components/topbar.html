@@ -1,8 +1,11 @@
 <mat-toolbar id="primarybar" color="primary" class="mat-elevation-z6">
     <a [routerLink]="['/']"><div class="topbar-logo"></div></a>
-    <div style="margin-left: .5em; font-weight: bold;">{{title}}</div>
+    <div class="{{tw && tw.currentIndex == 0 ? 'title-long' : 'title'}}">{{title}}</div>
     <span style="flex: 1 1 auto;"></span>
-    <button *ngIf="app.community" mat-icon-button [title]="'general.settings'|translate" [routerLink]="['/settings']">
+    <button fxShow fxHide.xs *ngIf="app.community" mat-icon-button [title]="'general.settings'|translate" [routerLink]="['/settings']">
+      <mat-icon>settings_applications</mat-icon>
+    </button>
+    <button fxHide fxShow.xs *ngIf="app.community && (!tw || (tw && tw.currentIndex != 0))" mat-icon-button [title]="'general.settings'|translate" [routerLink]="['/settings']">
         <mat-icon>settings_applications</mat-icon>
     </button>
 </mat-toolbar>

@@ -62,7 +62,15 @@ a, a:visited {
 }
 
 #secondarybar.mat-toolbar-single-row {
+    height: auto;
+    white-space: normal;
+    line-height: 1em;
+}
+
+#secondarybar.mat-toolbar-single-row .mat-icon-button {
     height: 30px;
+    width: 30px;
+    line-height: 30px;
 }
 
 #secondarybar .material-icons {
@@ -209,10 +217,19 @@ pre {
     font-size: .7em;
 }
 
+.title, .title-long {
+    margin-left: .5em;
+    font-weight: bold;
+}
+
 /* Extra small devices (phones, less than 768px) */
 @media (max-width:600px) {
     .mat-form-field {font-size:0.6em;}
-    
+    .title-long {
+        margin-left: .5em;
+        font-weight: bold;
+        font-size: .8em;
+    }
     /* responsive mat-table */
     td.mat-cell {
         border: none !important;

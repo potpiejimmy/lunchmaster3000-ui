@@ -12,6 +12,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppTopbarComponent implements OnInit {
 
     title: string;
+    tw: TypeWriter
 
     constructor(
         public app: AppService,
@@ -21,10 +22,10 @@ export class AppTopbarComponent implements OnInit {
 
     async ngOnInit() {
         let slogan = await this.translate.get("components.topbar.slogan").toPromise();
-        let tw = new TypeWriter([slogan,"lunch.community"], t => {
+        this.tw = new TypeWriter([slogan,"lunch.community"], t => {
             this.title = t;
         })
-        tw.start();
+        this.tw.start();
     }
 
     async linkCopied() {
