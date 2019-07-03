@@ -1,5 +1,4 @@
-import { Component, Input, Output, EventEmitter, AfterViewInit, OnInit, ViewChild } from "@angular/core";
-import { LocationEditComponent } from './location-edit';
+import { Component, Input, Output, EventEmitter, OnInit } from "@angular/core";
 import { AppService } from '../services/app';
 
 @Component({

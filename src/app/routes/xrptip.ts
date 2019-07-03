@@ -3,7 +3,8 @@ import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { TranslateService } from '@ngx-translate/core';
 import { TipbotApiService } from '../services/tipbotapi';
-import { CoilUtil } from '../util/CoilUtil';
+import * as util from '../util/CoilUtil';
+import { LocalStorageService } from 'angular-2-local-storage';
 
 @Component({
     selector: "xrptip",
@@ -23,15 +24,20 @@ export class XrpTipComponent {
         private snackBar: MatSnackBar,
         private translate: TranslateService,
         private tipbotApi: TipbotApiService,
-        private util: CoilUtil
+        private localStorageService: LocalStorageService
     ) {}
 
     async claim() {
         //check for coil availability
-        if(!this.util.isCoilRunning()) {
+        if(!util.isCoilRunning()) {
             this.snackBar.open(await this.translate.get("routes.xrptip.error_no_coil").toPromise(), null, {duration: 5000});
             this.router.navigate(['/']);
             return;
+        }
+
+        if(this.xrpAlreadySent()) {
+            this.snackBar.open(await this.translate.get("routes.xrptip.error_already_tipped").toPromise(), null, {duration: 5000});
+            this.router.navigate(['/']);
         }
 
         //handle tip
@@ -52,24 +58,37 @@ export class XrpTipComponent {
     }
 
     async handleResponse(response) {
-        if(!response || response.error || !response.data || !response.data.status) {
+        if(!response || !response.data || !response.data.code) {
             this.snackBar.open(await this.translate.get("routes.xrptip.error_generic_response").toPromise(), null, {duration: 5000});
         } else {
-            switch(response.data.status) {
-                case 200: { 
+            switch(response.data.code) {
+                case 200:
+                    this.localStorageService.set("xrpSent", true);
                     this.snackBar.open(await this.translate.get("routes.xrptip.tip_sent").toPromise(), null, {duration: 5000});
                     //redirect to main page
                     this.router.navigate(['/']);
                     break;
-                }
-                case 300: this.snackBar.open(await this.translate.get("routes.xrptip.error_tip_yourself").toPromise(), null, {duration: 5000}); break;
+                case 300:
+                    this.snackBar.open(await this.translate.get("routes.xrptip.error_tip_yourself").toPromise(), null, {duration: 5000});
+                    this.router.navigate(['/']);
+                    break;
                 case 400: this.snackBar.open(await this.translate.get("routes.xrptip.error_tipbot_disabled").toPromise(), null, {duration: 5000}); break;
-                case 401: this.snackBar.open(await this.translate.get("routes.xrptip.error_no_balance").toPromise(), null, {duration: 5000}); break;
+                case 401:
+                    this.snackBar.open(await this.translate.get("routes.xrptip.error_no_balance").toPromise(), null, {duration: 5000});
+                    this.router.navigate(['/']);
+                    break;
                 case 404:
                 case 500: this.snackBar.open(await this.translate.get("routes.xrptip.error_unknown_user").toPromise(), null, {duration: 5000}); break;
-                case 405: this.snackBar.open(await this.translate.get("routes.xrptip.error_already_tipped").toPromise(), null, {duration: 5000}); break;
+                case 405:
+                    this.snackBar.open(await this.translate.get("routes.xrptip.error_already_tipped").toPromise(), null, {duration: 5000});
+                    this.router.navigate(['/']);
+                    break;
                 default: this.snackBar.open(await this.translate.get("routes.xrptip.error_generic_response").toPromise(), null, {duration: 5000}); break;
             }
         }
+    }
+
+    xrpAlreadySent() {
+        return this.localStorageService.get("xrpSent");
     }
 }

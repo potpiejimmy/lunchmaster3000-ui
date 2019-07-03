@@ -100,9 +100,9 @@
     <div *ngIf="!orderSet.arrived" class="font-size-small">
       {{'components.orderset.order_finished'|translate}} {{own ? ('components.orderset.order_finished_own'|translate) : ('components.orderset.order_finished_not_own'|translate) }} 
     </div>
-    <div *ngIf="orderSet.arrived" >
-      <mat-icon>location_on</mat-icon> {{'components.orderset.food_arrived_msg'|translate}}
-      <coil></coil>
+    <div *ngIf="orderSet.arrived">
+        <mat-card-title><div class="center-alignment"><mat-icon>location_on</mat-icon>&nbsp;{{'components.orderset.food_arrived_msg'|translate}}</div></mat-card-title>
+        <mat-card-title><coil></coil></mat-card-title>
     </div>
   </mat-card>
   <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="0.5em" style="margin-bottom: .5em;">

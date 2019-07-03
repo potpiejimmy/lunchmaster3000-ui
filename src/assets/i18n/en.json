@@ -68,6 +68,10 @@
             "chat": "Chat",
             "chat_msg": "Your message",
             "chat_msg_send": "Send message"
+        },
+        "coil": {
+            "icon_button_text": "Get your XRP!",
+            "info_text": "Congratulations, you have finished your first order! Click the XRP icon to claim your reward for your first successful order!"
         }
     },
     "routes": {
@@ -130,16 +134,16 @@
             "error": "This is not a valid link for a community!"
         },
         "xrptip": {
-            "title": "Here you can claim your XRP",
-            "subtitle": "Please enter your XRPTipbot handle and select your network.",
-            "xrphandle": "User name",
+            "title": "Claim your XRP",
+            "subtitle": "Please enter your XRPTipbot user name and select your network.",
+            "xrphandle": "XRPTipbot user name",
             "claim_reward": "Claim your XRP now!",
-            "tip_sent": "We have sent you a tip! Thank you! :)",
+            "tip_sent": "We have sent you a tip! Thank you for your support! :)",
             "error_no_coil": "It seems like you don't have Coil. Sorry but you cannot claim any XRP.",
             "error_tip_yourself": "Thank you! But unfortunately we cannot tip ourself :)",
             "error_tipbot_disabled": "Sorry, this user has diabled his XRPTipbot account",
             "error_unknown_user": "Sorry but this user does not have a XRPTipbot account.",
-            "error_already_tipped": "Sorry but you claimed your XRP already. You only can participate once.",
+            "error_already_tipped": "Sorry but you have claimed your XRP already. You can only participate once at this time.",
             "error_no_balance": "Sorry, but our balance is not enough to send you this tip :-(",
             "error_generic_response": "Sorry, something went wrong."
         }

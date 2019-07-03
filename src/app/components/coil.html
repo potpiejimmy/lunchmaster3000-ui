@@ -1,4 +1,3 @@
-test
-<div *ngIf="isCoilRunning()">
-    <mat-card-subtitle style="color:white;"><button mat-icon-button title="Get your XRP" (click)="redirect()"><mat-icon>monetization_on</mat-icon></button>Congratulations. You have finished your order! You can claim your XRP now! Just click he icon!<button mat-icon-button title="Get your XRP" (click)="redirect()"><mat-icon>monetization_on</mat-icon></button></mat-card-subtitle>
+<div *ngIf="isCoilRunning() && !xrpAlreadySent()" class="center-alignment" style="color:white;font-size:.6em;">
+    <br/>{{'components.coil.info_text'|translate}}&nbsp;<button mat-icon-button style="height: 30px; width: 30px;" [title]="'components.coil.icon_button_text'|translate" (click)="redirect()"><img src="/assets/icons/xrp/xrp-reversed.png" height="24" width="24"></button>
 </div>

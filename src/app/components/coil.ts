@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { Router } from '@angular/router';
-import { CoilUtil } from '../util/CoilUtil';
+import * as util from '../util/CoilUtil';
+import { LocalStorageService } from 'angular-2-local-storage';
 
 @Component({
     selector: "coil",
@@ -12,14 +13,18 @@ export class CoilComponent {
     streamedValue:number = 0;
     checkValue:boolean = true;
     
-    constructor(private router: Router, private util: CoilUtil) {}
+    constructor(private router: Router, private localStorageService: LocalStorageService) {}
 
     isCoilRunning(): boolean {
-        return this.util.isCoilRunning();
+        return util.isCoilRunning();
     }
 
     redirect() {
         console.log("navigate")
         this.router.navigate(['/xrptip'], { skipLocationChange: true });
+    }
+
+    xrpAlreadySent() {
+        return this.localStorageService.get("xrpSent");
     }
 }

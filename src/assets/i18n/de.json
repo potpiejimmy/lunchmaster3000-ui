@@ -68,6 +68,10 @@
             "chat": "Chat",
             "chat_msg": "Deine Nachricht",
             "chat_msg_send": "Nachricht absenden"
+        },
+        "coil": {
+            "icon_button_text": "Hol dir deine XRP!",
+            "info_text": "Glückwunsch! Du hast erfolgreich deine erste Bestellung beendet! Klicke einfach auf das XRP Icon, um dir den Bonus für deine erste Bestellung zu holen!"
         }
     },
     "routes": {
@@ -130,16 +134,16 @@
             "error": "Dies ist kein Link zu einer Community!"
         },
         "xrptip": {
-            "title": "Hier kannst du deine verdienten XRP claimen",
+            "title": "Hol' dir deine XRP!",
             "subtitle": "Bitte trage deinen Tipbot-Namen ein und wähle dein Netwerk aus.",
-            "xrphandle": "Username",
+            "xrphandle": "XrpTipbot Username",
             "claim_reward": "Hol dir jetzt deine XRP!",
-            "tip_sent": "Wir haben dir einen tip gesendet! Vielen Dank! :)",
+            "tip_sent": "Wir haben dir einen Tip gesendet! Vielen Dank für deine Unterstützung! :)",
             "error_no_coil": "Anscheinend hast du kein Coil. Leider kannst du keine XRP claimen.",
             "error_tip_yourself": "Danke, aber leider können wir uns nicht selbst einen Tip senden :)",
-            "error_tipbot_disabled": "Sorry, dieser Nutzer hat seinen XRPTipbot account deaktiviert",
-            "error_unknown_user": "Sorry, aber dieser User hat noch keinen XRPTipbot account.",
-            "error_already_tipped": "Sorry, aber du hast schon die XRP erhalten! Du kannst leider nur einmal teilnehmen.",
+            "error_tipbot_disabled": "Sorry, dieser Nutzer hat seinen XRPTipbot Account deaktiviert.",
+            "error_unknown_user": "Sorry, aber dieser User hat noch keinen XRPTipbot Account.",
+            "error_already_tipped": "Sorry, aber du hast schon die XRP erhalten! Du kannst aktuell leider nur einmal teilnehmen.",
             "error_no_balance": "Sorry, wir haben leider nicht mehr genug XRP um dir einen Tip zu senden.",
             "error_generic_response": "Leider ist etwas schwiefgelaufen."
         }
