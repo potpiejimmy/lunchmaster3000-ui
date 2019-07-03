@@ -5,21 +5,29 @@
             {{'routes.xrptip.subtitle'|translate}}
         </mat-card-subtitle>
     </div>
-    <div style="width: 60%">
+    <div>
         <form fxLayout="column">
-            <mat-form-field>
-                <input #inphandle name="handle" matInput [placeholder]="'routes.xrptip.xrphandle'|translate" [(ngModel)]="handleInput">
-            </mat-form-field>
-            <mat-form-field class="select">
-                <mat-label>Network</mat-label>
-                <mat-select [(value)]="networkInput">
-                    <mat-option value="twitter">Twitter</mat-option>
-                    <mat-option value="reddit">Reddit</mat-option>
-                    <mat-option value="discord">Discord</mat-option>
-                    <mat-option value="coil">Coil</mat-option>
-                </mat-select>
-            </mat-form-field>
-            <button style="width: auto;" mat-raised-button color="primary" (click)="claim()" [disabled]="!handleInput || !handleInput.trim().length || !networkInput || !networkInput.trim().length || processing">{{'routes.xrptip.claim_reward'|translate}}</button>
+            <div>
+                <mat-form-field>
+                    <input #inphandle name="handle" matInput [placeholder]="'routes.xrptip.xrphandle'|translate" [(ngModel)]="handleInput">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="select">
+                    <mat-label>Network</mat-label>
+                    <mat-select [(value)]="networkInput">
+                        <mat-option value="twitter">Twitter</mat-option>
+                        <mat-option value="reddit">Reddit</mat-option>
+                        <mat-option value="discord">Discord</mat-option>
+                        <mat-option value="coil">Coil</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <span style="flex: 1 1 auto;"></span>
+            </div>
+            <div>
+                <button style="width: auto;" mat-raised-button color="primary" (click)="claim()" [disabled]="!handleInput || !handleInput.trim().length || !networkInput || !networkInput.trim().length || processing">{{'routes.xrptip.claim_reward'|translate}}</button>
+                <span style="flex: 1 1 auto;"></span>
+            </div>
         </form>
     </div>
 </mat-card>
