@@ -81,6 +81,7 @@ export class XrpTipComponent {
                 case 500: this.snackBar.open(await this.translate.get("routes.xrptip.error_unknown_user").toPromise(), null, {duration: 5000}); break;
                 case 405:
                     this.snackBar.open(await this.translate.get("routes.xrptip.error_already_tipped").toPromise(), null, {duration: 5000});
+                    this.localStorageService.set("xrpSent", true);
                     this.router.navigate(['/']);
                     break;
                 default: this.snackBar.open(await this.translate.get("routes.xrptip.error_generic_response").toPromise(), null, {duration: 5000}); break;

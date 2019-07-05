@@ -103,7 +103,8 @@
             "invite_colleagues_4": "misuse by others.",
             "invite_colleagues_5": "Please add places to your community to get going. Press the '+' symbol below to add a new place.",
             "invite_colleagues_6": "",
-            "add_new_location": "Add new place"
+            "add_new_location": "Add new place",
+            "community_id_does_not_exist": "Sorry, we didn't found a community with this link."
         },
         "settings": {
             "card_title": "Your current lunch.community",

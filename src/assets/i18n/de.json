@@ -103,7 +103,8 @@
             "invite_colleagues_4": "damit deine Community nicht von Fremden missbraucht wird.",
             "invite_colleagues_5": "Füge dann bitte unten über das Plus-Symbol neue Essens-Locations hinzu, um deine Community mit Leben",
             "invite_colleagues_6": "zu füllen.",
-            "add_new_location": "Neue Location hinzufügen"
+            "add_new_location": "Neue Location hinzufügen",
+            "community_id_does_not_exist": "Sorry, wir haben keine Community mit diesem Link gefunden."
         },
         "settings": {
             "card_title": "Deine aktuelle lunch.community",

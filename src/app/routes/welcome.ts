@@ -1,5 +1,4 @@
 import { Component, ViewChild, OnInit, AfterViewInit } from "@angular/core";
-import { LmApiService } from '../services/lmapi';
 import { Router } from '@angular/router';
 import { AppService } from '../services/app';
 import { LocalStorageService } from 'angular-2-local-storage';

@@ -1,5 +1,5 @@
-import {Routes,RouterModule} from '@angular/router';
-import {ModuleWithProviders} from '@angular/core';
+import { Routes,RouterModule } from '@angular/router';
+import { ModuleWithProviders } from '@angular/core';
 import { MainComponent } from './routes/main';
 import { CreateComponent } from './routes/create';
 import { WelcomeComponent } from './routes/welcome';

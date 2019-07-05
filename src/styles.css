@@ -257,6 +257,6 @@ pre {
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width:992px) {
-    .mat-card {margin: 32px 128px;}
+    .mat-card {margin: 32px 64px;}
     .mat-form-field {font-size:0.8em;}
 }

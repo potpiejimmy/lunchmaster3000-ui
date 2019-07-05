@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, OnDestroy } from '@angular/core';
 import { LmApiService } from '../services/lmapi';
 import * as io from 'socket.io-client';
 import { environment } from '../../environments/environment';
@@ -6,6 +6,7 @@ import { LocalStorageService } from 'angular-2-local-storage';
 import { AppService } from '../services/app';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
     selector: 'main',
@@ -27,7 +28,8 @@ export class MainComponent implements AfterViewInit, OnDestroy {
         public app: AppService,
         private router: Router,
         private route: ActivatedRoute,
-        private translate: TranslateService) {
+        private translate: TranslateService,
+        private snackBar: MatSnackBar) {
 
         // initialize name from local storage
         this.name = this.localStorageService.get('name');
@@ -44,8 +46,9 @@ export class MainComponent implements AfterViewInit, OnDestroy {
                 this.router.navigate(['/create'], { replaceUrl: true });
             } else {
                 // load community
-                let c = this.api.getCommunity(id).then(c => {
+                this.api.getCommunity(id).then(async c => {
                     if (!c) {
+                        this.snackBar.open(await this.translate.get("routes.main.community_id_does_not_exist").toPromise(), null, {duration: 5000});
                         this.router.navigate(['/create'], { replaceUrl: true });
                     } else {
                         this.app.community = c;
