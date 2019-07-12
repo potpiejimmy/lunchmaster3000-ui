@@ -1,5 +1,5 @@
 <mat-card class="orderSet">
-  <div fxLayout="column" fxLayoutGap="0" fxLayout.gt-md="row" fxLayoutGap.gt-md="1em">
+  <div fxLayout="column" fxLayoutGap="0" fxLayout.gt-md="row" fxLayoutGap.gt-md=".5em">
     <div fxFlex.gt-md="70">
       <mat-card-title><div class="center-alignment"><mat-icon>fastfood</mat-icon>&nbsp;{{orderSet.location.name}}</div></mat-card-title>
       <mat-card-subtitle>{{'components.orderset.subtitle_1'|translate:{name:orderSet.name, location:orderSet.location.name} }} <span *ngIf="orderSet.location.menu_link">{{'components.orderset.subtitle_menu_card'|translate}} <a target="_blank" [href]="orderSet.location.menu_link">{{'general.menucard'|translate}}</a>.</span></mat-card-subtitle>
@@ -116,23 +116,7 @@
     </div>
 
     <div fxFlex.gt-md="30">
-      <mat-card class="chatcard">
-        <mat-card-title><div class="center-alignment"><mat-icon>chat</mat-icon>&nbsp;{{'components.orderset.chat'|translate}}</div></mat-card-title>
-        <div class="font-size-small">
-          <div *ngFor="let msg of orderSet.chat" style="margin: .5em 0;">
-            <span style="color: #777; font-size: .75em;">{{msg.name}} [{{formatMoment(msg.date)}}]</span><br/>
-            <span style="color: black;">{{msg.msg}}</span>
-          </div>
-        </div>
-        <form class="font-size-middle">
-          <mat-form-field>
-            <input #inpchat name="chatmsg" matInput [placeholder]="'components.orderset.chat_msg'|translate" [(ngModel)]="chatInput">
-            <button type="submit" mat-button *ngIf="chatInput && chatInput.trim().length" matSuffix mat-icon-button (click)="sendChatMsg()" [title]="'components.orderset.chat_msg_send'|translate">
-              <mat-icon>send</mat-icon>
-            </button>
-          </mat-form-field>
-        </form>
-      </mat-card>
+      <chat [orderSet]="orderSet" (chatMessage)="chatMessage.emit($event);"></chat>
     </div>
   </div>
 </mat-card>

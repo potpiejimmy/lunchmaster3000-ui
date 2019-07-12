@@ -1,5 +1,4 @@
 import { Component, Input, Output, EventEmitter, OnInit, ViewChild, AfterViewInit } from "@angular/core";
-import * as moment from 'moment';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -51,8 +50,6 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
     _payLinkInput: string;
     _feeInput: number;
     _adminInputDeferrer: any;
-
-    chatInput: string;
 
     displayedColumns: string[] = ['name', 'order', 'price', 'fee', 'total', 'paylink', 'moneyrec'];
 
@@ -217,17 +214,5 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
             orderSet: this.orderSet,
             order: this.orderSet.orders[name]
         })
-    }
-
-    sendChatMsg() {
-        this.chatMessage.emit({
-            orderSet: this.orderSet,
-            msg: this.chatInput
-        });
-        this.chatInput = '';
-    }
-
-    formatMoment(d): string {
-        return moment(d).fromNow();
     }
 }

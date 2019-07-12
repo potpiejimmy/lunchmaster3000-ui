@@ -54,6 +54,7 @@ import { CoilComponent } from './components/coil';
 import { JoinComponent } from './routes/join';
 import { XrpTipComponent } from './routes/xrptip';
 import { TipbotApiService } from './services/tipbotapi';
+import { ChatComponent } from './components/chat';
 
 
 @NgModule({
@@ -74,7 +75,8 @@ import { TipbotApiService } from './services/tipbotapi';
     DonateComponent,
     CoilComponent,
     JoinComponent,
-    XrpTipComponent
+    XrpTipComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
