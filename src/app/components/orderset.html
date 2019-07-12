@@ -116,7 +116,7 @@
     </div>
 
     <div fxFlex.gt-md="30">
-      <chat [orderSet]="orderSet" (chatMessage)="chatMessage.emit($event);"></chat>
+      <chat [orderSet]="orderSet" [data]="orderSet.chat" (chatMessage)="chatMessage.emit($event);"></chat>
     </div>
   </div>
 </mat-card>

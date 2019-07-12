@@ -10,6 +10,9 @@ export class ChatComponent {
     @Input()
     orderSet: any;
 
+    @Input()
+    data: any;
+
     @Output()
     chatMessage = new EventEmitter<any>();
 
@@ -17,7 +20,7 @@ export class ChatComponent {
 
     sendChatMsg() {
         this.chatMessage.emit({
-            orderSet: this.orderSet,
+            orderSet: this.orderSet, // Note: is null for general chat
             msg: this.chatInput
         });
         this.chatInput = '';

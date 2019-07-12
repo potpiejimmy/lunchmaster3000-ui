@@ -103,7 +103,8 @@ export class MainComponent implements AfterViewInit, OnDestroy {
 
     data = {
         locations: [],
-        ordersets: []
+        ordersets: [],
+        chat: []
     };
 
     get nameInUse(): boolean {
@@ -125,6 +126,7 @@ export class MainComponent implements AfterViewInit, OnDestroy {
 
     adaptDataFromServer(data) {
         this.data.locations = data.locations;
+        this.data.chat = data.chat;
         for (let o of Object.values<any>(data.ordersets)) {
             // adapt new ones
             if (!this.data.ordersets[o.id]) this.data.ordersets[o.id] = o;
@@ -175,6 +177,6 @@ export class MainComponent implements AfterViewInit, OnDestroy {
     }
 
     sendChatMsg(e: any) {
-        this.api.sendChatMsg(e.orderSet.id, this.name, e.msg);
+        this.api.sendChatMsg(e.orderSet ? e.orderSet.id : null, this.name, e.msg);
     }
 }

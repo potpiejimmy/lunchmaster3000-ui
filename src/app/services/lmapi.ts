@@ -58,7 +58,7 @@ export class LmApiService extends HttpBaseService {
     }
 
     sendChatMsg(ordersetId: string, name: string, msg: string) {
-        return this.post(environment.apiUrl+"ordersets/"+ordersetId+"/chat?id="+this.localStorage.get("id"), {
+        return this.post(environment.apiUrl+(ordersetId ? ("ordersets/"+ordersetId+"/"):"")+"chat?id="+this.localStorage.get("id"), {
             name: name, msg: msg
         });
     }
