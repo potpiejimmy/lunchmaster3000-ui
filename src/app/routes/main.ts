@@ -76,9 +76,13 @@ export class MainComponent implements AfterViewInit, OnDestroy {
     initSocket() {
         // register socket for receiving data:
         this.socket = io.connect(environment.apiUrl+this.app.community.webid);
+        this.socket.on('reconnect', async () => {
+            //reload data from server on connect to fix iOS problem with PWA
+            this.adaptDataFromServer(await this.api.getData());
+        });
         this.socket.on('data', data => {
             if (!this.isTyping) this.adaptDataFromServer(data);
-        })
+        });
         this.socket.on('push', async msg => {
             if (msg.name != this.name) {
                 new Notification(msg.title, {
@@ -86,7 +90,7 @@ export class MainComponent implements AfterViewInit, OnDestroy {
                     requireInteraction: msg.type != 'chat'
                 });
             }
-        })
+        });
     }
 
     ngAfterViewInit(): void {
