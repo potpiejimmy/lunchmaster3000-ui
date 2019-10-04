@@ -9,6 +9,7 @@ import { PrivacyAndCookiesComponent } from './routes/privacy';
 import { AboutComponent } from './routes/about';
 import { JoinComponent } from './routes/join';
 import { XrpTipComponent } from './routes/xrptip';
+import { TestDriveComponent } from './routes/testdrive';
 
 export const routes: Routes = [
     {path: '', component: MainComponent},
@@ -19,7 +20,8 @@ export const routes: Routes = [
     {path: 'terms', component: TermsAndConditionsComponent},
     {path: 'privacy', component: PrivacyAndCookiesComponent},
     {path: 'join', component: JoinComponent},
-    {path: 'xrptip', component: XrpTipComponent}
+    {path: 'xrptip', component: XrpTipComponent},
+    {path: 'testdrive', component: TestDriveComponent}
 ];
 
 export const AppRoutes: ModuleWithProviders = RouterModule.forRoot(routes);

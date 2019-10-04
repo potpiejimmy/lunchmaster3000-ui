@@ -1,0 +1,18 @@
+<mat-card>
+    <mat-card-title>Deine Probefahrt</mat-card-title>
+    <p></p>
+    <img src="/assets/testdrive.png"/>
+    <mat-card-subtitle>Die ersten 50 Follower der @lunch_community erhalten eine kostenlose Probefahrt im Tesla Model 3. Registriere dich hier für deine persönliche Probefahrt im lunch.community.</mat-card-subtitle>
+    <form class="settings-form" style="font-size: .7em;">
+        <mat-form-field>
+        <input #inpname name="name" matInput placeholder="Dein Twitter-Handle" [(ngModel)]="yourName">
+        </mat-form-field>
+    </form>
+    <mat-card-subtitle>
+        <mat-checkbox name="agreePrivacy" [(ngModel)]="agreePrivacy" [disabled]="processing">
+            Ich bin mit der Erfassung meiner Daten gemäß der <a [routerLink]="['/privacy']" target="_blank">Datenschutzerklärung</a>
+            einverstanden.
+        </mat-checkbox>
+    </mat-card-subtitle>
+    <button mat-raised-button color="primary" (click)="submit()" [disabled]="!agreePrivacy || !yourName || !yourName.trim().length || processing">Registrieren</button>
+</mat-card>

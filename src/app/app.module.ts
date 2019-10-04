@@ -55,6 +55,7 @@ import { JoinComponent } from './routes/join';
 import { XrpTipComponent } from './routes/xrptip';
 import { TipbotApiService } from './services/tipbotapi';
 import { ChatComponent } from './components/chat';
+import { TestDriveComponent } from './routes/testdrive';
 
 
 @NgModule({
@@ -76,7 +77,8 @@ import { ChatComponent } from './components/chat';
     CoilComponent,
     JoinComponent,
     XrpTipComponent,
-    ChatComponent
+    ChatComponent,
+    TestDriveComponent
   ],
   imports: [
     BrowserModule,
