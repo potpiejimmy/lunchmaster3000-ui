@@ -1,18 +1,52 @@
 <mat-card>
     <mat-card-title>Deine Probefahrt</mat-card-title>
-    <p></p>
+    <mat-card-subtitle>
+        Die ersten 50 Follower der @lunch_community erhalten eine kostenlose Probefahrt im Tesla Model 3.
+        Registriere dich hier für deine persönliche Probefahrt.
+    </mat-card-subtitle>
+    <mat-card-subtitle>
+        Bitte beachte, dass wir nur Probefahrten in Deutschland anbieten können. Du musst mindestens 25 Jahre alt sein
+        und einen gültigen Führerschein besitzen.
+    </mat-card-subtitle>
     <img src="/assets/testdrive.png"/>
-    <mat-card-subtitle>Die ersten 50 Follower der @lunch_community erhalten eine kostenlose Probefahrt im Tesla Model 3. Registriere dich hier für deine persönliche Probefahrt im lunch.community.</mat-card-subtitle>
     <form class="settings-form" style="font-size: .7em;">
         <mat-form-field>
-        <input #inpname name="name" matInput placeholder="Dein Twitter-Handle" [(ngModel)]="yourName">
+            <span matPrefix>@</span>
+            <input #inphandle name="handle" matInput placeholder="Twitter-Handle" [(ngModel)]="yourHandle" appAutofocus>
+            <mat-hint align="start">Gib hier dein Twitter-Handle an, unter dem wir dich auf Twitter kontaktieren können.</mat-hint>
         </mat-form-field>
+        <mat-form-field>
+            <input #inpname name="name" matInput placeholder="Dein Name" [(ngModel)]="yourName">
+        </mat-form-field>
+        <mat-form-field>
+            <input #inplocation name="location" matInput placeholder="Ort der Probefahrt (Postleitzahl oder Ortsname)" [(ngModel)]="yourLocation">
+            <mat-hint align="start">Gib hier deinen Wunschort für die Probefahrt ein</mat-hint>
+        </mat-form-field>
+        <p></p>
+        <mat-card-subtitle>
+            Hinweise:
+        </mat-card-subtitle>
+        <mat-card-subtitle>
+            Die Probefahrten finden voraussichtlich im Zeitraum Oktober 2019 bis März 2020 statt. Eine Garantie
+            auf die Durchführung einer Probefahrt an deinem Wunschort besteht nicht. Termin und Ort deiner Probefahrt
+            geben wir innerhalb der nächsten Wochen bekannt.
+        </mat-card-subtitle>
+        <mat-card-subtitle>
+            Wir verwenden deine oben eingegebenen Daten ausschließlich für die Organisation der Probefahrten an
+            verschiedenen Standorten. Wir speichern die Daten nur bis zum Zeitpunkt der Durchführung deiner Probefahrt,
+            danach löschen wir sie wieder.
+        </mat-card-subtitle>
+        <mat-card-subtitle>
+            Dieses Angebot ist zeitlich begrenzt und kann jederzeit durch uns beendet werden. Ein Rechtsanspruch auf
+            Durchführung einer Probefahrt besteht nicht. Wir behalten uns das Recht vor, eine geplante Probefahrt jederzeit
+            ohne Angabe von Gründen abzusagen. Ein Recht auf Entschädigung besteht nicht.
+        </mat-card-subtitle>
     </form>
     <mat-card-subtitle>
         <mat-checkbox name="agreePrivacy" [(ngModel)]="agreePrivacy" [disabled]="processing">
-            Ich bin mit der Erfassung meiner Daten gemäß der <a [routerLink]="['/privacy']" target="_blank">Datenschutzerklärung</a>
+            Ich bin mit den obigen Bedingungen und mit der Erfassung meiner Daten gemäß der <a [routerLink]="['/privacy']" target="_blank">Datenschutzerklärung</a>
             einverstanden.
         </mat-checkbox>
     </mat-card-subtitle>
-    <button mat-raised-button color="primary" (click)="submit()" [disabled]="!agreePrivacy || !yourName || !yourName.trim().length || processing">Registrieren</button>
+    <button mat-raised-button color="primary" (click)="submit()" [disabled]="!agreePrivacy || !yourHandle || !yourHandle.trim().length || !yourName || !yourName.trim().length || processing">Für Probefahrt registrieren</button>
 </mat-card>

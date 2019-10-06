@@ -6,6 +6,7 @@ import { Component } from "@angular/core";
 })
 export class TestDriveComponent {
 
+    yourHandle: string;
     yourName: string;
     agreePrivacy: boolean;
     

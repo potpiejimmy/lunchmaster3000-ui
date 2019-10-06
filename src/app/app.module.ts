@@ -33,6 +33,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NgxPrintModule } from 'ngx-print';
 
 // App
+import { AutofocusDirective } from './autofocus.directive';
 import { AppComponent } from './app.component';
 import { AppTopbarComponent } from './components/topbar';
 import { AppFooterComponent } from './components/footer';
@@ -60,6 +61,7 @@ import { TestDriveComponent } from './routes/testdrive';
 
 @NgModule({
   declarations: [
+    AutofocusDirective,
     AppComponent,
     AppTopbarComponent,
     AppFooterComponent,
