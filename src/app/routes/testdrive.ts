@@ -8,6 +8,8 @@ export class TestDriveComponent {
 
     yourHandle: string;
     yourName: string;
+    yourLocation: string;
+    
     agreePrivacy: boolean;
     
 }
