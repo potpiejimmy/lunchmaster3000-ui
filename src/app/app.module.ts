@@ -23,6 +23,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSelectModule } from '@angular/material/select';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 // Special
 import { LocalStorageModule } from 'angular-2-local-storage';
@@ -97,6 +99,8 @@ import { ChatComponent } from './components/chat';
     MatListModule,
     MatExpansionModule,
     MatSelectModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
     // Special
     CurrencyMaskModule,
     ClipboardModule,

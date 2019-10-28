@@ -20,4 +20,5 @@
     </div>
     <donate fxShow fxHide.xs></donate>
 </mat-toolbar>
+<mat-progress-bar *ngIf="!app.community" mode="buffer" color="accent"></mat-progress-bar>
 <donate fxHide fxShow.xs fxLayoutAlign="end" style="padding: 12px 16px 0;"></donate>
