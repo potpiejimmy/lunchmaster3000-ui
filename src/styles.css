@@ -230,6 +230,11 @@ pre {
     font-weight: bold;
 }
 
+img.location-image {
+    border: 1px solid  #2E7D32;
+    padding: 5px;
+}
+
 /* Extra small devices (phones, less than 768px) */
 @media (max-width:600px) {
     .mat-form-field {font-size:0.6em;}

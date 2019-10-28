@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { LocationEditComponent } from '../components/location-edit';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class AppService {
@@ -14,4 +15,7 @@ export class AppService {
 
     // editing?
     locationEditor: LocationEditComponent;
+
+    // API URL
+    get apiUrl() { return environment.apiUrl; }
 }
