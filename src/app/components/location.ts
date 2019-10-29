@@ -39,11 +39,6 @@ export class LocationComponent implements OnInit {
         this.change.emit({checked: b, location: this.location});
     }
 
-    get iconSrc() {
-        //return this.app.apiUrl+'icons/'+this.location.icon+'.jpg';
-        return '/assets/food/'+this.location.icon+'.jpg';
-    }
-
     takeOrdersClicked() {
         this.takeOrders.emit(this.location);
     }

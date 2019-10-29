@@ -11,6 +11,26 @@
             <mat-form-field style="font-size: .65em;">
                 <input #inpmenulink name="menu_link" matInput maxLength="1024" [placeholder]="'components.location_edit.menu_link'|translate" [(ngModel)]="location.menu_link">
             </mat-form-field>
+            <p>
+                <img *ngIf="location.icon && !showCropper" class="location-image" [src]="app.apiUrl+'resources/'+location.icon+'.png'"/>
+                <img *ngIf="location.newIcon" class="location-image" [src]="location.newIcon"/>
+                <input type="file" (change)="fileChangeEvent($event)" />
+                <image-cropper
+                    [imageChangedEvent]="imageChangedEvent"
+                    [maintainAspectRatio]="true"
+                    [aspectRatio]="3/2"
+                    [resizeToWidth]="90"
+                    [cropperMinWidth]="90"
+                    [onlyScaleDown]="false"
+                    [roundCropper]="false"
+                    format="png"
+                    outputType="base64"
+                    (imageCropped)="imageChangeEvent($event)"
+                    (imageLoaded)="imageLoaded()"
+                    [style.display]="showCropper ? null : 'none'"
+                    [alignImage]="'left'">
+                </image-cropper>
+            </p>
             <div fxLayout="row" fxLayout.xs="column" fxLayoutGap=".5em">
                 <button mat-raised-button color="primary" (click)="save()" [disabled]="processing || !location.name">{{'general.save'|translate}}</button>
                 <button mat-raised-button color="secondary" (click)="cancel()" [disabled]="processing">{{'general.cancel'|translate}}</button>

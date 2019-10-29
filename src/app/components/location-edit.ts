@@ -14,6 +14,8 @@ export class LocationEditComponent {
     location: any;
     origName: string;
     processing: boolean;
+    showCropper = false;
+    imageChangedEvent: any;
 
     constructor(
         public app: AppService,
@@ -35,6 +37,8 @@ export class LocationEditComponent {
 
     cancel() {
         this.location = null;
+        this.showCropper = false;
+        this.imageChangedEvent = null;
     }
 
     async save() {
@@ -54,4 +58,18 @@ export class LocationEditComponent {
         }
         this.cancel();
     }
+
+    fileChangeEvent(event: any): void {
+        this.imageChangedEvent = event;
+    }
+
+    imageChangeEvent(event: any) {
+        // add newIcon property:
+        this.location.newIcon = event.base64;
+    }
+
+    imageLoaded() {
+        this.showCropper = true;
+    }
+
 }
