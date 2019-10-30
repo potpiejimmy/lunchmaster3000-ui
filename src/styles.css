@@ -231,7 +231,7 @@ pre {
 }
 
 img.location-image {
-    border: 1px solid black;
+    border: none;
 }
 
 /* Extra small devices (phones, less than 768px) */
