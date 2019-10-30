@@ -12,9 +12,14 @@
                 <input #inpmenulink name="menu_link" matInput maxLength="1024" [placeholder]="'components.location_edit.menu_link'|translate" [(ngModel)]="location.menu_link">
             </mat-form-field>
             <p>
-                <img *ngIf="location.icon && !showCropper" class="location-image" [src]="app.apiUrl+'resources/'+location.icon+'.png'"/>
+                <!-- the old server image if it was already set-->
+                <img *ngIf="!showCropper && location.icon" class="location-image" [src]="app.apiUrl+'resources/'+location.icon+'.png'"/>
+                <!-- a placeholder image if no image set -->
+                <img *ngIf="!showCropper && !location.icon" class="location-image" src="/assets/placeholder.jpg"/>
+                <!-- the currently edited but not yet uploaded local image -->
                 <img *ngIf="location.newIcon" class="location-image" [src]="location.newIcon"/>
-                <input type="file" (change)="fileChangeEvent($event)" />
+                <br/>
+                <input id="fileInput" type="file" (change)="fileChangeEvent($event)"/>
                 <image-cropper
                     [imageChangedEvent]="imageChangedEvent"
                     [maintainAspectRatio]="true"

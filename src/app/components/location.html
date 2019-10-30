@@ -4,7 +4,10 @@
             <mat-checkbox [(ngModel)]="checked"></mat-checkbox>
         </div>
         <div fxHide.xs style="margin-left: 1em;">
-            <a (click)="checked=!checked" href="#"><img class="location-image" [src]="app.apiUrl+'resources/'+location.icon+'.png'"/></a>
+            <a (click)="checked=!checked" href="#">
+                <img *ngIf="location.icon" class="location-image" [src]="app.apiUrl+'resources/'+location.icon+'.png'"/>
+                <img *ngIf="!location.icon" class="location-image" src="/assets/placeholder.jpg"/>
+            </a>
         </div>
         <div style="flex: 1 1 auto;" (click)="showEditControls=true;" (mouseenter)="showEditControls=true;" (mouseleave)="showEditControls=false;">
             <div style="font-size: .7em; line-height: 30px;">
