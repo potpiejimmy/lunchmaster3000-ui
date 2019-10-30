@@ -37,8 +37,8 @@
         },
         "location": {
             "placeorder": "Take orders",
-            "order_count": "You have already ordered {{order_count}} times here!",
-            "no_order_count":"You never ordered here before!"
+            "order_count": "You've ordered here {{order_count}} times",
+            "no_order_count":"You've never ordered here"
         },
         "orderset": {
             "subtitle_1": "{{name}} is taking orders for {{location}} today.",

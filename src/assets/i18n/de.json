@@ -37,8 +37,8 @@
         },
         "location": {
             "placeorder": "Bestellungen aufnehmen",
-            "order_count":"Hier habt ihr schon {{order_count}} mal bestellt!",
-            "no_order_count":"Hier habt ihr noch nie bestellt!"
+            "order_count":"Hier habt ihr schon {{order_count}} mal bestellt",
+            "no_order_count":"Hier habt ihr noch nie bestellt"
         },
         "orderset": {
             "subtitle_1": "{{name}} bestellt heute bzw. holt heute etwas bei {{location}}.",
