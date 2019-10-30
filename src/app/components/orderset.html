@@ -1,8 +1,23 @@
 <mat-card class="orderSet">
   <div fxLayout="column" fxLayoutGap="0" fxLayout.gt-md="row" fxLayoutGap.gt-md=".5em">
     <div fxFlex.gt-md="70">
-      <mat-card-title><div class="center-alignment"><mat-icon>fastfood</mat-icon>&nbsp;{{orderSet.location.name}}</div></mat-card-title>
-      <mat-card-subtitle>{{'components.orderset.subtitle_1'|translate:{name:orderSet.name, location:orderSet.location.name} }} <span *ngIf="orderSet.location.menu_link">{{'components.orderset.subtitle_menu_card'|translate}} <a target="_blank" [href]="orderSet.location.menu_link">{{'general.menucard'|translate}}</a>.</span></mat-card-subtitle>
+      <div fxLayout="row" fxLayoutGap=".5em" style="margin-bottom: .25em;">
+        <div *ngIf="orderSet.location.icon" style="margin-left: 1em;">
+            <a (click)="checked=!checked" href="#">
+                <img class="location-image" [src]="app.apiUrl+'resources/'+orderSet.location.icon+'.png'"/>
+            </a>
+        </div>
+        <div style="flex: 1 1 auto;">
+            <div style="font-size: .7em; line-height: 30px;">
+                {{orderSet.location.name}}
+            </div>
+            <mat-card-subtitle style="margin:0;" *ngIf="orderSet.location.description">{{orderSet.location.description}}</mat-card-subtitle>
+            <div style="font-size: .5em;" *ngIf="orderSet.location.menu_link">
+                <a target="_blank" [href]="orderSet.location.menu_link">{{'general.menucard'|translate}}</a>
+            </div>
+        </div>
+      </div>
+      <mat-card-subtitle>{{'components.orderset.subtitle_1'|translate:{name:orderSet.name, location:orderSet.location.name} }}</mat-card-subtitle>
       <mat-card-subtitle>{{'components.orderset.subtitle_2'|translate}}</mat-card-subtitle>
       <div *ngIf="own">
         <form class="font-size-middle">
