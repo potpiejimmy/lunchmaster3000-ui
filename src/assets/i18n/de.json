@@ -65,6 +65,7 @@
             "food_arrived_btn": "Essen ist da!!",
             "food_arrived_msg": "Das Essen ist da!!",
             "order_delete": "Bestellung löschen",
+            "order_reopen": "Bestellannahme wiedereröffnen",
             "chat": "Chat",
             "chat_msg": "Deine Nachricht",
             "chat_msg_send": "Nachricht absenden"

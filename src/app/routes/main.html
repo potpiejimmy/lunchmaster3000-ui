@@ -1,6 +1,6 @@
 <div *ngIf="name && name.length > 2">
   <div *ngFor="let orderSet of orderSets">
-    <orderset [orderSet]="orderSet" [name]="name" (orderChanged)="order($event)" (commentChanged)="update($event)" (cancelled)="cancel($event)" (finished)="finish($event)" (arrived)="arrive($event)" (chatMessage)="sendChatMsg($event)" (isTyping)="isTyping = $event"></orderset>
+    <orderset [orderSet]="orderSet" [name]="name" (orderChanged)="order($event)" (commentChanged)="update($event)" (cancelled)="cancel($event)" (finished)="finish($event)" (reopened)="reopen($event)" (arrived)="arrive($event)" (chatMessage)="sendChatMsg($event)" (isTyping)="isTyping = $event"></orderset>
   </div>
 </div>
 

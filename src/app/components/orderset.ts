@@ -32,6 +32,9 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
     finished = new EventEmitter<any>();
 
     @Output()
+    reopened = new EventEmitter<any>();
+
+    @Output()
     arrived = new EventEmitter<any>();
 
     @Output()
@@ -157,6 +160,10 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
 
     finish() {
         this.finished.emit(this.orderSet);
+    }
+
+    reopen() {
+        this.reopened.emit(this.orderSet);
     }
 
     arrive() {

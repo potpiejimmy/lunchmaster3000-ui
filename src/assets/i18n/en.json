@@ -65,6 +65,7 @@
             "food_arrived_btn": "Lunch is here!!",
             "food_arrived_msg": "Lunch is here!!",
             "order_delete": "Delete all",
+            "order_reopen": "Reopen order",
             "chat": "Chat",
             "chat_msg": "Your message",
             "chat_msg_send": "Send message"

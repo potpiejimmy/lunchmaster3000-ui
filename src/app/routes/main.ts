@@ -172,8 +172,12 @@ export class MainComponent implements AfterViewInit, OnDestroy {
         this.api.updateOrderSet(e.id, true);
     }
 
+    reopen(e) {
+        this.api.updateOrderSet(e.id, false, false);
+    }
+
     arrive(e) {
-        this.api.updateOrderSet(e.id, false, true);
+        this.api.updateOrderSet(e.id, true, true);
     }
 
     sendChatMsg(e: any) {
