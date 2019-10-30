@@ -36,7 +36,9 @@
             "menu_link": "Link to the menu"
         },
         "location": {
-            "placeorder": "Take orders"
+            "placeorder": "Take orders",
+            "order_count": "You have already ordered {{order_count}} times here!",
+            "no_order_count":"You never ordered here before!"
         },
         "orderset": {
             "subtitle_1": "{{name}} is taking orders for {{location}} today.",

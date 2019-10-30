@@ -1,4 +1,4 @@
-<div fxFlex fxLayout="column">
+<div style="margin-top: .75em;" fxFlex fxLayout="column">
     <div fxLayout="row" fxLayoutGap=".5em">
         <div class="locfavcheck">
             <mat-checkbox [(ngModel)]="checked"></mat-checkbox>
@@ -38,7 +38,10 @@
     <div fxHide fxShow.xs fxFlexAlign="end">
         <button *ngIf="location.votes && location.votes.length" mat-raised-button color="primary" (click)="takeOrdersClicked()">{{'components.location.placeorder'|translate}}</button>
     </div>
-    <div>
+    <mat-card-subtitle style="font-size: .35em;margin:.3em 0 0 0; text-align: right;">
+            {{location.order_count ? ('components.location.order_count'|translate:{order_count: location.order_count}) : ('components.location.no_order_count'|translate)}}
+    </mat-card-subtitle>
+    <div style="font-size: .25em;">
         <hr/>
     </div>
 </div>
