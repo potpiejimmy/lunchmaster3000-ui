@@ -3,9 +3,7 @@
     <div fxFlex.gt-md="70">
       <div fxLayout="row" fxLayoutGap=".5em" style="margin-bottom: .25em;">
         <div *ngIf="orderSet.location.icon" style="margin-left: 1em;">
-            <a (click)="checked=!checked" href="#">
-                <img class="location-image" [src]="app.apiUrl+'resources/'+orderSet.location.icon+'.png'"/>
-            </a>
+          <img class="location-image" [src]="app.apiUrl+'resources/'+orderSet.location.icon+'.png'"/>
         </div>
         <div style="flex: 1 1 auto;">
             <div style="font-size: .7em; line-height: 30px;">
@@ -23,16 +21,19 @@
         <form class="font-size-middle">
             <mat-form-field>
                 <textarea #inpcomment name="comment" matInput [placeholder]="'components.orderset.comment'|translate" [(ngModel)]="commentInput" cdkTextareaAutosize="true"></textarea>
+                <mat-hint>{{'components.orderset.comment_hint'|translate}}</mat-hint>
             </mat-form-field>
-            <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="1em" fxLayoutGap.xs="0">
+            <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="1em" fxLayoutGap.xs="0" style="margin-bottom: .5em;">
               <div style="flex: 1 1 auto;">
                 <mat-form-field>
                     <input #inppaylink name="paylink" matInput [placeholder]="'components.orderset.paylink'|translate" [(ngModel)]="payLinkInput"/>
+                    <mat-hint>{{'components.orderset.paylink_hint'|translate}}</mat-hint>
                 </mat-form-field>
               </div>
               <div>
                 <mat-form-field>
                     <input #inpfee name="fee" matInput currencyMask [placeholder]="'components.orderset.fee'|translate" [(ngModel)]="feeInput" [options]="{prefix: '', suffix: '', thousands: thousandsSeparator, decimal: decimalSeparator}"/>
+                    <mat-hint>{{'components.orderset.fee_hint'|translate}}</mat-hint>
                 </mat-form-field>
               </div>
             </div>
