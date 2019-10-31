@@ -230,6 +230,10 @@ pre {
     font-weight: bold;
 }
 
+img.location-image {
+    border: none;
+}
+
 /* Extra small devices (phones, less than 768px) */
 @media (max-width:600px) {
     .mat-form-field {font-size:0.6em;}

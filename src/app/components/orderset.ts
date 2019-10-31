@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter, OnInit, ViewChild, AfterViewInit } from "@angular/core";
 import { TranslateService } from '@ngx-translate/core';
+import { AppService } from '../services/app';
 
 @Component({
     selector: "orderset",
@@ -56,8 +57,10 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
 
     displayedColumns: string[] = ['name', 'order', 'price', 'fee', 'total', 'paylink', 'moneyrec'];
 
-    constructor(private translate: TranslateService) {
-        
+    constructor(
+        private translate: TranslateService,
+        public app: AppService
+    ) {
     }
 
     ngOnInit() {

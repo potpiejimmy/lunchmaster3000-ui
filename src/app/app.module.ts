@@ -33,6 +33,7 @@ import { ClipboardModule } from 'ngx-clipboard';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NgxPrintModule } from 'ngx-print';
+import { ImageCropperModule } from 'ngx-image-cropper';
 
 // App
 import { AppComponent } from './app.component';
@@ -105,6 +106,7 @@ import { ChatComponent } from './components/chat';
     CurrencyMaskModule,
     ClipboardModule,
     NgxPrintModule,
+    ImageCropperModule,
     LocalStorageModule.forRoot({ prefix: 'lunch.community', storageType: 'localStorage' }), // or sessionStorage
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     TranslateModule.forRoot({loader: {provide: TranslateLoader, useFactory: (http: HttpClient) => new TranslateHttpLoader(http),deps: [HttpClient]}})
