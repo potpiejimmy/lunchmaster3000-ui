@@ -5,6 +5,8 @@ import { environment } from '../../environments/environment';
 @Injectable()
 export class AppService {
 
+    loading: boolean;
+
     // agree to terms and conditions and privacy statement?
     agreeTerms: boolean;    
     agreePrivacy: boolean;

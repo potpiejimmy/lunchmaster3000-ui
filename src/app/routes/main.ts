@@ -46,6 +46,7 @@ export class MainComponent implements AfterViewInit, OnDestroy {
                 this.router.navigate(['/create'], { replaceUrl: true });
             } else {
                 // load community
+                this.app.loading = true;
                 this.api.getCommunity(id).then(async c => {
                     if (!c) {
                         this.snackBar.open(await this.translate.get("routes.main.community_id_does_not_exist").toPromise(), null, {duration: 5000});
@@ -60,6 +61,8 @@ export class MainComponent implements AfterViewInit, OnDestroy {
                             this.startup();
                         }
                     }
+                }).finally(() => {
+                    this.app.loading = false;
                 });
             }
         });
