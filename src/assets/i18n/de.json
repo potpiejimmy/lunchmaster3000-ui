@@ -15,7 +15,9 @@
         "privacy_read_2": "Datenschutzerklärung",
         "privacy_read_3": " zur Kenntnis genommen.",
         "donation_btn_source": "https://www.paypalobjects.com/de_DE/i/btn/btn_donate_SM.gif",
-        "donation_text": "Deine Spende erhält die lunch.community am Leben!"
+        "donation_text": "Deine Spende erhält die lunch.community am Leben!",
+        "fee": "Liefergebühr",
+        "optional": "optional"
     },
     "components": {
         "footer": {
@@ -48,7 +50,6 @@
             "comment_hint": "Optionale Hinweise für die anderen Teilnehmer",
             "paylink": "Bezahllink",
             "paylink_hint": "Zum Beispiel: https://paypal.me/yourname",
-            "fee": "Liefergebühr",
             "fee_hint": "Wird auf alle aufgeteilt",
             "incl_fee": "inkl. Liefergebühr",
             "total": "Zu zahlen",

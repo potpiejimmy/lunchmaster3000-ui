@@ -15,7 +15,9 @@
         "privacy_read_2": "Privacy & Cookies",
         "privacy_read_3": " statement.",
         "donation_btn_source": "https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif",
-        "donation_text": "Your donation keeps the lunch.community alive!"
+        "donation_text": "Your donation keeps the lunch.community alive!",
+        "fee": "Delivery fee",
+        "optional": "optional"
     },
     "components": {
         "footer": {
@@ -48,7 +50,6 @@
             "comment_hint": "Optional info for the other participants",
             "paylink": "Payment link",
             "paylink_hint": "For example: https://paypal.me/yourname",
-            "fee": "Delivery fee",
             "fee_hint": "Split among participants",
             "incl_fee": "incl. delivery fee",
             "total": "To pay",

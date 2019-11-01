@@ -33,7 +33,7 @@ export class LmApiService extends HttpBaseService {
 
     createOrderSet(location: any, name: string, payLink: string): Promise<any> {
         return this.post(environment.apiUrl+"ordersets?id="+this.localStorage.get("id"), {
-            location: location, name: name, payLink: payLink
+            location: location, name: name, payLink: payLink, fee: location.delivery_fee
         });
     }
 
