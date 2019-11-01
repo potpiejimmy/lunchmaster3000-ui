@@ -184,8 +184,8 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
     }
 
     feePerPerson() : number {
-        if(this.orderSet && this.orderSet.orders && this.orderKeys.length && this.orderSet.fee)
-            return Math.ceil(this.orderSet.fee / this.orderKeys.length*100)/100;
+        if(this.orderSet && this.orderSet.fee && this.orderSet.orders && this.orderKeys.length)
+            return this.orderKeys.length > 1 ? Math.ceil(this.orderSet.fee / this.orderKeys.length*100)/100 : this.orderSet.fee;
         else
             return 0;
     }
