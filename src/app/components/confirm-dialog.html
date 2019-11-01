@@ -1,0 +1,14 @@
+<div>
+    <mat-card-title>
+        {{title}}
+    </mat-card-title>
+
+    <mat-card-subtitle>
+        {{message}}
+    </mat-card-subtitle>
+
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="0.5em" mat-dialog-actions style="justify-content: right;">
+        <button mat-raised-button (click)="onLeftClick()">{{leftButton}}</button>
+        <button mat-raised-button color="primary" (click)="onRightClick()">{{rightButton}}</button>
+    </div>
+</div>

@@ -1,4 +1,7 @@
 import { Component, ViewChild } from "@angular/core";
+import { ConfirmDialogModel, ConfirmDialogComponent } from './confirm-dialog';
+import { MatDialog } from '@angular/material';
+import { TranslateService } from '@ngx-translate/core';
 import { AppService } from '../services/app';
 import { LmApiService } from '../services/lmapi';
 
@@ -16,10 +19,12 @@ export class LocationEditComponent {
     processing: boolean;
     showCropper = false;
     imageChangedEvent: any;
-
+    
     constructor(
+        public dialog: MatDialog,
         public app: AppService,
-        private api: LmApiService
+        private api: LmApiService,
+        private translate: TranslateService
     ) {}
 
     editLocation(l: any): void {
@@ -72,4 +77,32 @@ export class LocationEditComponent {
         this.showCropper = true;
     }
 
+    get decimalSeparator(): string {
+        return (1.1).toLocaleString().substring(1, 2);
+    }
+
+    get thousandsSeparator(): string {
+        return (1000).toLocaleString().substring(1, 2);
+    }
+
+    async confirmDialogDelete(): Promise<void> {
+        let header = await this.translate.get("components.location_edit.confirm_deletion_header").toPromise();
+        let question = await this.translate.get("components.location_edit.confirm_deletion_question").toPromise();
+        question += this.origName + "?";
+
+        let yes = await this.translate.get("components.location_edit.confirm_deletion_yes").toPromise();
+        let no = await this.translate.get("components.location_edit.confirm_deletion_no").toPromise();
+        
+        const dialogData = new ConfirmDialogModel(header, question, no, yes);
+
+        const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+            maxWidth: "400px",
+            data: dialogData
+        });
+
+        dialogRef.afterClosed().subscribe(dialogResult => {
+            if(dialogResult)
+                this.delete();
+        });
+    }
 }

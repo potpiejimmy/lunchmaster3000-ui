@@ -35,7 +35,11 @@
             "edit": "Edit: {{name}}",
             "new_location": "Add new place",
             "shortdescription": "Short description / info",
-            "menu_link": "Link to the menu"
+            "menu_link": "Link to the menu",
+            "confirm_deletion_header": "Confirm Deletion",
+            "confirm_deletion_question": "Are you sure you want to delete ",
+            "confirm_deletion_no": "No",
+            "confirm_deletion_yes": "Yes, delete"
         },
         "location": {
             "placeorder": "Take orders",
@@ -73,7 +77,11 @@
             "order_delete": "Delete all",
             "chat": "Chat",
             "chat_msg": "Your message",
-            "chat_msg_send": "Send message"
+            "chat_msg_send": "Send message",
+            "confirm_deletion_header": "Confirm deletion",
+            "confirm_deletion_question": "Are you sure you want to delete the order at  ",
+            "confirm_deletion_no": "No!",
+            "confirm_deletion_yes": "Yes, delete it!"
         },
         "coil": {
             "icon_button_text": "Get your XRP!",
@@ -115,7 +123,11 @@
         "settings": {
             "card_title": "Your current lunch.community",
             "community_leave": "Leave community",
-            "your_name": "Your Name"
+            "your_name": "Your Name",
+            "confirm_deletion_header": "Confirm leaving",
+            "confirm_deletion_question": "Are you sure you want to leave the lunch.community  ",
+            "confirm_deletion_no": "No, stay!",
+            "confirm_deletion_yes": "Yes, leave!"
         },
         "welcome": {
             "welcome_message": "Welcome to the lunch.community of",

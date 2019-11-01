@@ -35,7 +35,12 @@
             "edit": "Bearbeite: {{name}}",
             "new_location": "Neue Location hinzufügen",
             "shortdescription": "Kurzbeschreibung / Infos",
-            "menu_link": "Link zur Speisekarte"
+            "menu_link": "Link zur Speisekarte",
+            "confirm_deletion_header": "Löschen bestätigen",
+            "confirm_deletion_question": "Willst du wirklich folgende Location löschen: ",
+            "confirm_deletion_no": "Nein",
+            "confirm_deletion_yes": "Ja, löschen"
+
         },
         "location": {
             "placeorder": "Bestellungen aufnehmen",
@@ -73,7 +78,11 @@
             "order_delete": "Bestellung löschen",
             "chat": "Chat",
             "chat_msg": "Deine Nachricht",
-            "chat_msg_send": "Nachricht absenden"
+            "chat_msg_send": "Nachricht absenden",
+            "confirm_deletion_header": "Löschen bestätigen",
+            "confirm_deletion_question": "Willst du wirklich folgende Bestellung löschen: ",
+            "confirm_deletion_no": "Nein!",
+            "confirm_deletion_yes": "Ja, löschen!"
         },
         "coil": {
             "icon_button_text": "Hol dir deine XRP!",
@@ -115,7 +124,11 @@
         "settings": {
             "card_title": "Deine aktuelle lunch.community",
             "community_leave": "Community verlassen",
-            "your_name": "Dein Name"
+            "your_name": "Dein Name",
+            "confirm_deletion_header": "Verlassen bestätigen",
+            "confirm_deletion_question": "Willst du wirklich folgende Community verlassen: ",
+            "confirm_deletion_no": "Nein, ich will bleiben!",
+            "confirm_deletion_yes": "Ja, raus hier!"
         },
         "welcome": {
             "welcome_message": "Willkommen bei der lunch.community von",
