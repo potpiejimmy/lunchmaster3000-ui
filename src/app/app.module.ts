@@ -25,6 +25,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatSelectModule } from '@angular/material/select';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatDialogModule } from '@angular/material/dialog';
 
 // Special
 import { LocalStorageModule } from 'angular-2-local-storage';
@@ -58,7 +59,7 @@ import { JoinComponent } from './routes/join';
 import { XrpTipComponent } from './routes/xrptip';
 import { TipbotApiService } from './services/tipbotapi';
 import { ChatComponent } from './components/chat';
-
+import { ConfirmDialogComponent } from './components/confirm-dialog';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,8 @@ import { ChatComponent } from './components/chat';
     CoilComponent,
     JoinComponent,
     XrpTipComponent,
-    ChatComponent
+    ChatComponent,
+    ConfirmDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -102,6 +104,7 @@ import { ChatComponent } from './components/chat';
     MatSelectModule,
     MatProgressBarModule,
     MatProgressSpinnerModule,
+    MatDialogModule,
     // Special
     CurrencyMaskModule,
     ClipboardModule,
@@ -116,6 +119,7 @@ import { ChatComponent } from './components/chat';
     LmApiService,
     TipbotApiService
   ],
+  entryComponents: [ConfirmDialogComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

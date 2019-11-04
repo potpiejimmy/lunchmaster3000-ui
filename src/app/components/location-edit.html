@@ -11,6 +11,9 @@
             <mat-form-field style="font-size: .65em;">
                 <input #inpmenulink name="menu_link" matInput maxLength="1024" [placeholder]="'components.location_edit.menu_link'|translate" [(ngModel)]="location.menu_link">
             </mat-form-field>
+            <mat-form-field style="font-size: .65em;">
+                <input #inpdeliveryfee style="text-align: left;" name="delivery_fee" matInput currencyMask placeholder="{{'general.fee'|translate}} ({{'general.optional'|translate}})" [(ngModel)]="location.delivery_fee" [options]="{prefix: '', suffix: '', thousands: thousandsSeparator, decimal: decimalSeparator}"/>
+            </mat-form-field>
             <p>
                 <!-- the old server image if it was already set-->
                 <img *ngIf="!showCropper && location.icon" class="location-image" [src]="app.apiUrl+'resources/'+location.icon+'.png'"/>
@@ -40,7 +43,7 @@
                 <button mat-raised-button color="primary" (click)="save()" [disabled]="processing || !location.name">{{'general.save'|translate}}</button>
                 <button mat-raised-button color="secondary" (click)="cancel()" [disabled]="processing">{{'general.cancel'|translate}}</button>
                 <span style="flex: 1 1 auto;"></span>
-                <button *ngIf="location.id" mat-raised-button color="warn" (click)="delete()" [disabled]="processing">{{'general.delete'|translate}}</button>
+                <button *ngIf="location.id" mat-raised-button color="warn" (click)="confirmDialogDelete()" [disabled]="processing">{{'general.delete'|translate}}</button>
             </div>
         </div>
     </form>

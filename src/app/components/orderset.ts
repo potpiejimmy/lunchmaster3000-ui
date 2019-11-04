@@ -1,4 +1,6 @@
 import { Component, Input, Output, EventEmitter, OnInit, ViewChild, AfterViewInit } from "@angular/core";
+import { ConfirmDialogModel, ConfirmDialogComponent } from './confirm-dialog';
+import { MatDialog } from '@angular/material';
 import { TranslateService } from '@ngx-translate/core';
 import { AppService } from '../services/app';
 
@@ -59,6 +61,7 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
 
     constructor(
         private translate: TranslateService,
+        private dialog: MatDialog,
         public app: AppService
     ) {
     }
@@ -224,5 +227,26 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
             orderSet: this.orderSet,
             order: this.orderSet.orders[name]
         })
+    }
+
+    async confirmDialogDelete(): Promise<void> {
+        let header = await this.translate.get("components.orderset.confirm_deletion_header").toPromise();
+        let question = await this.translate.get("components.orderset.confirm_deletion_question").toPromise();
+        question += this.orderSet.location.name + "?";
+
+        let yes = await this.translate.get("components.orderset.confirm_deletion_yes").toPromise();
+        let no = await this.translate.get("components.orderset.confirm_deletion_no").toPromise();
+        
+        const dialogData = new ConfirmDialogModel(header, question, no, yes);
+
+        const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+            maxWidth: "400px",
+            data: dialogData
+        });
+
+        dialogRef.afterClosed().subscribe(dialogResult => {
+            if(dialogResult)
+                this.cancel();
+        });
     }
 }

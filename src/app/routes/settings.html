@@ -3,7 +3,7 @@
   <mat-card-subtitle>
     {{app.community && app.community.name}}
   </mat-card-subtitle>
-  <button mat-raised-button color="warn" (click)="leaveCommunity()">{{'routes.settings.community_leave'|translate}}</button>
+  <button mat-raised-button color="warn" (click)="confirmDialogLeaving()">{{'routes.settings.community_leave'|translate}}</button>
 </mat-card>
 <mat-card>
   <form class="settings-form" style="font-size: .7em;">
