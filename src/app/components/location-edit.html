@@ -40,7 +40,7 @@
                 </image-cropper>
             </p>
             <div fxLayout="row" fxLayout.xs="column" fxLayoutGap=".5em">
-                <button mat-raised-button color="primary" (click)="save()" [disabled]="processing || !location.name">{{'general.save'|translate}}</button>
+                <button mat-raised-button color="primary" (click)="save()" [disabled]="processing || !location.name || !location.name.trim()">{{'general.save'|translate}}</button>
                 <button mat-raised-button color="secondary" (click)="cancel()" [disabled]="processing">{{'general.cancel'|translate}}</button>
                 <span style="flex: 1 1 auto;"></span>
                 <button *ngIf="location.id" mat-raised-button color="warn" (click)="confirmDialogDelete()" [disabled]="processing">{{'general.delete'|translate}}</button>
