@@ -75,7 +75,7 @@
             "food_arrived_btn": "Lunch is here!!",
             "food_arrived_msg": "Lunch is here!!",
             "order_delete": "Delete all",
-            "order_reopen": "Reopen order",
+            "order_reopen": "Reopen orders",
             "chat": "Chat",
             "chat_msg": "Your message",
             "chat_msg_send": "Send message",
@@ -119,7 +119,7 @@
             "invite_colleagues_5": "Please add places to your community to get going. Press the '+' symbol below to add a new place.",
             "invite_colleagues_6": "",
             "add_new_location": "Add new place",
-            "community_id_does_not_exist": "Sorry, we didn't found a community with this link."
+            "community_id_does_not_exist": "Sorry, we didn't find a community with this link."
         },
         "settings": {
             "card_title": "Your current lunch.community",
