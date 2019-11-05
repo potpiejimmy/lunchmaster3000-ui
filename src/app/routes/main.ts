@@ -58,7 +58,7 @@ export class MainComponent implements AfterViewInit, OnDestroy {
                             this.router.navigate(['/welcome'], { replaceUrl: true });
                         } else {
                             this.app.name = this.name;
-                            this.startup();
+                            await this.startup();
                         }
                     }
                 }).finally(() => {
@@ -68,9 +68,9 @@ export class MainComponent implements AfterViewInit, OnDestroy {
         });
     }
 
-    startup() {
+    async startup(): Promise<void> {
         this.initSocket();
-        this.load();
+        await this.load();
         try {
             Notification.requestPermission(); // request notification permission
         } catch (err) {}
@@ -120,11 +120,8 @@ export class MainComponent implements AfterViewInit, OnDestroy {
         return Object.values(this.data.ordersets);
     }
 
-    load() {
-        this.api.getData().then(data => {
-            console.log("Loaded data: " + data.locations.length + " locations");
-            this.data = data;
-        });
+    async load(): Promise<void> {
+        this.data = await this.api.getData();
     }
 
     adaptDataFromServer(data) {

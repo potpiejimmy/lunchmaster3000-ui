@@ -7,7 +7,8 @@
         {{message}}
     </mat-card-subtitle>
 
-    <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="0.5em" mat-dialog-actions style="justify-content: right;">
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="0.5em" mat-dialog-actions>
+        <span fxShow fxHide.xs style="flex: 1 1 auto;"></span>
         <button mat-raised-button (click)="onLeftClick()">{{leftButton}}</button>
         <button mat-raised-button color="primary" (click)="onRightClick()">{{rightButton}}</button>
     </div>
