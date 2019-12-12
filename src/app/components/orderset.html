@@ -96,7 +96,7 @@
                 </ng-container>
                 <ng-container matColumnDef="paylink">
                   <th mat-header-cell *matHeaderCellDef> </th>
-                  <td mat-cell *matCellDef="let element"><a *ngIf="orderSet.name!=name && element==name && orderSet.orders[element].price && orderSet.payLink && orderSet.finished" target="_blank" [href]="formatPayLink(orderSet.orders[element])">{{'components.orderset.pay_now'|translate}}</a></td>
+                  <td mat-cell *matCellDef="let element"><a *ngIf="orderSet.name!=name && element==name && totalPerPerson(orderSet.orders[element].price) && orderSet.payLink && orderSet.finished" target="_blank" [href]="formatPayLink(orderSet.orders[element])">{{'components.orderset.pay_now'|translate}}</a></td>
                 </ng-container>
                 <ng-container matColumnDef="moneyrec">
                   <th mat-header-cell *matHeaderCellDef> {{'components.orderset.money_received'|translate}} </th>

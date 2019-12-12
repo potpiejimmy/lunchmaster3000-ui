@@ -201,7 +201,7 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
     }
 
     totalPerPerson(p): number {
-        return p + this.feePerPerson();
+        return p ? p + this.feePerPerson() : this.feePerPerson();
     }
 
     get decimalSeparator(): string {
@@ -218,7 +218,7 @@ export class OrderSetComponent implements OnInit, AfterViewInit {
     }
 
     formatPayLink(o) {
-        return this.orderSet.payLink && o.price ? this.orderSet.payLink + '/' + Math.round((o.price + this.feePerPerson())*100)/100 : "";
+        return this.orderSet.payLink && this.totalPerPerson(o.price) ? this.orderSet.payLink + '/' + Math.round(this.totalPerPerson(o.price)*100)/100 : "";
     }
 
     moneyReceivedClicked(name: string, e: any) {
