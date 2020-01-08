@@ -9,6 +9,16 @@
         <mat-icon>settings_applications</mat-icon>
     </button>
 </mat-toolbar>
+<!-- testing carousel: -->
+<div fxLayout="row" class="mat-elevation-z6" style="height: 64px;">
+  <div fxFlex style="background: url('/assets/dishes/dish1.jpg') no-repeat center center; background-size: cover;"></div>
+  <div fxFlex style="background-color: red;"></div>
+  <div fxFlex style="background-color: orange;"></div>
+  <div fxFlex fxHide.lt-sm style="background-color: blue;"></div>
+  <div fxFlex fxHide.lt-md style="background-color: yellow;"></div>
+  <div fxFlex fxHide.lt-lg style="background-color: brown;"></div>
+</div>
+<!-- end -->
 <mat-toolbar id="secondarybar" color="secondary" class="mat-elevation-z6">
     <div class="headerSign" fxLayout="column">
       <div>
