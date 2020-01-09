@@ -14,6 +14,8 @@ export class AppTopbarComponent implements OnInit {
     title: string;
     tw: TypeWriter
 
+    dishes = [1,2,3,4,5,6,1,2,3,4,5,6,1,2,3,4,5,6];
+
     constructor(
         public app: AppService,
         private snackBar: MatSnackBar,
@@ -34,5 +36,10 @@ export class AppTopbarComponent implements OnInit {
 
     get communityLink(): string {
         return environment.shareUrl+'?id='+this.app.community.webid;
+    }
+
+    dishStyle(i: number): any {
+        console.log(i);
+        return {'background': "url('/assets/dishes/dish1.jpg') no-repeat center center", 'background-size': 'cover'};
     }
 }
