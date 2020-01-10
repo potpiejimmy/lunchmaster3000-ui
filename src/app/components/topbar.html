@@ -22,8 +22,8 @@
 </mat-toolbar>
 <mat-progress-bar *ngIf="app.loading" mode="buffer" color="accent"></mat-progress-bar>
 <!-- testing carousel: -->
-<div fxLayout="row" fxLayoutGap="4px" class="mat-elevation-z6" style="height: 64px; margin: 4px 4px 0 4px; overflow: hidden;">
-  <div *ngFor="let i of dishes" fxFlex="128px">
+<div fxHide.xs fxLayout="row" fxLayoutGap="2px" class="mat-elevation-z6" style="height: 84px; padding: 2px; overflow: hidden; background-color: white;">
+  <div *ngFor="let i of dishes" fxFlex="120px" style="overflow: hidden;">
     <img [src]="'/assets/dishes/dish'+i+'.jpg'" width="100%">
   </div>
 </div>
