@@ -22,9 +22,11 @@
 </mat-toolbar>
 <mat-progress-bar *ngIf="app.loading" mode="buffer" color="accent"></mat-progress-bar>
 <!-- testing carousel: -->
-<div fxHide.xs fxLayout="row" fxLayoutGap="2px" class="mat-elevation-z6" style="height: 84px; padding: 2px; overflow: hidden; background-color: white;">
-  <div *ngFor="let i of dishes" fxFlex="120px" style="overflow: hidden;">
-    <img [src]="'/assets/dishes/dish'+i+'.jpg'" width="100%">
+<div fxHide.xs class="mat-elevation-z6" style="overflow: hidden; background-color: white;">
+  <div [@shiftCarousel]="animationState" (@shiftCarousel.done)="shiftAnimationDone($event)" fxLayout="row" fxLayoutGap="2px" style="height: 84px; padding: 2px;">
+    <div *ngFor="let i of dishes" fxFlex="120px" style="overflow: hidden;">
+      <img [src]="'/assets/dishes/dish'+i+'.jpg'" width="100%">
+    </div>
   </div>
 </div>
 <!-- end -->

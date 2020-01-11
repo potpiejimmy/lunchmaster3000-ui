@@ -4,10 +4,23 @@ import { AppService } from '../services/app';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { environment } from '../../environments/environment';
 import { TranslateService } from '@ngx-translate/core';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 @Component({
     selector: 'app-topbar',
-    templateUrl: './topbar.html'
+    templateUrl: './topbar.html',
+    animations: [
+        trigger('shiftCarousel', [
+            state('idle', style({
+                transform: 'translateX(0)'
+            })),
+            state('shiftedLeft', style({
+                transform: 'translateX(-122px)'
+            })),
+            transition('idle => shiftedLeft', animate('2s ease-in-out')),
+            transition('shiftedLeft => idle', animate('0s'))
+        ])
+    ]
 })
 export class AppTopbarComponent implements OnInit {
 
@@ -15,6 +28,7 @@ export class AppTopbarComponent implements OnInit {
     tw: TypeWriter
 
     dishes = [1,2,3,4,5,6,1,2,3,4,5,6,1,2,3,4,5,6];
+    animationState = 'idle';
 
     constructor(
         public app: AppService,
@@ -28,6 +42,19 @@ export class AppTopbarComponent implements OnInit {
             this.title = t;
         })
         this.tw.start();
+        setTimeout(() => { this.shiftCarousel(); setInterval(()=>this.shiftCarousel(), 10000) }, 2000);
+    }
+
+    shiftCarousel() {
+        this.animationState='shiftedLeft';
+    }
+
+    shiftAnimationDone(event) {
+        if (event.toState === 'shiftedLeft') {
+            this.animationState = 'idle';
+            let i = this.dishes.shift();
+            this.dishes.push(i);
+        }
     }
 
     async linkCopied() {
