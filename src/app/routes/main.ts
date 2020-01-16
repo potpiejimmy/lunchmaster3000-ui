@@ -122,10 +122,15 @@ export class MainComponent implements AfterViewInit, OnDestroy {
 
     async load(): Promise<void> {
         this.data = await this.api.getData();
+        this.adaptFavorites();
     }
 
     adaptDataFromServer(data) {
         this.data.locations = data.locations;
+
+        //sort locations based on preferred favorites
+        this.adaptFavorites();
+
         this.data.chat = data.chat;
         for (let o of Object.values<any>(data.ordersets)) {
             // adapt new ones
@@ -149,6 +154,32 @@ export class MainComponent implements AfterViewInit, OnDestroy {
 
     checkboxChanged(event) {
         this.api.setFavorite(event.location.id, this.name, event.checked);
+    }
+
+    favoriteChanged(event) {
+        console.log("setting favorite: " + event.favorite + " for location: " + event.location.name);
+        let favorites:string[] = this.localStorageService.get("favorites");
+        if(!favorites)
+            favorites = [];
+
+        if(event.favorite && !favorites.includes(event.location.id))
+            favorites.push(event.location.id);
+        else
+            favorites = favorites.filter(id => id != event.location.id);
+
+        this.localStorageService.set("favorites", favorites);
+
+        this.adaptFavorites();
+    }
+
+    adaptFavorites() {
+        console.log("sorting by favorite as well");
+        console.log(JSON.stringify(this.data.locations));
+        let favorites:string[] = this.localStorageService.get("favorites");
+        if(!favorites)
+            favorites = [];
+
+        this.data.locations.sort((l1,l2)=>(l2.votes.length-l1.votes.length) || (favorites.includes(l2.id)&&favorites.includes(l1.id) ? 0 : (favorites.includes(l2.id) ? 1 : (favorites.includes(l1.id) ? -1 : 0))) || (l2.order_count - l1.order_count) || (l2.name.localeCompare(l1.name)))
     }
 
     takeOrders(location: any) {

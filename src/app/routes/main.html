@@ -33,7 +33,7 @@
       <form class="favorites-form">
         <div fxFlex fxLayout="column">
           <div *ngFor="let l of data.locations">
-            <location [location]="l" [name]="name" (change)="checkboxChanged($event)" (takeOrders)="takeOrders($event)"></location>
+            <location [location]="l" [name]="name" (change)="checkboxChanged($event)" (takeOrders)="takeOrders($event)" (favoriteChanged)="favoriteChanged($event)"></location>
           </div>
           <div gdAlignRows="start" *ngIf="(!app.locationEditor || !app.locationEditor.location) && !app.loading" (click)="app.locationEditor.newLocation()">
             <button *ngIf="!data || !data.locations.length" mat-raised-button color="primary" [title]="'routes.main.add_new_location'|translate"><mat-icon>add</mat-icon> {{'components.location_edit.new_location'|translate}}</button>
