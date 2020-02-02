@@ -27,7 +27,10 @@ export class AppTopbarComponent implements OnInit {
     title: string;
     tw: TypeWriter
 
-    dishes = [1,2,3,4,5,6,1,2,3,4,5,6,1,2,3,4,5,6];
+    static readonly CAROUSEL_RENDER_SIZE = 50; // number of pictures to render in carousel - should be large enough for largest screens
+    static readonly CAROUSEL_NUM_PICTURES = 6; // number of distinct carousel pictures in assets/dishes/dishX.jpg
+
+    dishes = Array.from(Array(AppTopbarComponent.CAROUSEL_RENDER_SIZE).keys()).map(i=>i%AppTopbarComponent.CAROUSEL_NUM_PICTURES+1);
     animationState = 'idle';
 
     constructor(
