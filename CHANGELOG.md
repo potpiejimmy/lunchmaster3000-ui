@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.2.1](https://github.com/potpiejimmy/lunchmaster3000-ui/compare/v3.2.0...v3.2.1) (2020-11-22)
+
+
+### Bug Fixes
+
+* moved socket.io to /api/socket.io ([511af6e](https://github.com/potpiejimmy/lunchmaster3000-ui/commit/511af6e08efec25e542a3f63cbff6e7d97f2e34a))
+
 ## [3.2.0](https://github.com/potpiejimmy/lunchmaster3000-ui/compare/v3.1.0...v3.2.0) (2020-11-22)
 
 
