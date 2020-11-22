@@ -78,7 +78,7 @@ export class MainComponent implements AfterViewInit, OnDestroy {
 
     initSocket() {
         // register socket for receiving data:
-        this.socket = io.connect(environment.apiUrl+this.app.community.webid);
+        this.socket = io.connect(environment.socketIoUrl+this.app.community.webid, { path: environment.socketIoPath });
         this.socket.on('reconnect', async () => {
             //reload data from server on connect to fix iOS problem with PWA
             this.adaptDataFromServer(await this.api.getData());

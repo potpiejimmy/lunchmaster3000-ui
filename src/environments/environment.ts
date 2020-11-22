@@ -5,6 +5,8 @@
 export const environment = {
   production: false,
   apiUrl: "http://localhost:3000/api/v1/",
+  socketIoUrl: "http://localhost:3000/",
+  socketIoPath: "/api/socket.io",
   shareUrl: "http://localhost:4200",
   supportedLanguages: ["en","de"]
 };
