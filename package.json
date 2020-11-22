@@ -7,7 +7,9 @@
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "push": "git push --follow-tags -v",
+    "release": "standard-version && npm run push"
   },
   "private": true,
   "dependencies": {
@@ -22,7 +24,7 @@
     "@angular/material": "^7.3.7",
     "@angular/platform-browser": "^7.2.16",
     "@angular/platform-browser-dynamic": "^7.2.16",
-    "@angular/pwa": "^0.13.9",
+    "@angular/pwa": "^0.1100.2",
     "@angular/router": "^7.2.16",
     "@angular/service-worker": "^7.2.16",
     "@ngx-translate/core": "^11.0.1",
@@ -41,7 +43,7 @@
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^0.13.8",
+    "@angular-devkit/build-angular": "^0.1100.2",
     "@angular/cli": "^7.3.9",
     "@angular/compiler-cli": "^7.2.16",
     "@angular/language-service": "^7.2.16",
@@ -57,6 +59,7 @@
     "karma-jasmine": "~1.1.2",
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "^5.4.3",
+    "standard-version": "^9.0.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
     "typescript": "~3.2.2"

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: "http://localhost:3000/",
+  apiUrl: "http://localhost:3000/api/v1/",
   shareUrl: "http://localhost:4200",
   supportedLanguages: ["en","de"]
 };
