@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.1](https://github.com/potpiejimmy/lunchmaster3000-ui/compare/v3.2.3...v0.0.1) (2021-12-16)
+
+
+### Features
+
+* upgraded to Angular 13 ([a62b374](https://github.com/potpiejimmy/lunchmaster3000-ui/commit/a62b37483339e117230942c9944c1ea69188ce68))
+
 ### [3.2.3](https://github.com/potpiejimmy/lunchmaster3000-ui/compare/v3.2.2...v3.2.3) (2021-05-02)
 
 
