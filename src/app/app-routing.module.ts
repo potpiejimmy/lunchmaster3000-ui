@@ -1,5 +1,5 @@
-import { Routes,RouterModule } from '@angular/router';
-import { ModuleWithProviders } from '@angular/core';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './routes/main';
 import { CreateComponent } from './routes/create';
 import { WelcomeComponent } from './routes/welcome';
@@ -10,7 +10,7 @@ import { AboutComponent } from './routes/about';
 import { JoinComponent } from './routes/join';
 import { XrpTipComponent } from './routes/xrptip';
 
-export const routes: Routes = [
+const routes: Routes = [
     {path: '', component: MainComponent},
     {path: 'create', component: CreateComponent},
     {path: 'welcome', component: WelcomeComponent},
@@ -22,4 +22,8 @@ export const routes: Routes = [
     {path: 'xrptip', component: XrpTipComponent}
 ];
 
-export const AppRoutes: ModuleWithProviders = RouterModule.forRoot(routes);
+@NgModule({
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
+})
+export class AppRoutingModule { }

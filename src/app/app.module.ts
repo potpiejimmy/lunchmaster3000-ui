@@ -8,7 +8,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule, HttpClient }    from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { AppRoutes } from './app.routes';
+import { AppRoutingModule } from './app-routing.module';
 import { environment } from '../environments/environment';
 
 // Material
@@ -87,7 +87,7 @@ import { ConfirmDialogComponent } from './components/confirm-dialog';
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    AppRoutes,
+    AppRoutingModule,
     HttpClientModule,
     FlexLayoutModule,
     // Material
@@ -111,7 +111,12 @@ import { ConfirmDialogComponent } from './components/confirm-dialog';
     NgxPrintModule,
     ImageCropperModule,
     LocalStorageModule.forRoot({ prefix: 'lunch.community', storageType: 'localStorage' }), // or sessionStorage
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
     TranslateModule.forRoot({loader: {provide: TranslateLoader, useFactory: (http: HttpClient) => new TranslateHttpLoader(http),deps: [HttpClient]}})
   ],
   providers: [
