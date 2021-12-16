@@ -1,6 +1,6 @@
 import { Component, OnInit, AfterViewInit } from "@angular/core";
 import { ConfirmDialogModel, ConfirmDialogComponent } from '../components/confirm-dialog'
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import { AppService } from '../services/app';
 import { LocalStorageService } from 'angular-2-local-storage';
 import { DeferredValue } from '../util/DeferredValue';

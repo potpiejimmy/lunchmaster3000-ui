@@ -1,6 +1,6 @@
 import { Component, AfterViewInit, ViewChild, OnDestroy } from '@angular/core';
 import { LmApiService } from '../services/lmapi';
-import * as io from 'socket.io-client';
+import { io, Socket } from 'socket.io-client';
 import { environment } from '../../environments/environment';
 import { LocalStorageService } from 'angular-2-local-storage';
 import { AppService } from '../services/app';
@@ -16,7 +16,7 @@ export class MainComponent implements AfterViewInit, OnDestroy {
 
     @ViewChild('locationEditor') locationEditor;
 
-    socket: SocketIOClient.Socket;
+    socket: Socket;
 
     name: string;
 
@@ -78,7 +78,7 @@ export class MainComponent implements AfterViewInit, OnDestroy {
 
     initSocket() {
         // register socket for receiving data:
-        this.socket = io.connect(environment.socketIoUrl+this.app.community.webid, { path: environment.socketIoPath });
+        this.socket = io(environment.socketIoUrl+this.app.community.webid, { path: environment.socketIoPath });
         this.socket.on('reconnect', async () => {
             //reload data from server on connect to fix iOS problem with PWA
             this.adaptDataFromServer(await this.api.getData());
@@ -94,7 +94,10 @@ export class MainComponent implements AfterViewInit, OnDestroy {
                 });
             }
         });
-    }
+        this.socket.on("connect_error", (err) => {
+            console.log(`socket.io connect error due to ${err.message}`);
+          });
+        }
 
     ngAfterViewInit(): void {
         this.app.locationEditor = this.locationEditor;

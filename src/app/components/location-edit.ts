@@ -1,6 +1,6 @@
 import { Component, ViewChild } from "@angular/core";
 import { ConfirmDialogModel, ConfirmDialogComponent } from './confirm-dialog';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import { TranslateService } from '@ngx-translate/core';
 import { AppService } from '../services/app';
 import { LmApiService } from '../services/lmapi';
