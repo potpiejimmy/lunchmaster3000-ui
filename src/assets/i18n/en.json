@@ -149,7 +149,7 @@
         "join": {
             "title": "Join an existing community",
             "subtitle": "Please insert the link to the community into the field below.",
-            "community_link": "Link of the community",
+            "community_link": "Community link",
             "join_community_button": "Join community",
             "error": "This is not a valid link for a community!"
         },

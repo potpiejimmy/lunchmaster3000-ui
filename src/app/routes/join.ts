@@ -1,4 +1,4 @@
-import { Component, ViewChild } from "@angular/core";
+import { AfterViewInit, Component, ViewChild } from "@angular/core";
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { TranslateService } from '@ngx-translate/core';
@@ -8,7 +8,8 @@ import { TranslateService } from '@ngx-translate/core';
     templateUrl: "join.html"
 })
 
-export class JoinComponent {
+export class JoinComponent implements AfterViewInit{
+
     @ViewChild('inplink') inplink;
     linkInput: string;
 
@@ -17,6 +18,10 @@ export class JoinComponent {
         private snackBar: MatSnackBar,
         private translate: TranslateService
     ) {}
+
+    ngAfterViewInit(): void {
+        setTimeout(() => this.inplink && this.inplink.nativeElement.focus(), 100);
+    }
 
     async join() {
         let urlParams = new URLSearchParams(this.linkInput.substring(this.linkInput.indexOf("?")));
